@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Projects - Creation Steppers</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Docs/logo.jpg" alt="CSYDI Logo">
+                <span>Creation Steppers Youth Development Initiative</span>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li> 
+                    <li><a href="staff.html">Our Staffs</a></li>
+
+                    <!-- Projects dropdown -->
+                    <li class="dropdown">
+                        <a href="project.html" class="active">Projects ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ongoing.html">Ongoing Projects</a></li>
+                            <li><a href="completed.html">Completed Projects</a></li>
+                            <li><a href="upcoming.html" class="active">Upcoming Projects</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="f&q.html">F&Q</a></li>
+                    <li><a href="photo.html">Photo Album</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- UPCOMING PROJECTS SECTION -->
+    <section class="projects">
+        <div class="container">
+            <h1>Upcoming Projects</h1>
+            <p class="intro">We are excited to announce our upcoming projects that aim to inspire, empower, and transform communities. These initiatives will continue to build a brighter future for young people and families across the region.</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="Docs/river.jpg" alt="Youth Farming Initiative">
+                    <h2>5th January – Kanyangareng River Carnival</h2>
+                    <p>Kanyangareng River Carnival is an annual event of organized series of edutainment which entails, carrier guidance, plays, or films, Creative displays held every 5th of January at the banks of river Kanyangareng in Amudat Town Council Amudat district of Uganda.</p>
+                    <p>This River Carnival started on the 5th of January 2017 by a group of Creation Steppers youth enjoying their holiday, it however later started attracting the attention of the entire community especially the young people. The founding members saw this as an opportunity to unite and empower Amudat youth especially the youth both in and out of school and advocate against bad cultural practices. The activity is coordinated by Creation Steppers and implemented regionally by Warrior Promotions and Jedark Home of Creativity with support from the community.</p>                    
+                    <p>This Carnival has become more popular over the years and attracts more participants which require more resources, effort and creativity from different to enable achievement of the desired event objectives.</p>
+                    <p>Unlike in other areas of Karamoja, the population in Amudat does not regard dialogue meetings as a big deal most especially when no transport refund is provided. It’s upon this background that we decided to change the festival organization inviting stake holders from different departments who engage the youth along with other indulging educational and recreational activities making the event effective and efficient.</p>
+                    <p>This Carnival will benefit from the Foundation’s experience of strengthening civil society’s capacity to engage with governments and other development partners to promote desired aspects of the sustainable development goals in health, economic empowerment livelihood good governance, culture and diversity.</p>
+                    <a href="donate.html" class="btn">Sponsor Project</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="Docs/mentalhealth.jpg" alt="Mental Health Outreach">
+                    <h2>Mental Health Outreach</h2>
+                    <p>Creating peer-support networks, awareness campaigns, and school-based mental health programs to promote wellness and emotional resilience.</p>
+                    <a href="donate.html" class="btn">Get Involved</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="Docs/makerspace.jpg" alt="MakerSpace Build">
+                    <h2>June/ July – Creation Steppers Excursion</h2>
+                    <p>This is an educational tour aiming to broaden the minds of the youth by exposing them to productive sectors such as agriculture, industry, and tourism. Through this, we hope to inspire innovation, entrepreneurship, and responsible citizenship among participants.</p>
+                    <p>Given the fact that we are in a setup of an area that illiteracy rate is high and low exposure amongst community members, the upcoming generation especially the ones born and studding around Amudat District would never have a chance to visit and learn more beyond home practices, we therefore thought it wise to have an excursion that will give other youth chance to exposure.</p>
+                    <a href="donate.html" class="btn">Contribute</a>
+                </div>
+            </div>
+
+            <!-- PROJECT LIST VIEW -->
+            <div class="project-lists">
+                <ul>
+                    <li class="project-item">
+                        <strong>Youth Farming Initiative</strong>
+                        <p>Empowering young people to engage in agribusiness through hands-on training and mentorship in sustainable farming practices.</p>
+                    </li>
+                    <li class="project-item">
+                        <strong>Mental Health Outreach</strong>
+                        <p>Promoting positive mental health through workshops, counseling sessions, and advocacy in schools and communities.</p>
+                    </li>
+                    <li class="project-item">
+                        <strong>MakerSpace Build</strong>
+                        <p>Creating an innovation hub for young people to explore science, technology, and creative arts while building practical solutions.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Creation Steppers Youth Development Initiative | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+        const dropdown = document.querySelector('.dropdown > a');
+
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navbar.classList.toggle('active');
+            
+            if (!navbar.classList.contains('active')) {
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+            }
+            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Dropdown click (mobile)
+        dropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (window.innerWidth <= 768) {
+                dropdown.parentElement.classList.toggle('open');
+            } else {
+                window.location.href = dropdown.getAttribute('href');
+            }
+        });
+
+        // Close navbar when clicking a link
+        document.querySelectorAll('.navbar a:not(.dropdown > a)').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+        let lastScrollTop = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        header.classList.add('hide');
+    } else {
+        // Scrolling up
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+});
+    </script>
+</body>
+</html>

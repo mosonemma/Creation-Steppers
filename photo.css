@@ -1,0 +1,253 @@
+/*Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: #fff;
+  color: #333;
+  padding-top: 120px; /* To prevent content being hidden behind fixed header */
+}
+/*Container*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*Header*/
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.4s ease, background-color 0.3s ease;
+  padding: 20px 0;
+}
+
+/* Hide header on scroll */
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.logo span {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+  
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #2e7d32;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 28px;
+  background-color: #2e7d32;
+  border-radius: 2px;
+}
+/* --- Main Photo Album Styling --- */
+.photo-album {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.photo-album h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.photo-album p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* --- Gallery Grid --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- Photo Cards --- */
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.15) rotate(1deg);
+    filter: brightness(1.1);
+}
+
+/* --- Overlay Text on Hover --- */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px);
+}
+
+.photo-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Modal Styling --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    background-color: rgba(0,0,0,0.95);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#caption {
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* --- Close Button --- */
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.close:hover {
+    color: #bbb;
+    transform: scale(1.1);
+}
+
+/* --- Extra: subtle 3D tilt effect for cards --- */
+.photo-card:hover {
+    transform: perspective(1000px) rotateY(2deg) rotateX(1deg);
+}
+
+/* --- Smooth Transition for Gallery --- */
+.photo-card,
+.modal-content {
+    will-change: transform, box-shadow, opacity;
+}
+/* Footer */
+footer {
+    background: #222;
+    color: #4e4c4c;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+/* Hide header on scroll */
+.header.hide {
+  transform: translateY(-100%);
+}
+.header {
+  transition: transform 0.4s ease, background-color 0.3s ease;
+}

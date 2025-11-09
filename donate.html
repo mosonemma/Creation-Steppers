@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation Steppers</title>
+    <link rel="stylesheet" href="donate.css">
+    </head>
+
+<body>
+    <header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="Docs/logo.jpg" alt="CSYDI Logo">
+            <span>Creation Steppers Youth Development initiative</span>
+        </div> 
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html" >Home</a></li> 
+                <li><a href="about.html" >About</a></li> 
+                <li><a href="staff.html" >Our Staffs</a></li>
+                <li><a href="project.html" >Projects</a></li>
+                <li><a href="donate.html" class="active">Donate</a></li>
+                <li><a href="f&q.html" >F&Q</a></li>
+                <li><a href="photo.html" >Photo Album</a></li>
+                <li><a href="contact.html" >Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <main class="donate-section container">
+        <div class="donate-card">
+            <h1>Support Creation Steppers</h1>
+            <p class="lead">Help us empower young people with programs, materials and opportunities. Your gift — big or small — makes a difference.</p>
+
+            <form class="donate-form" onsubmit="handleDonate(event)" novalidate>
+                <div class="preset-amounts" role="tablist" aria-label="Suggested donation amounts">
+                    <button type="button" class="amount-btn" data-amount="10">$10</button>
+                    <button type="button" class="amount-btn" data-amount="25">$25</button>
+                    <button type="button" class="amount-btn" data-amount="50">$50</button>
+                    <button type="button" class="amount-btn" data-amount="100">$100</button>
+                </div>
+
+                <div class="custom-row">
+                    <label for="custom-amount" class="sr-only">Custom amount</label>
+                    <span class="currency">$</span>
+                    <input id="custom-amount" name="amount" type="number" min="1" step="0.01" placeholder="Enter amount" inputmode="decimal">
+                    <select id="frequency" name="frequency" class="frequency">
+                        <option value="one-time">One-time</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+
+                <div class="cta-row">
+                    <button class="donate-cta" type="submit">Donate Now</button>
+                    <small class="note">Secure payment (demo). We never share your information.</small>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // donation UI logic (demo-only)
+        (function(){
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            const customInput = document.getElementById('custom-amount');
+
+            amountButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // clear active state
+                    amountButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    customInput.value = btn.dataset.amount;
+                });
+            });
+
+            window.handleDonate = function(e){
+                e.preventDefault();
+                const raw = document.getElementById('custom-amount').value;
+                const amount = parseFloat(raw);
+                const freq = document.getElementById('frequency').value;
+                if (!amount || amount <= 0) {
+                    alert('Please enter a valid donation amount.');
+                    return;
+                }
+                // Demo behaviour: replace with real payment integration in production
+                alert(`Thank you for your ${freq} donation of $${amount.toFixed(2)} — this is a demo.`);
+                // Optionally clear selection
+                amountButtons.forEach(b => b.classList.remove('active'));
+                customInput.value = '';
+            };
+        })();
+    </script>
+
+    <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Toggle hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navbar.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+        navbar.classList.remove('active');
+      }
+    });
+
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+  <script>
+  // Fade-in scroll animation using Intersection Observer
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Header hide on scroll
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      header.classList.add('hide');
+    } else {
+      header.classList.remove('hide');
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
+
+</body>
+</html>

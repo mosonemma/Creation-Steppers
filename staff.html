@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creation Steppers</title>
+  <link rel="stylesheet" href="staff.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="Docs/logo.jpg" alt="CSYDI Logo">
+            <span>Creation Steppers Youth Development initiative</span>
+        </div> 
+
+        <!-- ✅ Added ID to match JavaScript -->
+        <nav class="navbar" id="navbar">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+            <ul>
+                <li><a href="index.html" >Home</a></li> 
+                <li><a href="about.html" >About</a></li> 
+                <li><a href="staff.html" class="active">Our Staffs</a></li>
+                <li><a href="project.html" >Projects</a></li>
+                <li><a href="donate.html" >Donate</a></li>
+                <li><a href="f&q.html" >F&Q</a></li>
+                <li><a href="photo.html" >Photo Album</a></li>
+                <li><a href="contact.html" >Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+  <section id="staffs">
+    <div class="container">
+      <h2>Our Staff</h2>
+
+      <div class="staff-grid">
+        <div class="staff-card">
+          <img src="Docs/mozerox.jpeg" alt="Mozerox">
+          <h3>Etapukan Moses Isura a.k.a Mozerox</h3>
+          <p>CEO</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/lodim.jpeg" alt="Loduk">
+          <h3>Loduk Samuel</h3>
+          <p>Finance Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/charles.jpeg" alt="Lobingo">
+          <h3>Lobingo Charles Loru</h3>
+          <p>Finance Assistant</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/ikoojo.JPG" alt="Ikoojo">
+          <h3>Ikoojo Michael Isura</h3>
+          <p>M&E</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/roy.jpeg" alt="Rotich">
+          <h3>Rotich Amos</h3>
+          <p>Assistant M&E</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/Brenda.jpeg" alt="Brenda">
+          <h3>Chepkemoi Brenda</h3>
+          <p>Project Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/Elizabeth.jpeg" alt="Elizabeth">
+          <h3>Chemutai Elizabeth</h3>
+          <p>Operations Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/moson.jpeg" alt="Moson">
+          <h3>Moson Emmanuel</h3>
+          <p>Information & Technology Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="Docs/Adimo.jpeg" alt="Adimo">
+          <h3>Kipto Nathan A.K.A Adimo</h3>
+          <p>Press</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="" alt="Akiror">
+          <h3>Akiror Seraphine</h3>
+          <p>Field Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="" alt="Lomokol">
+          <h3>Lomokol Lilian</h3>
+          <p>Field Officer</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="" alt="Wamash">
+          <h3>Wamash</h3>
+          <p>Driver</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="" alt="Lotolim">
+          <h3>Lotolim Dominik</h3>
+          <p>Security Guard</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Creation Steppers Youth Development Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+<!-- ===== SCRIPTS ===== -->
+  <script>
+    // Toggle hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navbar.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+        navbar.classList.remove('active');
+      }
+    });
+
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+  <script>
+  // Fade-in scroll animation using Intersection Observer
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Header hide on scroll
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      header.classList.add('hide');
+    } else {
+      header.classList.remove('hide');
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
+
+</body>
+</html>

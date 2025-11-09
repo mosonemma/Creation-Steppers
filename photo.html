@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album | Creation Steppers</title>
+    <link rel="stylesheet" href="photo.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Docs/logo.jpg" alt="CSYDI Logo">
+                <span>Creation Steppers Youth Development Initiative</span>
+            </div> 
+            <nav class="navbar">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li> 
+                    <li><a href="staff.html">Our Staffs</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="f&q.html">F&Q</a></li>
+                    <li><a href="photo.html" class="active">Photo Album</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<main class="photo-album">
+    <h1>Our Photo Memories</h1>
+    <p>Moments captured from our activities and projects — categorized by status.</p>
+
+    <!-- ONGOING PROJECTS -->
+    <section class="photo-status">
+        <h2>Ongoing Projects</h2>
+
+        <!-- Youth Empowerment Program -->
+        <div class="photo-category">
+            <h3>Youth Empowerment Program</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="Docs/bcf6a1d8-2936-4a40-98c4-df8371895742.jpg" alt="Entrepreneurship Training">
+                        <div class="overlay">
+                            <span class="overlay-title">Entrepreneurship Training</span>
+                            <span class="overlay-date">Jan 2025</span>
+                            <span class="badge">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Youth Tech & Innovation Lab -->
+        <div class="photo-category">
+            <h3>Youth Tech & Innovation Lab</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="Docs/project4.jpg" alt="Digital Skills Training">
+                        <div class="overlay">
+                            <span class="overlay-title">Digital Skills Training</span>
+                            <span class="overlay-date">May 2025</span>
+                            <span class="badge">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT PROJECTS -->
+    <section class="photo-status">
+        <h2>Current Projects</h2>
+
+        <!-- Community Health Initiative -->
+        <div class="photo-category">
+            <h3>Community Health Initiative</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="Docs/IMG_0484.JPG" alt="Health Awareness Campaign">
+                        <div class="overlay">
+                            <span class="overlay-title">Health Awareness Campaign</span>
+                            <span class="overlay-date">Mar 2025</span>
+                            <span class="badge">Current</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLETED PROJECTS -->
+    <section class="photo-status">
+        <h2>Completed Projects</h2>
+
+        <!-- GIRL Project -->
+        <div class="photo-category">
+            <h3>GIRL Project</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="photos/girl1.jpg" alt="Pokot Girls Livelihood Training">
+                        <div class="overlay">
+                            <span class="overlay-title">Livelihood Training</span>
+                            <span class="overlay-date">2022</span>
+                            <span class="badge">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Youth Skilling (BRAC) -->
+        <div class="photo-category">
+            <h3>Youth Skilling (BRAC)</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="photos/brac1.jpg" alt="Youth Skill Training">
+                        <div class="overlay">
+                            <span class="overlay-title">Skill Training Session</span>
+                            <span class="overlay-date">2019</span>
+                            <span class="badge">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TASO HIV/AIDS Prevention -->
+        <div class="photo-category">
+            <h3>HIV/AIDS Prevention Project (TASO)</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="photos/taso1.jpg" alt="HIV/AIDS Awareness Session">
+                        <div class="overlay">
+                            <span class="overlay-title">Awareness Session</span>
+                            <span class="overlay-date">2021</span>
+                            <span class="badge">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CECORE Youth Peace Champions -->
+        <div class="photo-category">
+            <h3>Youth Peace Champions (CECORE)</h3>
+            <div class="gallery">
+                <div class="photo-card">
+                    <div class="photo-wrapper">
+                        <img src="photos/cecore1.jpg" alt="Peace Engagement Session">
+                        <div class="overlay">
+                            <span class="overlay-title">Peace Engagement</span>
+                            <span class="overlay-date">2021</span>
+                            <span class="badge">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for full-size image -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+</main>
+
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        const caption = document.getElementById("caption");
+
+        document.querySelectorAll('.photo-card img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                caption.innerText = img.alt;
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+        let lastScrollTop = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        header.classList.add('hide');
+    } else {
+        // Scrolling up
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+});
+    </script>
+</body>
+</html>

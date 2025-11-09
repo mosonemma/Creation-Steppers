@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Projects - Creation Steppers</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Docs/logo.jpg" alt="CSYDI Logo">
+                <span>Creation Steppers Youth Development Initiative</span>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li> 
+                    <li><a href="staff.html">Our Staffs</a></li>
+
+                    <!-- Projects dropdown -->
+                    <li class="dropdown">
+                        <a href="project.html" class="active">Projects ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ongoing.html">Ongoing Projects</a></li>
+                            <li><a href="completed.html" class="active">Completed Projects</a></li>
+                            <li><a href="upcoming.html">Upcoming Projects</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="q&a.html">Q&A</a></li>
+                    <li><a href="photo.html">Photo Album</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- COMPLETED PROJECTS SECTION -->
+    <section class="projects">
+        <div class="container">
+            <h1>Completed Projects</h1>
+            <p class="intro">Over the years, Creation Steppers Youth Development Initiative has successfully implemented projects that have transformed lives and empowered communities. Here are some of our most impactful accomplishments.</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="Docs/solar.jpg" alt="Solar Library">
+                    <h2>Solar Library Project</h2>
+                    <p>Established a solar-powered community library, enabling access to reading materials and digital resources even in areas without electricity.</p>
+                    <a href="photo.html" class="btn">View Photos</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="Docs/water.jpg" alt="Clean Water Pilot">
+                    <h2>Clean Water Pilot</h2>
+                    <p>Rehabilitated boreholes and installed new hand pumps to provide clean and safe drinking water to over 2,000 rural residents.</p>
+                    <a href="photo.html" class="btn">See More</a>
+                </div>
+
+                <div class="project-card">
+                    <img src="Docs/digital.jpg" alt="Digital Skills Bootcamp">
+                    <h2>Digital Skills Bootcamp</h2>
+                    <p>Trained over 120 young people in computer literacy, online entrepreneurship, and digital marketing to boost employability.</p>
+                    <a href="photo.html" class="btn">Explore Highlights</a>
+                </div>
+            </div>
+
+            <!-- COMPLETED PROJECT LIST VIEW -->
+            <div class="project-lists">
+                <ul>
+                    <li class="project-item">
+                        <strong>Solar Library</strong>
+                        <p>Installed solar panels and created a modern learning space for students in rural communities.</p>
+                    </li>
+                    <li class="project-item">
+                        <strong>Clean Water Pilot</strong>
+                        <p>Provided sustainable access to clean water and promoted hygiene practices in multiple districts.</p>
+                    </li>
+                    <li class="project-item">
+                        <strong>Digital Skills Bootcamp</strong>
+                        <p>Helped youth gain practical computer skills and start their own online businesses.</p>
+                    </li>
+                    <li class="project-item">
+                        <strong>Community Outreach Events</strong>
+                        <p>Organized workshops and charity drives that benefited local schools and hospitals.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Creation Steppers Youth Development Initiative | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+        const dropdown = document.querySelector('.dropdown > a');
+
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navbar.classList.toggle('active');
+
+            if (!navbar.classList.contains('active')) {
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+            }
+            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Dropdown click (mobile)
+        dropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (window.innerWidth <= 768) {
+                dropdown.parentElement.classList.toggle('open');
+            } else {
+                window.location.href = dropdown.getAttribute('href');
+            }
+        });
+
+        // Close navbar after clicking a normal link
+        document.querySelectorAll('.navbar a:not(.dropdown > a)').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                hamburger.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

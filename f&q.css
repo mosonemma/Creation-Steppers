@@ -1,0 +1,376 @@
+/*Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: #fff;
+  color: #333;
+  padding-top: 120px; /* To prevent content being hidden behind fixed header */
+}
+/*Container*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*Header*/
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.4s ease, background-color 0.3s ease;
+  padding: 20px 0;
+}
+
+/* Hide header on scroll */
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.logo span {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+  
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #2e7d32;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 28px;
+  background-color: #2e7d32;
+  border-radius: 2px;
+}
+
+/* ===== FAQ HERO SECTION ===== */
+.faq-hero {
+  background: linear-gradient(135deg, #e8f0ff 0%, #f8fcff 100%);
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 3px solid #2e7d32;
+}
+
+.faq-hero h1 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.faq-hero p {
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+/* ===== ACCORDION STYLES ===== */
+.accordion-item {
+  border-bottom: 1px solid #e0e6ed;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-btn {
+  background-color: #fff;
+  color: #003366;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  padding: 15px 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.accordion-btn:hover {
+  background-color: #f0f6ff;
+}
+
+.accordion-btn i {
+  color: #0078d7;
+  transition: transform 0.3s ease;
+}
+
+.accordion-btn[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  max-height: 0; /* initially collapsed */
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 18px; /* horizontal padding */
+  background: #fafbfc;
+}
+
+.accordion-panel.open {
+  padding: 15px 18px; /* restore vertical padding when open */
+  max-height: 1000px; /* temporary large max-height for smooth transition */
+}
+
+/* ===== SIDEBAR: QUICK LINKS, CONTACTS, QUICK ACTIONS ===== */
+aside.faq-card,
+.faq-card aside {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px 25px;
+  height: fit-content;
+}
+
+/* ---- Quick Links ---- */
+aside.faq-card h3 {
+  font-size: 1.3rem;
+  color: #004080;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  color: #004080;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s ease;
+  font-size: 0.98rem;
+}
+
+.quick-links a::before {
+  content: "›";
+  color: #0078d7;
+  margin-right: 6px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.quick-links a:hover {
+  color: #0078d7;
+  transform: translateX(4px);
+}
+
+/* ---- Contacts ---- */
+aside.faq-card h4 {
+  color: #004080;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 5px;
+  margin: 20px 0 15px;
+  letter-spacing: 0.5px;
+}
+
+aside.faq-card p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  padding: 6px 0;
+}
+
+aside.faq-card p i {
+  color: #0078d7;
+  font-size: 1rem;
+  background: #e6f0ff;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+aside.faq-card p:hover {
+  color: #0078d7;
+  transform: translateX(4px);
+}
+
+aside.faq-card p:hover i {
+  background: #0078d7;
+  color: #fff;
+}
+
+aside.faq-card p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+aside.faq-card p a:hover {
+  text-decoration: underline;
+}
+
+aside.faq-card hr {
+  border: 0;
+  border-top: 1px solid #e6eaf2;
+  margin: 20px 0;
+}
+
+/* ---- Quick Actions ---- */
+aside.faq-card h5 {
+  color: #004080;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 5px;
+  margin: 25px 0 15px;
+  letter-spacing: 0.5px;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-actions a {
+  background: #0078d7;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.quick-actions a i {
+  font-size: 1rem;
+}
+
+.quick-actions a:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.25);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  aside.faq-card {
+    margin-top: 25px;
+  }
+
+  aside.faq-card h3,
+  aside.faq-card h4,
+  aside.faq-card h5 {
+    font-size: 1rem;
+  }
+
+  aside.faq-card p,
+  .quick-links a,
+  .quick-actions a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #222;
+    color: #4e4c4c;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .faq-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .accordion-btn {
+    font-size: 0.95rem;
+  }
+
+  .accordion-panel {
+    font-size: 0.9rem;
+  }
+}
+/* Hide header on scroll */
+.header.hide {
+  transform: translateY(-100%);
+}
+.header {
+  transition: transform 0.4s ease, background-color 0.3s ease;
+}

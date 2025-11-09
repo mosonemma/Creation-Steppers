@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint", content="width=device", initial-scale="1.0">
+        <title>Creation Steppers</title>
+        <link rel="stylesheet" href="contact.css">
+    </head>
+
+<body>
+    <header class="header">
+         <!-- Social Media Floating Icons -->
+    <div class="social-top-right">
+      <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/0778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <img src="Docs/logo.jpg" alt="CSYDI Logo">
+            <span>Creation Steppers Youth Development initiative</span>
+        </div> 
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html" >Home</a></li> 
+                <li><a href="about.html" >About</a></li> 
+                <li><a href="staff.html" >Our Staffs</a></li>
+                <li><a href="project.html" >Projects</a></li>
+                <li><a href="donate.html" >Donate</a></li>
+                <li><a href="f&q.html" >F&Q</a></li>
+                <li><a href="photo.html" >Photo Album</a></li>
+                <li><a href="contact.html" class="active">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-- Contact Details + Form -->
+    <section class="contact-container">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><i class="fa fa-map-marker"></i> Address: CSYDI Offices, Amudat District, Uganda</p>
+            <p><i class="fa fa-phone"></i> Phone: +256 0393 254 319</p>
+            <p><i class="fa fa-envelope"></i> Email: info@csydi.org</p>
+            <p><i class="fa fa-globe"></i> Website: www.csydi.org</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="mailto:info@csydi.org" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Creation Steppers Youth Development Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hamburger toggle
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.querySelector('.navbar');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+        let lastScrollTop = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        header.classList.add('hide');
+    } else {
+        // Scrolling up
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+});
+    </script>
+
+</body>
+</html>

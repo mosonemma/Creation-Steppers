@@ -3,40 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CSYDI empowers youth through mentorship, advocacy, and development programs in Uganda.">
-  <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment, FAQ">
-  <title>F&Q — Creation Steppers Youth Development Initiative</title>
+  <title>Creation Steppers</title>
+
+  <!-- Font Awesome for plus/minus icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-vcFJYhkV+tb1bGZ+xqwbpQ7sxQW2LbN9dhT1lXqL4Y9nVvo2w3+fH6whkR0JfKaX/0G0+I2N+qYd9k6dqEw5zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="f&q.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="Docs/logo.jpg">
-  <style>
-    /* Small inline styles to ensure FAQ looks good even if external CSS not loaded */
-    .faq-hero{padding:2.5rem 1rem;background:#f7f9fb;border-bottom:1px solid #e6eef6}
-    .faq-container{max-width:1100px;margin:0 auto;padding:2rem}
-    .faq-grid{display:grid;grid-template-columns:1fr;gap:1rem}
-    @media(min-width:900px){.faq-grid{grid-template-columns:1fr 340px}}
-    .faq-card{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);padding:1rem}
-    .accordion-item{border-bottom:1px solid #eef3f8}
-    .accordion-btn{width:100%;text-align:left;padding:1rem 0;border:0;background:none;font-size:1rem;display:flex;justify-content:space-between;align-items:center}
-    .accordion-panel{max-height:0;overflow:hidden;transition:max-height 0.32s ease;padding:0 0}
-    .accordion-panel.open{padding:0.75rem 0;}
-  </style>
 </head>
 <body>
-  <!-- ===== HEADER (copied from your design) ===== -->
   <header class="header">
-    <div class="social-top-right">
-      <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://wa.me/0778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
     <div class="container">
       <div class="logo">
         <img src="Docs/logo.jpg" alt="CSYDI Logo">
         <span>Creation Steppers Youth Development Initiative</span>
-      </div>
+      </div> 
 
       <nav class="navbar" id="navbar">
         <div class="hamburger" id="hamburger">
@@ -46,8 +26,8 @@
         </div>
 
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li> 
+          <li><a href="about.html">About</a></li> 
           <li><a href="staff.html">Our Staffs</a></li>
           <li><a href="project.html">Projects</a></li>
           <li><a href="donate.html">Donate</a></li>
@@ -59,7 +39,7 @@
     </div>
   </header>
 
-  <!-- ===== FAQ HERO ===== -->
+  <!-- FAQ HERO -->
   <section class="faq-hero">
     <div class="faq-container">
       <h1>Frequently Asked Questions</h1>
@@ -67,11 +47,10 @@
     </div>
   </section>
 
-  <!-- ===== FAQ CONTENT ===== -->
+  <!-- FAQ CONTENT -->
   <main class="faq-container">
     <div class="faq-grid">
       <div class="faq-card">
-        <!-- Accordion -->
         <div id="faqAccordion">
 
           <div class="accordion-item">
@@ -90,7 +69,7 @@
               <i class="fa-solid fa-plus"></i>
             </button>
             <div class="accordion-panel" role="region">
-              <p>We run vocational skills training, menstrual health &amp; FGM awareness campaigns, youth leadership workshops, community outreach and livelihood support activities.</p>
+              <p>We run vocational skills training, menstrual health & FGM awareness campaigns, youth leadership workshops, community outreach and livelihood support activities.</p>
             </div>
           </div>
 
@@ -157,7 +136,7 @@
     </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -166,12 +145,10 @@
     </div>
   </footer>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- SCRIPTS -->
   <script>
-    // set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // hamburger toggle (same behavior as header design)
     const hamburger = document.getElementById('hamburger');
     const navbar = document.getElementById('navbar');
     if (hamburger) {
@@ -181,64 +158,58 @@
       });
     }
 
-    // Accessible accordion
-   document.querySelectorAll('.accordion-item').forEach((item) => {
-  const btn = item.querySelector('.accordion-btn');
-  const panel = item.querySelector('.accordion-panel');
-  const icon = btn.querySelector('i');
+    // Accordion with + / – toggle
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      const btn = item.querySelector('.accordion-btn');
+      const panel = item.querySelector('.accordion-panel');
+      const icon = btn.querySelector('i');
 
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
 
-    // Close all other panels
-    document.querySelectorAll('.accordion-btn').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      b.querySelector('i').classList.remove('fa-minus');
-      b.querySelector('i').classList.add('fa-plus');
+        if (expanded) {
+          btn.setAttribute('aria-expanded', 'false');
+          panel.style.maxHeight = null;
+          panel.classList.remove('open');
+          icon.classList.remove('fa-minus');
+          icon.classList.add('fa-plus');
+        } else {
+          document.querySelectorAll('.accordion-btn').forEach(b => {
+            b.setAttribute('aria-expanded', 'false');
+            b.querySelector('i').classList.remove('fa-minus');
+            b.querySelector('i').classList.add('fa-plus');
+          });
+          document.querySelectorAll('.accordion-panel').forEach(p => {
+            p.style.maxHeight = null;
+            p.classList.remove('open');
+          });
+
+          btn.setAttribute('aria-expanded', 'true');
+          panel.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
+      });
     });
-    document.querySelectorAll('.accordion-panel').forEach(p => {
-      p.style.maxHeight = null;
-      p.classList.remove('open');
-    });
 
-    if (!expanded) {
-      btn.setAttribute('aria-expanded', 'true');
-      icon.classList.remove('fa-plus');
-      icon.classList.add('fa-minus');
-      panel.classList.add('open');
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } else {
-      btn.setAttribute('aria-expanded', 'false');
-      icon.classList.remove('fa-minus');
-      icon.classList.add('fa-plus');
-      panel.style.maxHeight = null;
-      panel.classList.remove('open');
-    }
-  });
-});
-
-
-    // progressively open first FAQ on larger screens
     if (window.innerWidth > 900) {
       const firstBtn = document.querySelector('.accordion-btn');
       if (firstBtn) firstBtn.click();
     }
+
+    // Header hide on scroll
     let lastScrollTop = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
         header.classList.add('hide');
-    } else {
-        // Scrolling up
+      } else {
         header.classList.remove('hide');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
-});
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
   </script>
 </body>
 </html>

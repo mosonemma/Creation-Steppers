@@ -1,4 +1,4 @@
-/*Reset and basic styling */
+/* Reset and basic styling */
 * {
     margin: 0;
     padding: 0;
@@ -7,33 +7,57 @@
 }
 
 body {
-  scroll-behavior: smooth;
-  background-color: #fff;
-  color: #333;
-  padding-top: 120px; /* To prevent content being hidden behind fixed header */
+    scroll-behavior: smooth;
+    background-color: #fff;
+    color: #333;
+    padding-top: 120px; /* To prevent content being hidden behind fixed header */
 }
-/*Container*/
+
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-/*Header*/
+
+/* Floating Top-Right Social Icons */
+.social-top-right {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 12px;
+    z-index: 2000;
+}
+
+.social-top-right a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-top-right a:hover {
+    color: #1b4d23;
+    transform: scale(1.2);
+}
+
+/* Header */
 .header {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.4s ease, background-color 0.3s ease;
-  padding: 20px 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+    padding: 20px 0;
 }
 
 /* Hide header on scroll */
 .header.hide {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -43,8 +67,8 @@ body {
 }
 
 .logo img {
-  height: 80px;
-  width: auto;
+    height: 80px;
+    width: auto;
 }
 
 .logo span {
@@ -54,44 +78,105 @@ body {
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 35px;
+    list-style: none;
+    display: flex;
+    gap: 35px;
 }
-  
+
 .navbar ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  color: #2e7d32;
+    color: #2e7d32;
 }
 
-
+/* Hamburger */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-  margin-left: auto;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    margin-left: auto;
 }
 
 .hamburger span {
-  height: 3px;
-  width: 28px;
-  background-color: #2e7d32;
-  border-radius: 2px;
+    height: 3px;
+    width: 28px;
+    background-color: #2e7d32;
+    border-radius: 2px;
 }
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+    }
+
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        padding: 15px 0;
+        display: block;
+        color: #333;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #4e4c4c;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+/* Smooth transitions for header */
+.header {
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+.header.hide {
+    transform: translateY(-100%);
+}
+
 /* --- Main Photo Album Styling --- */
 .photo-album {
     padding: 60px 20px;
@@ -235,19 +320,4 @@ body {
 .photo-card,
 .modal-content {
     will-change: transform, box-shadow, opacity;
-}
-/* Footer */
-footer {
-    background: #222;
-    color: #4e4c4c;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
-}
-/* Hide header on scroll */
-.header.hide {
-  transform: translateY(-100%);
-}
-.header {
-  transition: transform 0.4s ease, background-color 0.3s ease;
 }

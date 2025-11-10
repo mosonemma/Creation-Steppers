@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint", content="width=device", initial-scale="1.0">
-        <title>Creation Steppers</title>
-        <link rel="stylesheet" href="contact.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation Steppers</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
     <header class="header">
-         <!-- Social Media Floating Icons -->
-    <div class="social-top-right">
-      <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://wa.me/0778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-    <div class="container">
-        <div class="logo">
-            <img src="Docs/logo.jpg" alt="CSYDI Logo">
-            <span>Creation Steppers Youth Development initiative</span>
-        </div> 
-        <nav class="navbar">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul>
-                <li><a href="index.html" >Home</a></li> 
-                <li><a href="about.html" >About</a></li> 
-                <li><a href="staff.html" >Our Staffs</a></li>
-                <li><a href="project.html" >Projects</a></li>
-                <li><a href="donate.html" >Donate</a></li>
-                <li><a href="f&q.html" >F&Q</a></li>
-                <li><a href="photo.html" >Photo Album</a></li>
-                <li><a href="contact.html" class="active">Contacts</a></li>
-            </ul>
-        </nav>
-    </div>
+        <!-- Social Media Floating Icons -->
+        <div class="social-top-right">
+            <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/0778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <div class="container">
+            <div class="logo">
+                <img src="Docs/logo.jpg" alt="CSYDI Logo">
+                <span>Creation Steppers Youth Development Initiative</span>
+            </div> 
+
+            <nav class="navbar" id="navbar">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li> 
+                    <li><a href="staff.html">Our Staffs</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="f&q.html">F&Q</a></li>
+                    <li><a href="photo.html">Photo Album</a></li>
+                    <li><a href="contact.html" class="active">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -49,7 +52,6 @@
 
     <!-- Contact Details + Form -->
     <section class="contact-container">
-
         <!-- Contact Information -->
         <div class="contact-info">
             <h2>Get in Touch</h2>
@@ -70,19 +72,18 @@
                 <button type="submit">Send Message</button>
             </form>
         </div>
-
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; Creation Steppers Youth Development Initiative. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Creation Steppers Youth Development Initiative. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        // Set year automatically
+        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Hamburger toggle
@@ -101,23 +102,20 @@
                 body.style.overflow = 'auto';
             });
         });
+
+        // Hide header on scroll
         let lastScrollTop = 0;
-const header = document.querySelector('.header');
+        const header = document.querySelector('.header');
 
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        header.classList.add('hide');
-    } else {
-        // Scrolling up
-        header.classList.remove('hide');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
-});
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
     </script>
-
 </body>
 </html>

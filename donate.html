@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creation Steppers</title>
-    <link rel="stylesheet" href="donate.css">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creation Steppers</title>
+  <link rel="stylesheet" href="donate.css">
+</head>
 
 <body>
-    <header class="header">
+  <header class="header">
     <div class="container">
         <div class="logo">
             <img src="Docs/logo.jpg" alt="CSYDI Logo">
             <span>Creation Steppers Youth Development initiative</span>
         </div> 
-        <nav class="navbar">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+        <!-- ✅ Added ID to match JavaScript -->
+        <nav class="navbar" id="navbar">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
             <ul>
                 <li><a href="index.html" >Home</a></li> 
                 <li><a href="about.html" >About</a></li> 
@@ -71,85 +74,61 @@
         </div>
     </footer>
 
-    <script>
-        // donation UI logic (demo-only)
-        (function(){
-            const amountButtons = document.querySelectorAll('.amount-btn');
-            const customInput = document.getElementById('custom-amount');
+   <script>
+(function(){
+  // ===== Donation UI logic =====
+  const amountButtons = document.querySelectorAll('.amount-btn');
+  const customInput = document.getElementById('custom-amount');
 
-            amountButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // clear active state
-                    amountButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    customInput.value = btn.dataset.amount;
-                });
-            });
-
-            window.handleDonate = function(e){
-                e.preventDefault();
-                const raw = document.getElementById('custom-amount').value;
-                const amount = parseFloat(raw);
-                const freq = document.getElementById('frequency').value;
-                if (!amount || amount <= 0) {
-                    alert('Please enter a valid donation amount.');
-                    return;
-                }
-                // Demo behaviour: replace with real payment integration in production
-                alert(`Thank you for your ${freq} donation of $${amount.toFixed(2)} — this is a demo.`);
-                // Optionally clear selection
-                amountButtons.forEach(b => b.classList.remove('active'));
-                customInput.value = '';
-            };
-        })();
-    </script>
-
-    <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Toggle hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
-
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navbar.classList.toggle('active');
+  amountButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      amountButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      customInput.value = btn.dataset.amount;
     });
+  });
 
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
-        navbar.classList.remove('active');
-      }
-    });
+  window.handleDonate = function(e){
+    e.preventDefault();
+    const raw = customInput.value;
+    const amount = parseFloat(raw);
+    const freq = document.getElementById('frequency').value;
+    if (!amount || amount <= 0) {
+      alert('Please enter a valid donation amount.');
+      return;
+    }
+    alert(`Thank you for your ${freq} donation of $${amount.toFixed(2)} — this is a demo.`);
+    amountButtons.forEach(b => b.classList.remove('active'));
+    customInput.value = '';
+  };
 
-    // Fade-in animation on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
+  // ===== Hamburger Menu Toggle =====
+  const hamburger = document.querySelector('.hamburger');
+  const navbar = document.querySelector('.navbar');
 
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
+  hamburger.addEventListener('click', e => {
+    e.stopPropagation();
+    hamburger.classList.toggle('active');
+    navbar.classList.toggle('active');
+  });
 
-    faders.forEach(fader => appearOnScroll.observe(fader));
-  </script>
-  <script>
-  // Fade-in scroll animation using Intersection Observer
-  const fadeElements = document.querySelectorAll('.fade-in');
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
+      navbar.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+  });
 
+  // ===== Fade-in on scroll =====
+  const faders = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.2 });
+  faders.forEach(fader => observer.observe(fader));
 
-  fadeElements.forEach(el => observer.observe(el));
-
-  // Header hide on scroll
+  // ===== Header hide on scroll =====
   let lastScrollY = window.scrollY;
   const header = document.querySelector('.header');
 
@@ -161,7 +140,10 @@
     }
     lastScrollY = window.scrollY;
   });
+
+})();
 </script>
+
 
 </body>
 </html>

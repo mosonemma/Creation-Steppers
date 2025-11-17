@@ -1,22 +1,26 @@
-/*Reset and basic styling */
+/* RESET AND BASE STYLES */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === NEW === Smooth scrolling effect for entire site */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  scroll-behavior: smooth;
   background-color: #fff;
   color: #333;
-  padding-top: 120px; /* To prevent content being hidden behind fixed header */
 }
-/*Container*/
+
+/* CONTAINER */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 /* Floating Top-Right Social Icons */
 .social-top-right {
@@ -270,7 +274,7 @@ body {
     .custom-row .frequency { margin-left: 0; }
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
     background: #222;
     color: #4e4c4c;
@@ -278,6 +282,24 @@ footer {
     padding: 30px 0;
     font-size: 14px;
 }
+/* Social Icons in Footer */
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #2e7d32; /* Your theme color */
+  transform: scale(1.2);
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .navbar ul {

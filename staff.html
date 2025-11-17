@@ -3,132 +3,275 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creation Steppers</title>
+  <meta name="description" content="CSYDI empowers youth through mentorship, advocacy, and development programs in Uganda.">
+  <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
+  <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="staff.css">
+  <link 
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+  <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
 <body>
+  <!-- ===== HEADER ===== -->
   <header class="header">
-    <div class="container">
-        <div class="logo">
-            <img src="Docs/logo.jpg" alt="CSYDI Logo">
-            <span>Creation Steppers Youth Development initiative</span>
-        </div> 
+    <!-- Social Media Floating Icons -->
+    <div class="social-top-right">
+      <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/0778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
 
-        <!-- ✅ Added ID to match JavaScript -->
-        <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="Docs/logo.jpg" alt="CSYDI Logo">
+        <span>Creation Steppers Youth Development Initiative</span>
+      </div>
+
+      <!-- ✅ Added ID to match JavaScript -->
+      <nav class="navbar" id="navbar">
         <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-            <ul>
-                <li><a href="index.html" >Home</a></li> 
-                <li><a href="about.html" >About</a></li> 
-                <li><a href="staff.html" class="active">Our Staffs</a></li>
-                <li><a href="project.html" >Projects</a></li>
-                <li><a href="donate.html" >Donate</a></li>
-                <li><a href="f&q.html" >F&Q</a></li>
-                <li><a href="photo.html" >Photo Album</a></li>
-                <li><a href="contact.html" >Contacts</a></li>
-            </ul>
-        </nav>
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="about.html" >About</a></li>
+          <li><a href="staff.html"class="active">Our Staffs</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="f&q.html">F&Q</a></li>
+          <li><a href="photo.html">Photo Album</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
     </div>
-    </header>
+  </header>
 
-  <section id="staffs">
-    <div class="container">
-      <h2>Our Staff</h2>
+<section id="staffs">
+  <div class="container">
+    <h2>Our Staff</h2>
 
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="Docs/mozerox.jpeg" alt="Mozerox">
-          <h3>Etapukan Moses Isura a.k.a Mozerox</h3>
-          <p>CEO</p>
-        </div>
+    <div class="staff-grid">
+      <!-- === Staff 1 === -->
+      <div class="staff-card">
+        <img src="Docs/mozerox.jpeg" alt="Mozerox">
+        <h3>Etapukan Moses Isura a.k.a Mozerox</h3>
+        <p>CEO</p>
+        <button 
+          class="view-profile" 
+          data-name="Etapukan Moses Isura a.k.a Mozerox"
+          data-role="CEO"
+          data-bio="Founder and visionary leader of CSYDI. Passionate about youth empowerment and community development."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/lodim.jpeg" alt="Loduk">
-          <h3>Loduk Samuel</h3>
-          <p>Finance Officer</p>
-        </div>
+      <!-- === Staff 2 === -->
+      <div class="staff-card">
+        <img src="Docs/lodim.jpeg" alt="Loduk">
+        <h3>Loduk Samuel</h3>
+        <p>Finance Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Loduk Samuel"
+          data-role="Finance Officer"
+          data-bio="Oversees the financial management and budgeting for CSYDI, ensuring transparency and accountability."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/charles.jpeg" alt="Lobingo">
-          <h3>Lobingo Charles Loru</h3>
-          <p>Finance Assistant</p>
-        </div>
+      <!-- === Staff 3 === -->
+      <div class="staff-card">
+        <img src="Docs/charles.jpeg" alt="Lobingo">
+        <h3>Lobingo Charles Loru</h3>
+        <p>Finance Assistant</p>
+        <button 
+          class="view-profile" 
+          data-name="Lobingo Charles Loru"
+          data-role="Finance Assistant"
+          data-bio="Supports the finance department with day-to-day accounting and records management."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/ikoojo.JPG" alt="Ikoojo">
-          <h3>Ikoojo Michael Isura</h3>
-          <p>M&E</p>
-        </div>
+      <!-- === Staff 4 === -->
+      <div class="staff-card">
+        <img src="Docs/ikoojo.JPG" alt="Ikoojo">
+        <h3>Ikoojo Michael Isura</h3>
+        <p>M&E</p>
+        <button 
+          class="view-profile" 
+          data-name="Ikoojo Michael Isura"
+          data-role="Monitoring & Evaluation Officer"
+          data-bio="Leads the monitoring and evaluation processes to ensure project goals are effectively achieved."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/roy.jpeg" alt="Rotich">
-          <h3>Rotich Amos</h3>
-          <p>Assistant M&E</p>
-        </div>
+      <!-- === Staff 5 === -->
+      <div class="staff-card">
+        <img src="Docs/roy.jpeg" alt="Rotich">
+        <h3>Rotich Amos</h3>
+        <p>Assistant M&E</p>
+        <button 
+          class="view-profile" 
+          data-name="Rotich Amos"
+          data-role="Assistant M&E"
+          data-bio="Assists in data collection and reporting for project evaluations."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/Brenda.jpeg" alt="Brenda">
-          <h3>Chepkemoi Brenda</h3>
-          <p>Project Officer</p>
-        </div>
+      <!-- === Staff 6 === -->
+      <div class="staff-card">
+        <img src="Docs/Brenda.jpeg" alt="Brenda">
+        <h3>Chepkemoi Brenda</h3>
+        <p>Project Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Chepkemoi Brenda"
+          data-role="Project Officer"
+          data-bio="Coordinates project planning, implementation, and community outreach activities."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/Elizabeth.jpeg" alt="Elizabeth">
-          <h3>Chemutai Elizabeth</h3>
-          <p>Operations Officer</p>
-        </div>
+      <!-- === Staff 7 === -->
+      <div class="staff-card">
+        <img src="Docs/Elizabeth.jpeg" alt="Elizabeth">
+        <h3>Chemutai Elizabeth</h3>
+        <p>Operations Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Chemutai Elizabeth"
+          data-role="Operations Officer"
+          data-bio="Ensures smooth day-to-day operations and manages logistics across projects."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/moson.jpeg" alt="Moson">
-          <h3>Moson Emmanuel</h3>
-          <p>Information & Technology Officer</p>
-        </div>
+      <!-- === Staff 8 === -->
+      <div class="staff-card">
+        <img src="Docs/moson.jpeg" alt="Moson">
+        <h3>Moson Emmanuel</h3>
+        <p>Information & Technology Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Moson Emmanuel"
+          data-role="Information & Technology Officer"
+          data-bio="Handles CSYDI’s digital infrastructure, website, and technological solutions."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="Docs/Adimo.jpeg" alt="Adimo">
-          <h3>Kipto Nathan A.K.A Adimo</h3>
-          <p>Press</p>
-        </div>
+      <!-- === Staff 9 === -->
+      <div class="staff-card">
+        <img src="Docs/Adimo.jpeg" alt="Adimo">
+        <h3>Kipto Nathan A.K.A Adimo</h3>
+        <p>Press</p>
+        <button 
+          class="view-profile" 
+          data-name="Kipto Nathan A.K.A Adimo"
+          data-role="Press Officer"
+          data-bio="Leads media relations, documentation, and public communications for CSYDI."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="" alt="Akiror">
-          <h3>Akiror Seraphine</h3>
-          <p>Field Officer</p>
-        </div>
+      <!-- === Staff 10 === -->
+      <div class="staff-card">
+        <img src="" alt="Akiror">
+        <h3>Akiror Seraphine</h3>
+        <p>Field Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Akiror Seraphine"
+          data-role="Field Officer"
+          data-bio="Works directly with community groups to implement and monitor field activities."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="" alt="Lomokol">
-          <h3>Lomokol Lilian</h3>
-          <p>Field Officer</p>
-        </div>
+      <!-- === Staff 11 === -->
+      <div class="staff-card">
+        <img src="" alt="Lomokol">
+        <h3>Lomokol Lilian</h3>
+        <p>Field Officer</p>
+        <button 
+          class="view-profile" 
+          data-name="Lomokol Lilian"
+          data-role="Field Officer"
+          data-bio="Supports field teams in project implementation and data gathering."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="" alt="Wamash">
-          <h3>Wamash</h3>
-          <p>Driver</p>
-        </div>
+      <!-- === Staff 12 === -->
+      <div class="staff-card">
+        <img src="" alt="Wamash">
+        <h3>Wamash</h3>
+        <p>Driver</p>
+        <button 
+          class="view-profile" 
+          data-name="Wamash"
+          data-role="Driver"
+          data-bio="Ensures safe and reliable transport for staff and project activities."
+        >
+          View Profile
+        </button>
+      </div>
 
-        <div class="staff-card">
-          <img src="" alt="Lotolim">
-          <h3>Lotolim Dominik</h3>
-          <p>Security Guard</p>
-        </div>
+      <!-- === Staff 13 === -->
+      <div class="staff-card">
+        <img src="" alt="Lotolim">
+        <h3>Lotolim Dominik</h3>
+        <p>Security Guard</p>
+        <button 
+          class="view-profile" 
+          data-name="Lotolim Dominik"
+          data-role="Security Guard"
+          data-bio="Responsible for maintaining security and safety at CSYDI premises."
+        >
+          View Profile
+        </button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="year"></span> Creation Steppers Youth Development Initiative. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.</p>
+    <div class="social-icons">
+       <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/+256778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
 
 <!-- ===== SCRIPTS ===== -->
   <script>
@@ -188,6 +331,58 @@
     lastScrollY = window.scrollY;
   });
 </script>
+<script>
+// === Staff Profile Modal ===
+
+// Select modal elements
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-name"></h3>
+    <p id="modal-role"></p>
+    <p id="modal-bio"></p>
+  </div>
+`;
+document.body.appendChild(modal);
+
+const modalName = document.getElementById('modal-name');
+const modalRole = document.getElementById('modal-role');
+const modalBio = document.getElementById('modal-bio');
+const closeModal = modal.querySelector('.close');
+
+// Function to open modal
+function openModal(name, role, bio) {
+  modalName.textContent = name;
+  modalRole.textContent = role;
+  modalBio.textContent = bio;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // prevent background scroll
+}
+
+// Close modal
+function closeProfileModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+closeModal.addEventListener('click', closeProfileModal);
+window.addEventListener('click', (e) => {
+  if (e.target === modal) closeProfileModal();
+});
+
+// === Add event listeners to View Profile buttons ===
+document.querySelectorAll('.view-profile').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name = btn.dataset.name || 'Unknown Staff';
+    const role = btn.dataset.role || 'Staff Member';
+    const bio = btn.dataset.bio || 'Details coming soon.';
+    openModal(name, role, bio);
+  });
+});
+</script>
+
 
 </body>
 </html>

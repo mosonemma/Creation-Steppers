@@ -1,4 +1,4 @@
-/* Reset and basic styling */
+/*Reset and basic styling */
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +10,10 @@ body {
     scroll-behavior: smooth;
     background-color: #fff;
     color: #333;
-    padding-top: 120px; /* To prevent content being hidden behind fixed header */
+    padding-top: 120px;
 }
 
-/* Container */
+/*Container*/
 .container {
     width: 90%;
     max-width: 1200px;
@@ -42,20 +42,19 @@ body {
     transform: scale(1.2);
 }
 
-/* Header */
+
+/* HEADER */
 .header {
     width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: transform 0.4s ease, background-color 0.3s ease;
-    padding: 20px 0;
+    transition: transform .4s ease;
 }
-
-/* Hide header on scroll */
 .header.hide {
     transform: translateY(-100%);
 }
@@ -65,102 +64,162 @@ body {
     align-items: center;
     gap: 10px;
 }
-
 .logo img {
     height: 80px;
-    width: auto;
 }
-
 .logo span {
     font-size: 1.6rem;
-    font-weight: bold;
     color: #2e7d32;
+    font-weight: bold;
 }
 
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
 }
-
 .navbar ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 35px;
 }
-
 .navbar ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: .3s;
 }
-
 .navbar ul li a:hover,
 .navbar ul li a.active {
     color: #2e7d32;
 }
 
-/* Hamburger */
+/* HAMBURGER MENU */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
-    margin-left: auto;
 }
-
 .hamburger span {
-    height: 3px;
     width: 28px;
-    background-color: #2e7d32;
-    border-radius: 2px;
+    height: 3px;
+    background: #2e7d32;
 }
 
-/* Responsive Navbar */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
+    .hamburger { display: flex; }
 
     .navbar ul {
         flex-direction: column;
         width: 100%;
-        background-color: #ffffff;
+        display: none;
+        background: #fff;
         position: absolute;
         top: 100%;
         left: 0;
-        display: none;
         padding: 10px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1001;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
-    .navbar.active ul {
-        display: flex;
-    }
+    .navbar.active ul { display: flex; }
 
     .navbar ul li {
-        width: 100%;
         text-align: center;
     }
-
     .navbar ul li a {
         padding: 15px 0;
         display: block;
-        color: #333;
     }
 
-    .logo img {
-        height: 60px;
-    }
-
-    .logo span {
-        font-size: 1.2rem;
-    }
+    .logo img { height: 60px; }
+    .logo span { font-size: 1.2rem; }
 }
 
-/* Footer */
+/* ---- PHOTO ALBUM ---- */
+.photo-album {
+  padding: 120px 20px 50px;
+  text-align: center;
+}
+
+.photo-status {
+  margin-bottom: 40px;
+}
+
+/* Toggle header */
+.toggle-header {
+  font-size: 1.6rem;
+  background: #2e7d32;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.photo-content {
+  display: none; /* collapsible */
+  margin-top: 15px;
+}
+
+/* Gallery Grid (scales to thousands of photos) */
+.gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  margin-top: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+/* Modal viewer */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5000;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  max-width: 90%;
+  max-height: 85%;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Caption */
+#caption {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+}
+/* ===== FOOTER ===== */
 footer {
     background: #222;
     color: #4e4c4c;
@@ -169,155 +228,20 @@ footer {
     font-size: 14px;
 }
 
-/* Smooth transitions for header */
-.header {
-    transition: transform 0.4s ease, background-color 0.3s ease;
-}
-.header.hide {
-    transform: translateY(-100%);
+/* Social Icons in Footer */
+.social-icons {
+  margin-top: 15px;
 }
 
-/* --- Main Photo Album Styling --- */
-.photo-album {
-    padding: 60px 20px;
-    max-width: 1300px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+.social-icons a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.photo-album h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: #222;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.photo-album p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 50px;
-}
-
-/* --- Gallery Grid --- */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* --- Photo Cards --- */
-.photo-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.photo-card:hover img {
-    transform: scale(1.15) rotate(1deg);
-    filter: brightness(1.1);
-}
-
-/* --- Overlay Text on Hover --- */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 18px;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: translateY(20px);
-}
-
-.photo-card:hover .overlay {
-    opacity: 1;
-    transform: translateY(0);
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
-
-/* --- Modal Styling --- */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 80px;
-    background-color: rgba(0,0,0,0.95);
-    overflow: auto;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 85%;
-    max-height: 85%;
-    border-radius: 16px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.modal-content:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-}
-
-@keyframes zoom {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-#caption {
-    margin: 20px auto;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-/* --- Close Button --- */
-.close {
-    position: absolute;
-    top: 30px;
-    right: 50px;
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.close:hover {
-    color: #bbb;
-    transform: scale(1.1);
-}
-
-/* --- Extra: subtle 3D tilt effect for cards --- */
-.photo-card:hover {
-    transform: perspective(1000px) rotateY(2deg) rotateX(1deg);
-}
-
-/* --- Smooth Transition for Gallery --- */
-.photo-card,
-.modal-content {
-    will-change: transform, box-shadow, opacity;
+.social-icons a:hover {
+  color: #2e7d32; /* Your theme color */
+  transform: scale(1.2);
 }

@@ -23,10 +23,10 @@ body {
 /* Floating Top-Right Social Icons */
 .social-top-right {
     position: fixed;
-    top: 15px;
+    top: 5px;
     right: 15px;
     display: flex;
-    gap: 12px;
+    gap: 5px;
     z-index: 2000;
 }
 
@@ -43,19 +43,18 @@ body {
 }
 
 
-/* ===== Header & Navbar ===== */
+/* HEADER */
 .header {
     width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    padding: 20px 0;
-    transition: transform 0.4s ease, background-color 0.3s ease;
+    transition: transform .4s ease;
 }
-
 .header.hide {
     transform: translateY(-100%);
 }
@@ -65,79 +64,76 @@ body {
     align-items: center;
     gap: 10px;
 }
-
 .logo img {
     height: 80px;
-    width: auto;
 }
-
 .logo span {
     font-size: 1.6rem;
+    color: #2e7d32;
     font-weight: bold;
-    color: #2e7d32; /* GREEN LOGO TEXT */
 }
 
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
 }
-
 .navbar ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 35px;
 }
-
 .navbar ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: .3s;
 }
-
 .navbar ul li a:hover,
 .navbar ul li a.active {
-    color: #1b5e20; /* DARK GREEN HOVER */
+    color: #2e7d32;
 }
 
-/* Hamburger */
+/* HAMBURGER MENU */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
-    margin-left: auto;
 }
-
 .hamburger span {
-    height: 3px;
     width: 28px;
-    background-color: #2e7d32;
-    border-radius: 2px;
+    height: 3px;
+    background: #2e7d32;
 }
 
-/* Floating Social Icons */
-.social-top-right {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    gap: 12px;
-    z-index: 2000;
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar.active ul { display: flex; }
+
+    .navbar ul li {
+        text-align: center;
+    }
+    .navbar ul li a {
+        padding: 15px 0;
+        display: block;
+    }
+
+    .logo img { height: 60px; }
+    .logo span { font-size: 1.2rem; }
 }
 
-.social-top-right a {
-    text-decoration: none;
-    color: #2e7d32;  /* GREEN ICONS */
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-top-right a:hover {
-    color: #1b4d23;
-    transform: scale(1.2);
-}
 
 /* ===== Hero Section ===== */
 .contact-hero {

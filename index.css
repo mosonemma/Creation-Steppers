@@ -701,29 +701,65 @@ body {
 }
 
 /* ===== FOOTER ===== */
-footer {
-    background: #222;
-    color: #4e4c4c;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
-}
-/* Social Icons in Footer */
-.social-icons {
-  margin-top: 15px;
+.footer-home .footer-bg {
+  background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('Docs/footer-bg.jpg') center/cover no-repeat;
+  padding: 100px 20px 50px;
+  text-align: center;
 }
 
-.social-icons a {
-  text-decoration: none;
-  color: #ffffff;
+.footer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-stats h3 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 5px;
+}
+
+.footer-stats p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.footer-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.footer-cta .btn {
   margin: 0 10px;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #2e7d32; /* Your theme color */
+.footer-social a {
+  text-decoration: none;
+  color: #2e7d32;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
   transform: scale(1.2);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+@media(max-width:768px){
+  .footer-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* === NEW === FADE-IN ANIMATION EFFECTS */

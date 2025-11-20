@@ -304,30 +304,105 @@ body {
 }
 
 /* ===== FOOTER ===== */
-footer {
-    background: #222;
-    color: #4e4c4c;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
-}
-/* Social Icons in Footer */
-.social-icons {
-  margin-top: 15px;
+.footer-staff {
+  background: linear-gradient(135deg, #2e7d32, #a5d6a7);
+  color: #fff;
+  padding: 60px 0 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.social-icons a {
+.footer-staff .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+.footer-staff .footer-logo img {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 10px;
+}
+
+.footer-staff .tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.footer-staff .footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.footer-staff .footer-section h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+
+.footer-staff .footer-section ul {
+  list-style: none;
+}
+
+.footer-staff .footer-section ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #ffffff;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #2e7d32; /* Your theme color */
+.footer-staff .footer-section ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-staff .social-icons a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.footer-staff .social-icons a:hover {
+  color: #ffcc00;
   transform: scale(1.2);
 }
+
+.footer-staff .footer-bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.footer-staff .back-to-top {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-staff .back-to-top:hover {
+  color: #ffcc00;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  .footer-staff .footer-sections {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .footer-staff .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 
 /* === Responsive Design === */
 @media (max-width: 1024px) {

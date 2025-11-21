@@ -233,6 +233,28 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script>
+  const heroImages = [
+    "Docs/home.JPG",
+    "Docs/homee.JPG",
+    "Docs/home1.JPG",
+    "Docs/home2.JPG",
+    "Docs/home3.JPG",
+    "Docs/home4.JPG"
+  ];
+
+  let index = 0;
+  const hero = document.querySelector(".hero");
+
+  function changeHeroImage() {
+    hero.style.backgroundImage = `url(${heroImages[index]})`;
+    index = (index + 1) % heroImages.length;
+  }
+
+  changeHeroImage();
+  setInterval(changeHeroImage, 3000); // every 3 seconds
+</script>
+
 
 
   <!-- FLOATING FEEDBACK BUTTON -->

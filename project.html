@@ -57,7 +57,7 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero" style="background-image: url('Docs/Project.JPG');">
+  <section class="hero">
     <div class="hero-text">
       <h1>Empowering Youth Through Action</h1>
       <p>Our projects are designed to build brighter futures by nurturing innovation, education, and community transformation.</p>
@@ -73,7 +73,7 @@
 
       <div class="project-grid">
         <div class="project-card">
-          <img src="Docs/Project1.jpg" alt="Youth Empowerment Program">
+          <img src="Docs/mainproject5.jpg" alt="Youth Empowerment Program">
           <div class="card-body">
             <h3>Youth Empowerment Program</h3>
             <p>Training young people in entrepreneurship, leadership, and digital literacy to prepare them for real-world opportunities.</p>
@@ -293,5 +293,31 @@
       }
     });
   </script>
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+  const heroImages = [
+    "Docs/mainproject00.JPG",
+    "Docs/mainproject.JPG",
+    "Docs/mainproject1.JPG",
+    "Docs/mainproject3.JPG",
+    "Docs/mainproject4.JPG",
+    "Docs/mainproject0.JPG",
+    "Docs/mainproject5.JPG",
+    "Docs/mainproject2.JPG",  
+  ];
+
+  let index = 0;
+  const hero = document.querySelector(".hero");
+
+  function changeHeroImage() {
+    hero.style.backgroundImage = `url(${heroImages[index]})`;
+    index = (index + 1) % heroImages.length;
+  }
+
+  changeHeroImage();
+  setInterval(changeHeroImage, 1000); // every 1 seconds
+</script>
 </body>
 </html>

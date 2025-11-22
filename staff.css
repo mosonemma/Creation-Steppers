@@ -304,104 +304,144 @@ body {
 }
 
 /* ===== FOOTER ===== */
+/* ===== STAFF FOOTER STYLING ===== */
 .footer-staff {
-  background: linear-gradient(135deg, #2e7d32, #a5d6a7);
-  color: #fff;
-  padding: 60px 0 30px;
+  background-color: #0a0f24; /* same as other pages */
+  color: #ddd; /* main text color */
+  padding: 50px 20px 30px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.footer-staff .footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  text-align: center;
+.footer-staff a {
+  color: #ddd; /* links same as text */
+  text-decoration: none;
 }
 
-.footer-staff .footer-logo img {
-  width: 100px;
-  border-radius: 50%;
-  border: 2px solid #fff;
+.footer-staff a:hover {
+  color: #4cc9f0; /* same hover color as other pages */
+}
+
+/* Logo & Tagline */
+.footer-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* round logo */
+  display: block;
+  margin: 0 auto 10px;
+  object-fit: cover;
+}
+
+.footer-logo .tagline {
+  color: #ddd; /* match text color */
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Footer Sections */
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h4 {
+  color: #4cc9f0; /* same as headings on other pages */
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
   margin-bottom: 10px;
 }
 
-.footer-staff .tagline {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #f0f0f0;
+.footer-section p {
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.footer-staff .footer-sections {
+/* Social Icons */
+.social-icons {
   display: flex;
-  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: flex;
   justify-content: center;
-  gap: 50px;
-}
-
-.footer-staff .footer-section h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-decoration: underline;
-}
-
-.footer-staff .footer-section ul {
-  list-style: none;
-}
-
-.footer-staff .footer-section ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-staff .footer-section ul li a:hover {
-  color: #ffcc00;
-}
-
-.footer-staff .social-icons a {
-  color: #fff;
-  margin: 0 8px;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-}
-
-.footer-staff .social-icons a:hover {
-  color: #ffcc00;
-  transform: scale(1.2);
-}
-
-.footer-staff .footer-bottom {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
-  font-size: 0.9rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent; /* remove colored background */
+  color: #ddd; /* same as text color */
+  font-size: 18px;
+  border: 1px solid #ddd; /* optional for a subtle border */
+  transition: 0.3s;
 }
 
-.footer-staff .back-to-top {
+.social-icons a:hover {
+  color: #4cc9f0; /* same hover as other pages */
+  border-color: #4cc9f0; /* optional hover border */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-bottom a.back-to-top {
+  color: #4cc9f0;
+}
+
+.footer-bottom a.back-to-top:hover {
   color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.footer-staff .back-to-top:hover {
-  color: #ffcc00;
 }
 
 /* Responsive */
-@media(max-width:768px) {
-  .footer-staff .footer-sections {
+@media (max-width: 768px) {
+  .footer-sections {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
   }
-  .footer-staff .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
+
+  .footer-logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
   }
 }
+
 
 
 /* === Responsive Design === */

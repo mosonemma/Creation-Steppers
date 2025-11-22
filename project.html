@@ -16,45 +16,52 @@
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="Docs/logo.jpg" alt="CSYDI Logo">
-        <span>Creation Steppers Youth Development Initiative</span>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container">
+
+    <div class="logo">
+      <img src="Docs/logo.jpg" alt="CSYDI Logo">
+      <span>Creation Steppers Youth Development Initiative</span>
+    </div>
+
+    <nav class="navbar" id="navbar">
+
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <!-- ✅ Added ID to match JavaScript -->
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- MENU -->
+      <ul class="menu">
 
-        <ul>
-          <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html" >About</a></li>
-          <li><a href="staff.html">Our Staffs</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="staff.html">Our Staffs</a></li>
 
-           <!-- Projects dropdown -->
-          <li class="dropdown">
-            <a href="project.html" class="active">Projects ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="ongoing.html">Ongoing Projects</a></li>
-              <li><a href="completed.html">Completed Projects</a></li>
-              <li><a href="upcoming.html">Upcoming Projects</a></li>
-            </ul>
-          </li>
+        <!-- Projects Dropdown -->
+        <li class="dropdown">
+          <a href="project.html" class="active" class="dropdown-link">Projects ▾</a>
 
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="f&q.html">F&Q</a></li>
-          <li><a href="photo.html">Photo Album</a></li>
-          <li><a href="contact.html">Contacts</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          <ul class="dropdown-menu">
+            <li><a href="ongoing.html">Ongoing Projects</a></li>
+            <li><a href="completed.html">Completed Projects</a></li>
+            <li><a href="upcoming.html">Upcoming Projects</a></li>
+          </ul>
+        </li>
+
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="f&q.html">F&Q</a></li>
+        <li><a href="photo.html">Photo Album</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -246,18 +253,41 @@
   </section>
 
  <!-- Footer -->
-  <footer class="footer">
-  <div class="container">
-    <p>&copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.</p>
-    <div class="social-icons">
-       <a href="https://www.facebook.com/Ssong Pro" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/ssong.official" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/@Ssong_Pro0" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://wa.me/+256778632598" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@ssongpro0" target="_blank"><i class="fab fa-tiktok"></i></a>
+ <footer class="big-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>About CSYDI</h3>
+      <p>Creation Steppers Youth Development Initiative empowers youth through skills, innovation, and advocacy in Uganda.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>Email: info@csydu.org</p>
+      <p>Phone: +256 778 632 598</p>
+      <p>Address: Amudat, Uganda</p>
+    </div>
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
   </div>
-</footer> 
+  <div class="footer-bottom">
+    &copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.
+  </div>
+</footer>
 
   <script>
     const header = document.querySelector('.header');

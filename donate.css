@@ -275,30 +275,98 @@ body {
 }
 
 /* ===== FOOTER ===== */
-footer {
-    background: #222;
-    color: #4e4c4c;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
-}
-/* Social Icons in Footer */
-.social-icons {
-  margin-top: 15px;
+/* ===== EXTRA FOOTER STYLING ===== */
+/* ======================
+        DONATE PAGE FOOTER
+   ====================== */
+.extra-footer {
+  background: #0a0f24;
+  color: #fff;
+  padding: 70px 0 30px;
+  width: 100%;
+  margin-top: 80px;
+  border-top: 3px solid #4cc9f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.social-icons a {
+/* GRID LAYOUT */
+.extra-footer-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* COLUMN HEADINGS */
+.extra-footer-col h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4cc9f0;
+}
+
+/* COLUMN TEXT */
+.extra-footer-col p,
+.extra-footer-col li {
+  color: #ddd;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* LISTS */
+.extra-footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extra-footer-col ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.extra-footer-col ul li a {
+  color: #ddd;
   text-decoration: none;
-  color: #ffffff;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #2e7d32; /* Your theme color */
-  transform: scale(1.2);
+.extra-footer-col ul li a:hover {
+  color: #4cc9f0;
 }
+
+/* BOTTOM NOTE */
+.extra-footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+  border-top: 1px solid #333;
+}
+
+/* ======================
+       RESPONSIVE
+   ====================== */
+@media (max-width: 1024px) {
+  .extra-footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .extra-footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+  }
+}
+
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {

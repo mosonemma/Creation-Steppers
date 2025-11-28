@@ -39,7 +39,7 @@
           <li><a href="project.html">Projects</a></li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="f&q.html">F&Q</a></li>
-          <li><a href="photo.html">Photo Album</a></li>
+          <li><a href="photo.html">Gallery</a></li>
           <li><a href="contact.html"class="active">Contacts</a></li>
         </ul>
       </nav>
@@ -130,6 +130,51 @@
     <p>&copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- FLOATING FEEDBACK BUTTON -->
+  <a href="staff.html"
+  style="
+    position:fixed;
+    bottom:85px;
+    right:20px;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:50px;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    text-decoration:none;
+    z-index:999;">
+    Our Staffs 
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  ">↑</button>
+
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      btn.style.display = window.scrollY > 250 ? "block" : "none";
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

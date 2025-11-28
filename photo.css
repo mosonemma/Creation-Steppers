@@ -133,6 +133,57 @@ body {
     .logo img { height: 60px; }
     .logo span { font-size: 1.2rem; }
 }
+/* ------------------------------
+      IMAGE BANNER (FULL FIT + BLUR)
+   ------------------------------ */
+
+.image-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 6;        /* Landscape shape */
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+    background: #ddd;            /* fallback background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;          /* Entire image visible, no cropping */
+    display: block;
+}
+
+/* Optional gradient overlay for readability (can remove if desired) */
+.image-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    z-index: 1;
+}
+
+/* Transparent blurred title overlay */
+.image-banner-title {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);   /* Transparent background */
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    backdrop-filter: blur(6px);             /* Blur effect behind text */
+    -webkit-backdrop-filter: blur(6px);    /* Safari support */
+    z-index: 2;                             /* Stays above image */
+}
 
 /* ---- PHOTO ALBUM ---- */
 .photo-album {

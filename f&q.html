@@ -7,6 +7,7 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="f&q.css">
+  <link rel="stylesheet" href="common.css">
   <link 
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +16,7 @@
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container">
@@ -24,21 +25,29 @@
         <span>Creation Steppers Youth Development Initiative</span>
       </div>
 
-      <!-- ✅ Added ID to match JavaScript -->
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
 
+      <nav class="navbar" id="navbar">
         <ul>
-          <li><a href="index.html" >Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="staff.html">Our Staffs</a></li>
-          <li><a href="project.html">Projects</a></li>
+          <li class="has-dropdown">
+            <a href="project.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="ongoing.html">Ongoing</a></li>
+              <li><a href="completed.html">Completed</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+            </ul>
+          </li>
           <li><a href="donate.html">Donate</a></li>
-          <li><a href="f&q.html"class="active">F&Q</a></li>
+          <li><a href="f&q.html" class="active">F&Q</a></li>
           <li><a href="photo.html">Gallery</a></li>
           <li><a href="contact.html">Contacts</a></li>
         </ul>
@@ -227,43 +236,30 @@
     font-size: 17px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   ">↑</button>
-
   <script>
-    const btn = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      btn.style.display = window.scrollY > 250 ? "block" : "none";
+    // Back to top
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.scrollY > 250 ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
-
-  <!-- SCRIPTS -->
-  <script>
+    // Set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        navbar.classList.toggle('open');
-        hamburger.classList.toggle('is-active');
-      });
-    }
 
     // Accordion with + / – toggle
     document.querySelectorAll('.accordion-item').forEach((item) => {
-      const btn = item.querySelector('.accordion-btn');
+      const btnAcc = item.querySelector('.accordion-btn');
       const panel = item.querySelector('.accordion-panel');
-      const icon = btn.querySelector('i');
+      const icon = btnAcc.querySelector('i');
 
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btnAcc.addEventListener('click', () => {
+        const expanded = btnAcc.getAttribute('aria-expanded') === 'true';
 
         if (expanded) {
-          btn.setAttribute('aria-expanded', 'false');
+          btnAcc.setAttribute('aria-expanded', 'false');
           panel.style.maxHeight = null;
           panel.classList.remove('open');
           icon.classList.remove('fa-minus');
@@ -279,9 +275,9 @@
             p.classList.remove('open');
           });
 
-          btn.setAttribute('aria-expanded', 'true');
+          btnAcc.setAttribute('aria-expanded', 'true');
           panel.classList.add('open');
-          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.style.maxHeight = panel.scrollHeight + 'px';
           icon.classList.remove('fa-plus');
           icon.classList.add('fa-minus');
         }
@@ -306,5 +302,8 @@
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
   </script>
-</body>
-</html>
+
+  <script src="script.js" defer></script>
+
+  </body>
+  </html>

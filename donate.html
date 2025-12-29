@@ -7,6 +7,7 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="donate.css">
+  <link rel="stylesheet" href="common.css">
   <link 
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +16,7 @@
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container">
@@ -24,20 +25,28 @@
         <span>Creation Steppers Youth Development Initiative</span>
       </div>
 
-      <!-- ✅ Added ID to match JavaScript -->
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
 
+      <nav class="navbar" id="navbar">
         <ul>
-          <li><a href="index.html" >Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="staff.html">Our Staffs</a></li>
-          <li><a href="project.html">Projects</a></li>
-          <li><a href="donate.html"class="active">Donate</a></li>
+          <li class="has-dropdown">
+            <a href="project.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="ongoing.html">Ongoing</a></li>
+              <li><a href="completed.html">Completed</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+            </ul>
+          </li>
+          <li><a href="donate.html" class="active">Donate</a></li>
           <li><a href="f&q.html">F&Q</a></li>
           <li><a href="photo.html">Gallery</a></li>
           <li><a href="contact.html">Contacts</a></li>
@@ -67,6 +76,55 @@
                         <option value="one-time">One-time</option>
                         <option value="monthly">Monthly</option>
                     </select>
+                </div>
+
+              <fieldset style="margin-top:12px">
+                <legend>Payment method</legend>
+                <label><input type="radio" name="method" value="card" checked> Card (Visa/Mastercard)</label>
+                <label style="margin-left:8px"><input type="radio" name="method" value="mtn"> MTN Mobile Money</label>
+                <label style="margin-left:8px"><input type="radio" name="method" value="airtel"> Airtel Money</label>
+              </fieldset>
+
+                <div style="margin-top:12px" class="donor-group">
+                  <label for="donor-name">Name</label>
+                  <input id="donor-name" name="donorName" type="text" placeholder="Your name">
+                  <label for="donor-email">Email</label>
+                  <input id="donor-email" name="donorEmail" type="email" placeholder="you@example.com">
+                  <label for="donor-phone">Phone</label>
+                  <input id="donor-phone" name="donorPhone" type="tel" placeholder="+2567...">
+                </div>
+
+                <!-- Card input panel (shows when Card method selected) -->
+                <div class="card-panel fade-up" aria-hidden="true">
+                  <div class="card-visual">
+                    <div class="chip"></div>
+                    <div class="card-brand">VISA</div>
+                    <div class="card-number-preview" id="card-preview">•••• •••• •••• ••••</div>
+                    <div class="card-row">
+                      <div class="card-holder" id="card-holder-preview">FULL NAME</div>
+                      <div class="card-expiry" id="card-expiry-preview">MM/YY</div>
+                    </div>
+                  </div>
+
+                  <div class="card-fields">
+                    <label>Card number</label>
+                    <input id="card-number" name="cardNumber" type="text" inputmode="numeric" maxlength="19" placeholder="4242 4242 4242 4242">
+
+                    <div class="card-row small">
+                      <div>
+                        <label>Expiry</label>
+                        <input id="card-expiry" name="cardExpiry" type="text" placeholder="MM/YY" maxlength="5">
+                      </div>
+                      <div>
+                        <label>CVC</label>
+                        <input id="card-cvc" name="cardCvc" type="text" inputmode="numeric" maxlength="4" placeholder="123">
+                      </div>
+                    </div>
+
+                    <label>Cardholder name</label>
+                    <input id="card-name" name="cardName" type="text" placeholder="Full name on card">
+                    <small class="card-hint">Demo only — do not enter real card numbers here. Use Stripe Checkout for live payments.</small>
+                  </div>
                 </div>
 
                 <div class="cta-row">
@@ -166,11 +224,75 @@
   </script>
 
 
-   <script>
+  <script>
 (function(){
   // ===== Donation UI logic =====
   const amountButtons = document.querySelectorAll('.amount-btn');
   const customInput = document.getElementById('custom-amount');
+  const cardPanel = document.querySelector('.card-panel');
+  const methodInputs = document.querySelectorAll('input[name="method"]');
+  const donorGroup = document.querySelector('.donor-group');
+  const nameLabel = donorGroup && donorGroup.querySelector('label[for="donor-name"]');
+  const nameInput = document.getElementById('donor-name');
+  const emailLabel = donorGroup && donorGroup.querySelector('label[for="donor-email"]');
+  const emailInput = document.getElementById('donor-email');
+  const phoneLabel = donorGroup && donorGroup.querySelector('label[for="donor-phone"]');
+  const phoneInput = document.getElementById('donor-phone');
+  let removedNodes = null;
+
+  function updateMethodUI() {
+    const method = document.querySelector('input[name="method"]:checked').value;
+    if (cardPanel) {
+      const show = method === 'card';
+      cardPanel.style.display = show ? 'grid' : 'none';
+      cardPanel.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) cardPanel.classList.add('visible');
+      else cardPanel.classList.remove('visible');
+    }
+    // show/hide phone hint for mobile money
+    if (phoneInput) phoneInput.style.display = method === 'card' ? 'none' : 'block';
+
+    // Remove name/email elements from DOM when Card is selected; reinsert for mobile money
+    if (method === 'card') {
+      if (!removedNodes && nameInput && emailInput && phoneInput) {
+        removedNodes = [nameLabel, nameInput, emailLabel, emailInput, phoneLabel, phoneInput];
+        removedNodes.forEach(n => { if (n && n.parentNode) n.parentNode.removeChild(n); });
+      }
+      if (phoneInput) phoneInput.required = false;
+      // autofocus card number for convenience
+      const cardNumber = document.getElementById('card-number');
+      if (cardNumber) setTimeout(()=>cardNumber.focus(), 50);
+    } else {
+      if (removedNodes && donorGroup) {
+        // reinsert previously removed nodes in original order
+        const before = null;
+        removedNodes.forEach(n => { if (n) donorGroup.insertBefore(n, before); });
+        removedNodes = null;
+      }
+      if (phoneInput) phoneInput.required = true;
+    }
+  }
+
+  methodInputs.forEach(r => r.addEventListener('change', updateMethodUI));
+
+  // Card preview interactions
+  const cardNumberInput = document.getElementById('card-number');
+  const cardNameInput = document.getElementById('card-name');
+  const cardExpiryInput = document.getElementById('card-expiry');
+
+  function formatCardNumber(v){
+    return v.replace(/[^0-9]/g,'').replace(/(.{4})/g,'$1 ').trim();
+  }
+  if (cardNumberInput) cardNumberInput.addEventListener('input', (e)=>{
+    e.target.value = formatCardNumber(e.target.value).slice(0,19);
+    const preview = document.getElementById('card-preview');
+    preview.textContent = e.target.value || '•••• •••• •••• ••••';
+  });
+  if (cardNameInput) cardNameInput.addEventListener('input', (e)=>{ document.getElementById('card-holder-preview').textContent = e.target.value.toUpperCase() || 'FULL NAME'; });
+  if (cardExpiryInput) cardExpiryInput.addEventListener('input', (e)=>{ document.getElementById('card-expiry-preview').textContent = e.target.value || 'MM/YY'; });
+
+  // initial method UI
+  updateMethodUI();
 
   amountButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -180,7 +302,7 @@
     });
   });
 
-  window.handleDonate = function(e){
+  window.handleDonate = async function(e){
     e.preventDefault();
     const raw = customInput.value;
     const amount = parseFloat(raw);
@@ -189,35 +311,57 @@
       alert('Please enter a valid donation amount.');
       return;
     }
-    alert(`Thank you for your ${freq} donation of $${amount.toFixed(2)} — this is a demo.`);
-    amountButtons.forEach(b => b.classList.remove('active'));
-    customInput.value = '';
+
+    const method = document.querySelector('input[name="method"]:checked').value;
+    const nameEl = document.getElementById('donor-name');
+    const emailEl = document.getElementById('donor-email');
+    const phoneEl = document.getElementById('donor-phone');
+    const donor = {
+      name: nameEl ? nameEl.value : null,
+      email: emailEl ? emailEl.value : null,
+      phone: phoneEl ? phoneEl.value : null
+    };
+
+    try {
+      const resp = await fetch('http://localhost:4000/api/donate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amountUSD: amount, method, donor })
+      });
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data.error || 'Donation failed');
+
+      // If Stripe returned a Checkout session URL, redirect client to it
+      if (data.result && data.result.sessionUrl) {
+        window.location = data.result.sessionUrl;
+        return;
+      }
+
+      // Otherwise show instructions (mobile money)
+      if (data.result && (data.result.instruction || data.result.message)) {
+        alert(data.result.instruction || data.result.message || 'Follow the payment instructions provided.');
+      } else {
+        alert(`Donation processed. UGX amount: ${data.amountUGX}`);
+      }
+
+      amountButtons.forEach(b => b.classList.remove('active'));
+      customInput.value = '';
+    } catch (err) {
+      console.error(err);
+      alert('Donation failed: ' + (err.message || err));
+    }
   };
 
   // ===== Hamburger Menu Toggle =====
-  const hamburger = document.querySelector('.hamburger');
-  const navbar = document.querySelector('.navbar');
-
-  hamburger.addEventListener('click', e => {
-    e.stopPropagation();
-    hamburger.classList.toggle('active');
-    navbar.classList.toggle('active');
-  });
-
-  document.addEventListener('click', e => {
-    if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
-      navbar.classList.remove('active');
-      hamburger.classList.remove('active');
-    }
-  });
+  // Navbar behavior moved to central script.js (keeps donation UI code separate)
 
   // ===== Fade-in on scroll =====
-  const faders = document.querySelectorAll('.fade-in');
+  const faders = document.querySelectorAll('.fade-in, .fade-up');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
   faders.forEach(fader => observer.observe(fader));
 
   // ===== Header hide on scroll =====
@@ -236,6 +380,7 @@
 })();
 </script>
 
+<script src="script.js" defer></script>
 
 </body>
 </html>

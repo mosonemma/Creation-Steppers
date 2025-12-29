@@ -7,42 +7,54 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="index.css">
-  <link 
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container">
+      <!-- LOGO -->
       <div class="logo">
         <img src="Docs/logo.jpg" alt="CSYDI Logo">
         <span>Creation Steppers Youth Development Initiative</span>
       </div>
 
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
 
+      <!-- NAVBAR -->
+      <nav class="navbar" id="navbar">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="staff.html">Our Staffs</a></li>
-          <li><a href="project.html">Projects</a></li>
+          <li class="has-dropdown">
+            <a href="project.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="ongoing.html">Ongoing</a></li>
+              <li><a href="completed.html">Completed</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+            </ul>
+          </li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="f&q.html">F&Q</a></li>
-          <li><a href="photo.html">Gallery</a></li>
+          <li><a href="photo.html" >Gallery</a></li>
           <li><a href="contact.html">Contacts</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- HERO SECTION -->
   <section class="hero fade-in" style="background-image: url('Docs/home.JPG');">
     <div class="hero-text">
       <h1>Empowering Youth for a Brighter Tomorrow</h1>
@@ -52,7 +64,7 @@
     </div>
   </section>
 
-  <!-- ===== ABOUT PREVIEW ===== -->
+  <!-- ABOUT PREVIEW -->
   <section class="about-preview fade-in">
     <div class="container">
       <h2>About Us</h2>
@@ -65,7 +77,7 @@
     </div>
   </section>
 
-  <!-- ===== PROGRAMS SECTION ===== -->
+  <!-- PROGRAMS SECTION -->
   <section class="programs fade-in">
     <div class="container">
       <h2>Our Key Programs</h2>
@@ -86,24 +98,40 @@
     </div>
   </section>
 
-  <!-- ===== GALLERY PREVIEW ===== -->
+  <!-- GALLERY PREVIEW -->
   <section class="gallery-preview fade-in">
     <div class="container">
       <h2>In Action</h2>
+      <h2>Kanyangareng River Carnival</h2>
       <div class="gallery-grid">
-        <img src="Docs/event1.jpg" alt="Training session">
-        <img src="Docs/event2.jpg" alt="Youth workshop">
-        <img src="Docs/event3.JPG" alt="Community outreach">
-        <img src="Docs/event5.jpg" alt="Community outreach">
+        <img src="photos/river25-3.jpg">
+        <img src="photos/river25-0.jpg">
+        <img src="photos/river25-1.jpg">
+        <img src="photos/river24-7 - Copy.JPG">
+        <img src="photos/river8.jpg">
+        <img src="photos/river25 - Copy.jpeg">
+        <img src="photos/river25-7 - Copy.jpg">
+        <img src="photos/river25-23 - Copy.jpg">
+
       </div>
       <a href="photo.html" class="btn">View More</a>
     </div>
   </section>
 
-  <!-- ===== NEWS SECTION ===== -->
+  <!-- NEWS SECTION -->
   <section class="news fade-in">
     <div class="container">
       <h2>Latest News & Events</h2>
+      <article>
+        <h3>Annual Kanyangareng River Carnival</h3>
+        <p>Sounds like the Kanyangareng River Carnival is shaping up to be an exiciting event in Amudat District. Here are the Highlights.</p>
+        <p> <strong> - Camping Night Sunday (JAN 4):</strong> Youth dialogue at the River with stakeholders discussing issues affecting young people. Come along with your tent! Security will be guaranteed.</p>
+        <p> <strong> - Town Cleaning Monday (JAN 5, Morning):</strong> Kick off the day with community Clean-up.</p>
+        <p> <strong> - River Activities (JAN 5, All Day):</strong> Followed by river-based fun.</p>
+        <p> <strong> - Extension Party (JAN 5, 6:30PM):</strong> For those 18+, let's party.</p>
+        <p>Amudat District is known for its rich Pokot Culture and community-driven initiatives. Would you like to know more about the Pokot culture or how to get involved in the carnival;</p>
+        <a href="project.html">Read More</a>
+      </article>
       <article>
         <h3>Community Clean-up Drive</h3>
         <p>Over 50 youths participated in a cleanup campaign in Amudat Town.</p>
@@ -112,7 +140,7 @@
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
+  <!-- TESTIMONIALS -->
   <section class="testimonials fade-in">
     <div class="container">
       <h2>Voices of Change</h2>
@@ -126,20 +154,18 @@
         <blockquote>“We were able to travel all along to Yumbe district to showcase and see other youths skills.”  
           <cite>– CSYDI Team that travelled to Yumbe</cite>
         </blockquote>
-        <blockquote>“"Being part of Creation Steppers Youth Development Initiative (CSYDI) shaped my career path in ways I never imagined. Through mentorship, skills development, and practical digital projects, I discovered my passion for software engineering. The hands-on experience I gained at CSYDI strengthened my technical abilities, improved my problem-solving skills, and gave me the confidence to build real solutions. CSYDI played a major role in guiding me toward becoming the software engineer I am today." 
+        <blockquote>“Being part of Creation Steppers Youth Development Initiative (CSYDI) shaped my career path in ways I never imagined. Through mentorship, skills development, and practical digital projects, I discovered my passion for software engineering. The hands-on experience I gained at CSYDI strengthened my technical abilities, improved my problem-solving skills, and gave me the confidence to build real solutions. CSYDI played a major role in guiding me toward becoming the software engineer I am today." 
           <cite>– Moson Emmanuel</cite>
         </blockquote>
         <blockquote>“Through CSYDI, I gained both computer and music production skills. The computer training built my IT confidence and taught me to train others, while the music lessons gave me real hands-on experience with production equipments.
           CSYDI empowered me to grow, create, and share my skills in today’s digital world.”  
-          <cite>– — Rotich Amos – (Dj Heights)</cite>
+          <cite>– Rotich Amos – (Dj Heights)</cite>
         </blockquote>
       </div>
     </div>
   </section>
 
-
-
-  <!-- ===== PARTNERS ===== -->
+  <!-- PARTNERS -->
   <section class="partners fade-in">
     <div class="container">
       <h2>Our Partners</h2>
@@ -155,7 +181,7 @@
     </div>
   </section>
 
-  <!-- ===== NEWSLETTER ===== -->
+  <!-- NEWSLETTER -->
   <section class="newsletter fade-in">
     <div class="container">
       <h2>Stay Updated</h2>
@@ -166,114 +192,69 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-<footer class="footer-home">
-  <div class="footer-bg">
-    <div class="container">
+  <!-- FOOTER -->
+  <footer class="footer-home">
+    <div class="footer-bg">
+      <div class="container">
 
-      <!-- Impact Stats with icons -->
-      <div class="footer-stats fade-in">
-        <div>
-          <i class="fas fa-user-graduate"></i>
-          <h3>500+</h3>
-          <p>Youths Trained</p>
+        <!-- Impact Stats -->
+        <div class="footer-stats fade-in">
+          <div>
+            <i class="fas fa-user-graduate"></i>
+            <h3>500+</h3>
+            <p>Youths Trained</p>
+          </div>
+          <div>
+            <i class="fas fa-project-diagram"></i>
+            <h3>50+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div>
+            <i class="fas fa-handshake"></i>
+            <h3>15+</h3>
+            <p>Partners</p>
+          </div>
         </div>
-        <div>
-          <i class="fas fa-project-diagram"></i>
-          <h3>50+</h3>
-          <p>Projects Completed</p>
+
+        <!-- Call to Action -->
+        <div class="footer-cta fade-in">
+          <p>Be part of our journey in empowering youth!</p>
+          <a href="donate.html" class="btn">Donate</a>
+          <a href="project.html" class="btn btn-outline">Join Us</a>
         </div>
-        <div>
-          <i class="fas fa-handshake"></i>
-          <h3>15+</h3>
-          <p>Partners</p>
+
+        <!-- Quick Links -->
+        <div class="footer-links fade-in">
+          <a href="index.html">Home</a> |
+          <a href="about.html">About Us</a> |
+          <a href="project.html">Projects</a> |
+          <a href="photo.html">Gallery</a> |
+          <a href="donate.html">Donate</a> |
+          <a href="contact.html">Contact</a>
         </div>
-      </div>
 
-      <!-- Call to Action -->
-      <div class="footer-cta fade-in">
-        <p>Be part of our journey in empowering youth!</p>
-        <a href="donate.html" class="btn">Donate</a>
-        <a href="project.html" class="btn btn-outline">Join Us</a>
-      </div>
+        <!-- Social Media Links -->
+        <div class="footer-social fade-in">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
 
-      <!-- Quick Links -->
-      <div class="footer-links fade-in">
-        <a href="index.html">Home</a> |
-        <a href="about.html">About Us</a> |
-        <a href="project.html">Projects</a> |
-        <a href="photo.html">Gallery</a> |
-        <a href="donate.html">Donate</a> |
-        <a href="contact.html">Contact</a>
-      </div>
+        <!-- Quote -->
+        <div class="footer-quote fade-in">
+          <p>“Empowering youth is not a task, it’s a legacy we leave for tomorrow.”</p>
+        </div>
 
-      <!-- Social Media Links -->
-      <div class="footer-social fade-in">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom fade-in">
+          &copy; <span id="year"></span> 2025 CSYDI. All rights reserved.
+        </div>
 
-      <!-- Quote of the Day -->
-      <div class="footer-quote fade-in">
-        <p>“Empowering youth is not a task, it’s a legacy we leave for tomorrow.”</p>
       </div>
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom fade-in">
-        &copy; <span id="year"></span> 2025 CSYDI. All rights reserved.
-      </div>
-
     </div>
-  </div>
-</footer>
-
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<script>
-  const heroImages = [
-    "Docs/home.JPG",
-    "Docs/homee.JPG",
-    "Docs/home1.JPG",
-    "Docs/home2.JPG",
-    "Docs/home3.JPG",
-    "Docs/home4.JPG"
-  ];
-
-  let index = 0;
-  const hero = document.querySelector(".hero");
-
-  function changeHeroImage() {
-    hero.style.backgroundImage = `url(${heroImages[index]})`;
-    index = (index + 1) % heroImages.length;
-  }
-
-  changeHeroImage();
-  setInterval(changeHeroImage, 3000); // every 3 seconds
-</script>
-
-
-
-  <!-- FLOATING FEEDBACK BUTTON -->
-  <a href="contact.html"
-  style="
-    position:fixed;
-    bottom:85px;
-    right:20px;
-    background:#2e7d32;
-    color:#fff;
-    padding:12px 22px;
-    border-radius:50px;
-    font-size:16px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    text-decoration:none;
-    z-index:999;">
-    Give Feedback
-  </a>
+  </footer>
 
   <!-- BACK TO TOP BUTTON -->
   <button id="backToTop" style="
@@ -291,36 +272,57 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   ">↑</button>
 
-  <script>
-    const btn = document.getElementById("backToTop");
+  <!-- FLOATING FEEDBACK BUTTON -->
+  <a href="contact.html" style="
+    position:fixed;
+    bottom:85px;
+    right:20px;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:50px;
+    font-size:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    text-decoration:none;
+    z-index:999;">
+    Give Feedback
+  </a>
 
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hero slider
+    const heroImages = [
+      "Docs/home.JPG",
+      "Docs/homee.JPG",
+      "Docs/home1.JPG",
+      "Docs/home2.JPG",
+      "Docs/home3.JPG",
+      "Docs/home4.JPG"
+    ];
+    let index = 0;
+    const hero = document.querySelector(".hero");
+    function changeHeroImage() {
+      hero.style.backgroundImage = `url(${heroImages[index]})`;
+      index = (index + 1) % heroImages.length;
+    }
+    changeHeroImage();
+    setInterval(changeHeroImage, 3000);
+
+    // Back to top button
+    const btn = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       btn.style.display = window.scrollY > 250 ? "block" : "none";
     });
-
     btn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  </script>
 
-  <!-- ===== EXISTING SCRIPTS ===== -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
+    // (Menu toggle moved to external script.js)
 
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navbar.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
-        navbar.classList.remove('active');
-      }
-    });
-
+    // Fade-in elements
     const fadeElements = document.querySelectorAll('.fade-in');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -328,12 +330,11 @@
         }
       });
     }, { threshold: 0.2 });
-
     fadeElements.forEach(el => observer.observe(el));
 
+    // Header hide on scroll
     let lastScrollY = window.scrollY;
     const header = document.querySelector('.header');
-
     window.addEventListener('scroll', () => {
       if (window.scrollY > lastScrollY) {
         header.classList.add('hide');
@@ -343,6 +344,8 @@
       lastScrollY = window.scrollY;
     });
   </script>
+
+  <script src="script.js" defer></script>
 
 </body>
 </html>

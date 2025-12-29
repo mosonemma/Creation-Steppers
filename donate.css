@@ -115,45 +115,7 @@ body {
     color: #2e7d32;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-  
-.navbar ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  color: #2e7d32;
-}
-
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-  margin-left: auto;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 28px;
-  background-color: #2e7d32;
-  border-radius: 2px;
-}
+/* NAV/HAMBURGER STYLES MOVED TO common.css - per-page rules disabled */
 
 /* Donation section styles */
 .donate-section {
@@ -215,6 +177,66 @@ body {
     margin-bottom: 16px;
 }
 
+/* Donor credential fields and payment method styles */
+fieldset {
+  border: 1px solid #e6e6e6;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+fieldset legend {
+  padding: 0 6px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* Make native radio larger and more tappable */
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Donor inputs */
+#donor-name, #donor-email, #donor-phone {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+#donor-name:focus, #donor-email:focus, #donor-phone:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.08);
+}
+
+/* small helper spacing for labels and inputs grouped block */
+form .donor-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* keep inputs stacked on small screens */
+@media (max-width: 520px) {
+  fieldset { padding: 12px; }
+  fieldset label { display: block; margin-bottom: 8px; }
+  #donor-name, #donor-email, #donor-phone { width: 100%; }
+}
+
 .currency {
     font-weight: 700;
     color: #333;
@@ -272,6 +294,58 @@ body {
     .donate-card { padding: 18px; }
     .custom-row { flex-direction: column; align-items: stretch; gap: 8px; }
     .custom-row .frequency { margin-left: 0; }
+}
+
+/* Card panel styling */
+.card-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #123, #0b3b1a);
+  color: #fff;
+  align-items: center;
+}
+
+.card-panel.visible { display: grid; }
+
+.card-visual {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-visual .chip {
+  width: 44px; height: 32px; background: rgba(255,255,255,0.6); border-radius:4px;
+}
+.card-visual .card-brand { text-align: right; font-weight:800; color:#ffd; }
+.card-number-preview { font-size:1.05rem; letter-spacing:3px; margin-top:8px; }
+.card-row { display:flex; justify-content:space-between; font-size:0.9rem; color:#eee; margin-top:8px; }
+
+.card-fields { color:#222; background:#fff; padding:12px; border-radius:8px; }
+.card-fields label{ display:block; margin-bottom:6px; color:#333; font-weight:600 }
+.card-fields input{ width:100%; padding:10px 12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd; }
+.card-fields .small { display:flex; gap:10px }
+.card-fields .small div{ flex:1 }
+.card-hint{ font-size:0.8rem; color:#666 }
+
+/* Fade-up reveal */
+.fade-up { opacity: 0; transform: translateY(12px); transition: opacity 520ms cubic-bezier(.2,.9,.3,1), transform 520ms cubic-bezier(.2,.9,.3,1); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* CTA pulse on click */
+.donate-cta:active { transform: scale(0.99); }
+
+@media (max-width: 720px) {
+  .card-panel { grid-template-columns: 1fr; }
+  .card-visual { order: 2 }
+  .card-fields { order: 1 }
 }
 
 /* ===== FOOTER ===== */
@@ -376,36 +450,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    padding: 10px 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar.active ul {
-    display: flex;
-  }
-
-  .navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar ul li a {
-    padding: 15px 0;
-    display: block;
-    color: #333;
-  }
+  /* mobile navbar behavior moved to common.css; page retains other responsive tweaks */
 
   .hero-text h1 {
     font-size: 2.2rem;

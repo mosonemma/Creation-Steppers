@@ -101,20 +101,7 @@ body {
     color: #2e7d32;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-    margin-left: auto;
-}
 
-.hamburger span {
-    height: 3px;
-    width: 28px;
-    background-color: #2e7d32;
-    border-radius: 2px;
-}
 
 /* ===== FAQ HERO ===== */
 .faq-hero {
@@ -418,6 +405,7 @@ aside.faq-card hr {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    /* mobile navbar behavior moved to common.css */
     .faq-hero h1 {
         font-size: 1.8rem;
     }
@@ -429,31 +417,6 @@ aside.faq-card hr {
     }
     .accordion-panel {
         font-size: 0.95rem;
-    }
-    .hamburger {
-        display: flex;
-    }
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        background-color: #ffffff;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-        padding: 10px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    .navbar.open ul {
-        display: flex;
-    }
-    .navbar ul li {
-        width: 100%;
-        text-align: center;
-    }
-    .navbar ul li a {
-        padding: 15px 0;
-        display: block;
     }
     .logo img {
         height: 60px;

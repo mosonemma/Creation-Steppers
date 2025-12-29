@@ -7,6 +7,7 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="common.css">
   <link 
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +16,7 @@
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
 <!-- ===== HEADER ===== -->
 <header class="header">
   <div class="container">
@@ -25,33 +26,27 @@
       <span>Creation Steppers Youth Development Initiative</span>
     </div>
 
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="menu-text">Menu</div>
+    </div>
+
     <nav class="navbar" id="navbar">
-
-      <!-- HAMBURGER -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- MENU -->
-      <ul class="menu">
-
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="staff.html">Our Staffs</a></li>
-
-        <!-- Projects Dropdown -->
-        <li class="dropdown">
-          <a href="project.html" class="active" class="dropdown-link">Projects ▾</a>
-
-          <ul class="dropdown-menu">
-            <li><a href="ongoing.html">Ongoing Projects</a></li>
-            <li><a href="completed.html">Completed Projects</a></li>
-            <li><a href="upcoming.html">Upcoming Projects</a></li>
+        <li class="has-dropdown">
+          <a href="project.html" class="active">Projects</a>
+          <ul class="dropdown">
+            <li><a href="ongoing.html">Ongoing</a></li>
+            <li><a href="completed.html">Completed</a></li>
+            <li><a href="upcoming.html">Upcoming</a></li>
           </ul>
         </li>
-
         <li><a href="donate.html">Donate</a></li>
         <li><a href="f&q.html">F&Q</a></li>
         <li><a href="photo.html">Gallery</a></li>
@@ -119,6 +114,7 @@
   <div class="partner-card">
     <img src="Docs/mercycorps.png" alt="Mercy Corps Logo">
     <div class="partner-body">
+<html>
       <h3>Mercy Corps</h3>
       <p><strong>Years:</strong> 2021 – 2023</p>
       <p><strong>Terms of Collaboration:</strong> Mercy Corps funded CSYDI to implement a 3-year project titled “Girls Improving Resilience through Livelihoods and Health (GIRLH)” among the Pokot of Amudat District.</p>
@@ -347,26 +343,7 @@
       lastScrollY = window.scrollY;
     });
 
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.querySelector('.navbar');
-    const dropdown = document.querySelector('.dropdown > a');
-
-    // Toggle navbar
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navbar.classList.toggle('active');
-      document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
-    });
-
-    // Dropdown for mobile
-    dropdown.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (window.innerWidth <= 768) {
-        dropdown.parentElement.classList.toggle('open');
-      } else {
-        window.location.href = dropdown.getAttribute('href');
-      }
-    });
+    // Navbar and dropdown behavior handled by central script.js to keep behavior consistent
   </script>
   <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -394,5 +371,6 @@
   changeHeroImage();
   setInterval(changeHeroImage, 3000); // every 3 seconds
 </script>
+<script src="script.js" defer></script>
 </body>
 </html>

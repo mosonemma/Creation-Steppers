@@ -7,6 +7,7 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="common.css">
   <link 
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +16,7 @@
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container">
@@ -24,23 +25,31 @@
         <span>Creation Steppers Youth Development Initiative</span>
       </div>
 
-      <!-- ✅ Added ID to match JavaScript -->
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
 
+      <nav class="navbar" id="navbar">
         <ul>
-          <li><a href="index.html" >Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="staff.html">Our Staffs</a></li>
-          <li><a href="project.html">Projects</a></li>
+          <li class="has-dropdown">
+            <a href="project.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="ongoing.html">Ongoing</a></li>
+              <li><a href="completed.html">Completed</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+            </ul>
+          </li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="f&q.html">F&Q</a></li>
           <li><a href="photo.html">Gallery</a></li>
-          <li><a href="contact.html"class="active">Contacts</a></li>
+          <li><a href="contact.html" class="active">Contacts</a></li>
         </ul>
       </nav>
     </div>
@@ -185,22 +194,7 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Hamburger toggle
-        const hamburger = document.getElementById('hamburger');
-        const navbar = document.querySelector('.navbar');
-        const body = document.body;
-
-        hamburger.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
-        });
-
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.addEventListener('click', () => {
-                navbar.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
-        });
+        // Navbar / other scripts handled by central script.js; avoid duplicate handlers here
 
         // Hide header on scroll
         let lastScrollTop = 0;
@@ -216,5 +210,6 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
     </script>
-</body>
-</html>
+    <script src="script.js" defer></script>
+    </body>
+    </html>

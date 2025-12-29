@@ -1,0 +1,101 @@
+/* Common navigation and dropdown styles (shared across pages) */
+:root{
+  --nav-bg: #fff;
+  --nav-color: #111;
+  --accent: #2e7d32;
+}
+
+/* Basic navbar layout */
+.navbar ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.navbar ul li{position:relative}
+.navbar ul li a{color:var(--nav-color);text-decoration:none;padding:8px 6px;display:inline-block}
+
+/* Dropdown */
+.has-dropdown > a::after{content:'\f107';font-family:'Font Awesome 6 Free';font-weight:900;margin-left:6px;font-size:0.7em}
+.has-dropdown .dropdown{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  background:var(--nav-bg);
+  min-width:180px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  border-radius:6px;
+  overflow:hidden;
+  display:none;
+  z-index:999;
+}
+.has-dropdown .dropdown li a{display:block;padding:10px 12px;color:var(--nav-color)}
+.has-dropdown .dropdown li a:hover{background:#f3f3f3}
+
+/* Support variations used in some pages (dropdown-menu / dropdown classes) */
+.dropdown-menu, .dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--nav-bg);min-width:180px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border-radius:6px;overflow:hidden;display:none;z-index:999}
+.dropdown-menu li a{display:block;padding:10px 12px;color:var(--nav-color)}
+.dropdown-menu li a:hover{background:#f3f3f3}
+
+/* show on hover for desktop */
+@media(min-width:900px){
+  .has-dropdown:hover .dropdown{display:block}
+  .hamburger{display:none}
+}
+
+/* Mobile / small screens */
+@media(max-width:899px){
+  .header .container{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+  /* Make navbar fixed and full-width under header, and scrollable on tall menus */
+  /* Use a CSS variable for header height so the mobile menu positions correctly when headers vary */
+  .navbar{position:fixed;top:var(--header-height,70px);left:0;right:0;margin:0;padding:12px 16px;background:var(--nav-bg);border-radius:0 0 10px 10px;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.12);z-index:1001;max-height:calc(100vh - var(--header-height,70px));overflow-y:auto}
+  /* When active on mobile, make the menu a full-screen overlay so users don't need to scroll the page to access it */
+  .navbar.active{display:flex;flex-direction:column;align-items:center;justify-content:center;top:0;height:100vh;padding:24px;background:var(--nav-bg);border-radius:0;box-shadow:none;z-index:2000}
+  .navbar ul{flex-direction:column;gap:12px;padding:0;margin:0;width:100%;max-width:420px}
+
+  /* Exception: on pages that opt into `menu-below-header`, show a right-side panel like index mobile.
+     This matches the index mobile layout: right panel (70% width), full remaining height and internal scrolling. */
+  .menu-below-header .navbar {
+    position:fixed; /* ensure fixed positioning */
+    top:var(--header-height,70px);
+    right:0;
+    width:70%;
+    height:calc(100vh - var(--header-height,70px));
+    display:none;
+    flex-direction:column;
+    background:var(--nav-bg);
+    padding:16px;
+    box-shadow:-2px 0 10px rgba(0,0,0,0.1);
+    z-index:9999 !important;
+    overflow-y:auto;
+  }
+  .menu-below-header .navbar.active{display:flex}
+  .menu-below-header .navbar.active ul{flex-direction:column;display:flex;width:100%;margin:0;padding:0;gap:12px}
+  /* Override per-page rules that position the UL absolutely (pushes list down). */
+  .menu-below-header .navbar ul{position:static !important; top:auto !important; padding:0 !important; margin:0 !important;}
+  .menu-below-header .navbar ul li{margin:0 !important;}
+  /* Ensure active navbar always reveals its list (override page styles) */
+  .navbar.active ul{display:flex !important;}
+  .navbar ul li a{display:block;padding:10px 12px}
+  .has-dropdown .dropdown{position:static;box-shadow:none;display:none;margin-left:0}
+  .has-dropdown.open .dropdown{display:block}
+  /* also support pages that use the "dropdown-menu" class for submenu lists */
+  .has-dropdown.open .dropdown-menu{display:block}
+  .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;align-items:center}
+  .hamburger span{display:block;width:28px;height:3px;background:var(--nav-color);transition:all .25s}
+  .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .menu-text{font-size:12px;margin-top:4px;color:var(--nav-color)}
+
+  /* Stronger, page-independent hamburger/menu-text rules to standardize appearance across pages */
+  .header .hamburger { display: flex !important; flex-direction: column !important; gap:6px !important; align-items: center !important; padding:6px 8px; }
+  .header .hamburger span { width:30px !important; height:3px !important; background:var(--nav-color) !important; border-radius:2px; }
+  .header .hamburger .menu-text { font-size:13px !important; margin-top:6px !important; color:var(--nav-color) !important; font-weight:600; }
+}
+
+/* small visual helpers */
+.navbar a.active{font-weight:700;color:var(--accent)}

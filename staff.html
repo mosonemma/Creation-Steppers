@@ -7,6 +7,7 @@
   <meta name="keywords" content="CSYDI, youth development, Uganda, FGM, advocacy, empowerment">
   <title>Creation Steppers Youth Development Initiative</title>
   <link rel="stylesheet" href="staff.css">
+  <link rel="stylesheet" href="common.css">
   <link 
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,7 +15,7 @@
   <link rel="icon" type="image/png" href="Docs/logo.jpg">
 </head>
 
-<body>
+<body class="menu-below-header">
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container">
@@ -23,18 +24,27 @@
         <span>Creation Steppers Youth Development Initiative</span>
       </div>
 
-      <nav class="navbar" id="navbar">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
 
+      <nav class="navbar" id="navbar">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html" >About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="staff.html" class="active">Our Staffs</a></li>
-          <li><a href="project.html">Projects</a></li>
+          <li class="has-dropdown">
+            <a href="project.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="ongoing.html">Ongoing</a></li>
+              <li><a href="completed.html">Completed</a></li>
+              <li><a href="upcoming.html">Upcoming</a></li>
+            </ul>
+          </li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="f&q.html">F&Q</a></li>
           <li><a href="photo.html">Gallery</a></li>
@@ -183,7 +193,7 @@
         </div>
 
         <div class="staff-card">
-          <img src="" alt="Wamash">
+          <img src="Docs/wamash.jpeg" alt="Wamash">
           <h3>Wamash</h3>
           <p>Driver</p>
           <button 
@@ -262,21 +272,6 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script>
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
-
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navbar.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
-        navbar.classList.remove('active');
-      }
-    });
-
     // Fade-in scroll animation
     const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -392,5 +387,6 @@
       });
     });
   </script>
-</body>
-</html>
+  <script src="script.js" defer></script>
+  </body>
+  </html>

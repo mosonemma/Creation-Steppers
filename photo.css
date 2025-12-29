@@ -1,4 +1,6 @@
-/*Reset and basic styling */
+/* ==========================
+   Reset and Basic Styling
+========================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,57 +8,40 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+html {
     scroll-behavior: smooth;
-    background-color: #fff;
-    color: #333;
-    padding-top: 120px;
 }
 
-/*Container*/
+body {
+    background-color: #fff;
+    color: #333;
+    padding-top: 100px; /* header height */
+}
+
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Floating Top-Right Social Icons */
-.social-top-right {
-    position: fixed;
-    top: 5px;
-    right: 15px;
-    display: flex;
-    gap: 5px;
-    z-index: 2000;
-}
-
-.social-top-right a {
-    text-decoration: none;
-    color: #2e7d32;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-top-right a:hover {
-    color: #1b4d23;
-    transform: scale(1.2);
-}
-
-
-/* HEADER */
+/* ==========================
+       HEADER
+========================== */
 .header {
     width: 100%;
+    height: 100px; /* fixed height */
     background: #fff;
-    padding: 20px 0;
+    padding: 0 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: transform .4s ease;
-}
-.header.hide {
-    transform: translateY(-100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.4s ease;
 }
 
 .logo {
@@ -64,87 +49,74 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .logo img {
     height: 80px;
 }
+
 .logo span {
     font-size: 1.6rem;
     color: #2e7d32;
     font-weight: bold;
 }
 
-.navbar {
+/* Navigation */
+/* NAV/HAMBURGER STYLES MOVED TO common.css - per-page rules disabled */
+
+.navbar.active ul {
     display: flex;
-    justify-content: flex-end;
-}
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: .3s;
-}
-.navbar ul li a:hover,
-.navbar ul li a.active {
-    color: #2e7d32;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-/* HAMBURGER MENU */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
+.navbar.active ul li a {
+    font-size: 18px;
+    padding: 10px 0;
 }
-.hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #2e7d32;
+
+/* ==========================
+       MEDIA QUERIES
+========================== */
+@media (max-width: 1024px) {
+    .navbar ul {
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
-    .hamburger { display: flex; }
+    /* mobile navbar behavior moved to common.css; keep layout tweaks */
 
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        background: #fff;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 10px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .navbar.active ul { display: flex; }
-
-    .navbar ul li {
-        text-align: center;
-    }
-    .navbar ul li a {
-        padding: 15px 0;
-        display: block;
+    .logo img {
+        height: 60px;
     }
 
-    .logo img { height: 60px; }
-    .logo span { font-size: 1.2rem; }
+    .logo span {
+        font-size: 1.2rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1rem;
+    }
+}
+
+
+/* ==========================
+       MAIN CONTENT
 /* ------------------------------
-      IMAGE BANNER (FULL FIT + BLUR)
-   ------------------------------ */
+      IMAGE BANNER
+------------------------------ */
 
 .image-banner {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 6;        /* Landscape shape */
+    aspect-ratio: 16 / 6;
     overflow: hidden;
     border-radius: 10px;
     margin: 20px 0;
-    background: #ddd;            /* fallback background */
+    background: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,11 +125,10 @@ body {
 .image-banner img {
     width: 100%;
     height: 100%;
-    object-fit: contain;          /* Entire image visible, no cropping */
+    object-fit: contain;
     display: block;
 }
 
-/* Optional gradient overlay for readability (can remove if desired) */
 .image-banner::after {
     content: "";
     position: absolute;
@@ -169,194 +140,185 @@ body {
     z-index: 1;
 }
 
-/* Transparent blurred title overlay */
 .image-banner-title {
     position: absolute;
     bottom: 15px;
     left: 20px;
     padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.1);   /* Transparent background */
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     border-radius: 6px;
-    backdrop-filter: blur(6px);             /* Blur effect behind text */
-    -webkit-backdrop-filter: blur(6px);    /* Safari support */
-    z-index: 2;                             /* Stays above image */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2;
 }
 
 /* ---- PHOTO ALBUM ---- */
 .photo-album {
-  padding: 120px 20px 50px;
-  text-align: center;
+    padding: 120px 20px 50px;
+    text-align: center;
 }
 
 .photo-status {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-/* Toggle header */
 .toggle-header {
-  font-size: 1.6rem;
-  background: #2e7d32;
-  color: white;
-  padding: 12px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 6px;
+    font-size: 1.6rem;
+    background: #2e7d32;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
 }
 
 .photo-content {
-  display: none; /* collapsible */
-  margin-top: 15px;
+    display: none;
+    margin-top: 15px;
 }
 
-/* Gallery Grid (scales to thousands of photos) */
 .gallery {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  margin-top: 15px;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin-top: 15px;
 }
 
 .gallery img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 /* Modal viewer */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 5000;
-  padding-top: 90px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
+    display: none;
+    position: fixed;
+    z-index: 5000;
+    padding-top: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
 }
 
 .modal-content {
-  margin: auto;
-  max-width: 90%;
-  max-height: 85%;
-  display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 85%;
+    display: block;
 }
 
 .close {
-  position: absolute;
-  top: 40px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Caption */
 #caption {
     text-align: center;
     color: #fff;
     font-size: 20px;
     margin-top: 20px;
 }
+
 /* ===== FOOTER ===== */
-/* FOOTER */
+
 .footer {
-  background: #0a0f24;
-  color: #fff;
-  padding: 70px 0 20px;
-  width: 100%;
+    background: #0a0f24;
+    color: #fff;
+    padding: 70px 0 20px;
+    width: 100%;
 }
 
 .footer-grid {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
 }
 
-/* FOOTER HEADINGS */
 .footer-col h3 {
-  margin-bottom: 20px;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #4cc9f0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4cc9f0;
 }
 
-/* FOOTER PARAGRAPHS */
 .footer-col p {
-  line-height: 1.7;
-  color: #ddd;
+    line-height: 1.7;
+    color: #ddd;
 }
 
-/* FOOTER LINKS */
 .footer-col ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footer-col ul li {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .footer-col ul li a {
-  color: #ddd;
-  text-decoration: none;
-  transition: 0.3s;
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
-  color: #4cc9f0;
+    color: #4cc9f0;
 }
 
-/* SOCIAL ICONS */
 .social-icons a {
-  color: #fff;
-  margin-right: 12px;
-  font-size: 22px;
-  transition: 0.3s ease;
+    color: #fff;
+    margin-right: 12px;
+    font-size: 22px;
+    transition: 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #4cc9f0;
+social-icons a:hover {
+    color: #4cc9f0;
 }
 
-/* FOOTER BOTTOM TEXT (if added later) */
 .footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  font-size: 14px;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 500px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-  .social-icons a {
-    margin-right: 20px;
-  }
+    .social-icons a {
+        margin-right: 20px;
+    }
 }

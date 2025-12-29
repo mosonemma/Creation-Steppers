@@ -88,29 +88,7 @@ body {
 }
 
 /* NAVIGATION */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  color: #2e7d32;
-}
+/* NAV/HAMBURGER STYLES MOVED TO common.css - per-page rules disabled */
 
 /* Dropdown */
 .dropdown {
@@ -147,23 +125,7 @@ body {
   padding-left: 16px !important;
 }
 
-/* ===================================== */
-/* HAMBURGER MENU */
-/* ===================================== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-  margin-left: auto;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 28px;
-  background-color: #2e7d32;
-  border-radius: 2px;
-}
+/* NAV/HAMBURGER rules moved to common.css */
 
 /* ===================================== */
 /* HERO SECTION */
@@ -518,63 +480,7 @@ main, .projects, .container {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    padding: 10px 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar.active ul {
-    display: flex;
-  }
-
-  .navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar ul li a {
-    padding: 15px 0;
-    display: block;
-    color: #333;
-  }
-
-  .dropdown-menu {
-    display: none;
-    width: 100%;
-  }
-
-  .navbar.active .dropdown.open .dropdown-menu {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown-menu li {
-    display: inline;
-  }
-
-  .dropdown-menu a {
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    color: #666;
-  }
-
-  .dropdown-menu a:hover {
-    color: #2e7d32;
-  }
+  /* mobile navbar behavior moved to common.css; page keeps layout adjustments below */
 
   .hero-text h1 {
     font-size: 2.2rem;

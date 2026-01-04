@@ -59,6 +59,12 @@
 <main class="photo-album container">
     <h1>Our Photo Memories</h1>
     <p>Moments captured from our activities and projects — categorized by status.</p>
+    <div class="photo-filter">
+      <label for="photo-category-select">Show category:</label>
+      <select id="photo-category-select">
+        <option value="all">All</option>
+      </select>
+    </div>
     <div class="photo-album container">
 
     <!-- Field Work -->
@@ -192,7 +198,7 @@
 
         <!-- 2026 Photos -->
             <h3>2026</h3>
-            <p>Our 2026 River Festival was our most immersive celebration yet — a lively weekend of music, traditional dance, riverside games, and artisan stalls that brought the whole community together. New this year was a cozy campfire night on January 4th, where families and youth gathered to share stories, enjoy acoustic performances, and celebrate under the stars. The festival highlighted local creativity, strengthened community bonds, and honoured our river as a place of culture, joy, and togetherness.</p>
+            <p>This <strong>Kanyangareng River Carnival</strong> will be a joyful celebration of culture, music and community along the river. Festivities begin on <strong>4th January</strong> with a warm and exciting<strong>Camp Fire Night,</strong> where people gather to sing, dance, and share stories under the stars. <strong>On carnival day 5th,</strong> the riverbank will come alive with color, traditional performances, happy crowds, and unforgettable moments that bring everyone together, Later in the evenings of the day there will be<strong>a river carnival Extension</strong> for persons above 18 years of age, making the celebration truly unforgettable.</p>
             <div class="image-banner">
               <img src="photos/" alt="River Party 2026">
                 <div class="image-banner-title">Banner River Festival 2026</div>
@@ -358,16 +364,26 @@
         <h3>2025</h3>
         <P>A strong year of environmental leadership as we expanded our clean-up efforts.</P>
         <div class="gallery">
-            <img src="photos/clean2025-0.jpg" alt="Town Cleaning 2025 - 0">
-            <img src="photos/clean2025-1.jpg" alt="Town Cleaning 2025 - 1">
-            <img src="photos/clean2025-2.jpg" alt="Town Cleaning 2025 - 2">
-            <img src="photos/clean2025-3.jpg" alt="Town Cleaning 2025 - 3">
-            <img src="photos/clean2025-4.jpg" alt="Town Cleaning 2025 - 4">
-            <img src="photos/clean2025-5.jpg" alt="Town Cleaning 2025 - 5">
-            <img src="photos/clean2025-6.jpg" alt="Town Cleaning 2025 - 6">
-            <img src="photos/clean2025-7.jpg" alt="Town Cleaning 2025 - 7">
-            <img src="photos/clean2025-8.jpg" alt="Town Cleaning 2025 - 8">
-            <img src="photos/clean2025-9.jpg" alt="Town Cleaning 2025 - 9">  
+            <img src="photos/Town Cleaning/clean0.jpg" alt="Town Cleaning 2025 - 0"> 
+            <img src="photos/Town Cleaning/clean1.jpg" alt="Town Cleaning 2025 - 1">
+            <img src="photos/Town Cleaning/clean2.jpg" alt="Town Cleaning 2025 - 2">
+            <img src="photos/Town Cleaning/clean3.jpg" alt="Town Cleaning 2025 - 3">
+            <img src="photos/Town Cleaning/clean4.jpg" alt="Town Cleaning 2025 - 4">
+            <img src="photos/Town Cleaning/clean5.jpg" alt="Town Cleaning 2025 - 5">
+            <img src="photos/Town Cleaning/clean6.jpg" alt="Town Cleaning 2025 - 6">
+            <img src="photos/Town Cleaning/clean7.jpg" alt="Town Cleaning 2025 - 7">
+            <img src="photos/Town Cleaning/clean8.jpg" alt="Town Cleaning 2025 - 8">
+            <img src="photos/Town Cleaning/clean9.jpg" alt="Town Cleaning 2025 - 9">
+            <img src="photos/Town Cleaning/clean10.jpg" alt="Town Cleaning 2025 - 10">
+            <img src="photos/Town Cleaning/clean11.jpg" alt="Town Cleaning 2025 - 11">
+            <img src="photos/Town Cleaning/clean12.jpg" alt="Town Cleaning 2025 - 12">
+            <img src="photos/Town Cleaning/clean13.jpg" alt="Town Cleaning 2025 - 13">
+            <img src="photos/Town Cleaning/clean14.jpg" alt="Town Cleaning 2025 - 14">
+            <img src="photos/Town Cleaning/clean15.jpg" alt="Town Cleaning 2025 - 15">
+            <img src="photos/Town Cleaning/clean16.jpg" alt="Town Cleaning 2025 - 16">
+            <img src="photos/Town Cleaning/clean17.jpg" alt="Town Cleaning 2025 - 17">
+            <img src="photos/Town Cleaning/clean18.jpg" alt="Town Cleaning 2025 - 18">
+            <img src="photos/Town Cleaning/clean19.jpg" alt="Town Cleaning 2025 - 19">
         </div>
 
     </div>
@@ -575,6 +591,49 @@
      SET FOOTER YEAR
   ========================== */
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ==========================
+     PHOTO CATEGORY DROPDOWN
+  ========================== */
+  (function() {
+    const select = document.getElementById('photo-category-select');
+    if (!select) return;
+
+    // Gather category names from existing sections
+    const sections = Array.from(document.querySelectorAll('.photo-status'));
+    sections.forEach(section => {
+      const header = section.querySelector('.toggle-header');
+      if (!header) return;
+      const name = header.textContent.replace(/\+/g, '').trim();
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      select.appendChild(opt);
+    });
+
+    function showCategory(name) {
+      if (name === 'all') {
+        sections.forEach(s => s.style.display = 'block');
+        return;
+      }
+      sections.forEach(s => {
+        const header = s.querySelector('.toggle-header');
+        const text = header ? header.textContent.replace(/\+/g, '').trim() : '';
+        if (text === name) {
+          s.style.display = 'block';
+          // open content for visibility
+          const content = s.querySelector('.photo-content');
+          if (content) content.style.display = 'block';
+          // scroll into view
+          s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          s.style.display = 'none';
+        }
+      });
+    }
+
+    select.addEventListener('change', (e) => showCategory(e.target.value));
+  })();
 </script>
 
   <script src="script.js" defer></script>

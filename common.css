@@ -3,6 +3,7 @@
   --nav-bg: #fff;
   --nav-color: #111;
   --accent: #2e7d32;
+  --site-header-height: 100px;
 }
 
 /* Basic navbar layout */
@@ -43,6 +44,11 @@
 @media(min-width:900px){
   .has-dropdown:hover .dropdown{display:block}
   .hamburger{display:none}
+
+  /* Match index header: right-align nav on larger screens */
+  .header .container{display:flex;align-items:center}
+  .navbar{display:flex;align-items:center;justify-content:flex-end;margin-left:auto}
+  .navbar ul{justify-content:flex-end;gap:35px}
 }
 
 /* Mobile / small screens */
@@ -99,3 +105,20 @@
 
 /* small visual helpers */
 .navbar a.active{font-weight:700;color:var(--accent)}
+
+/* Global header sizing: keep header height consistent across pages */
+.header{
+  height: var(--site-header-height) !important;
+  padding: 0 20px !important;
+}
+
+/* Ensure page content accounts for fixed header */
+body{
+  padding-top: var(--site-header-height) !important;
+}
+
+/* Keep logo image size proportional to header */
+.logo img{
+  height: calc(var(--site-header-height) - 20px) !important;
+  max-height: calc(var(--site-header-height) - 20px) !important;
+}

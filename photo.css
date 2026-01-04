@@ -161,6 +161,27 @@ body {
     text-align: center;
 }
 
+/* Photo filter dropdown */
+.photo-filter {
+    margin: 12px 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo-filter label {
+    font-weight: 600;
+    color: #333;
+}
+
+.photo-filter select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
 .photo-status {
     margin-bottom: 40px;
 }

@@ -637,3 +637,10 @@ body {
     font-size: 0.95rem;
   }
 }
+
+/* Small phones (iPhone 12 - 390px) */
+@media (max-width: 390px) {
+  .logo img { height: 45px; }
+  .logo span { font-size: 1rem; }
+  .logo { gap: 8px; }
+}

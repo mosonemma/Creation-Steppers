@@ -520,6 +520,12 @@ main, .projects, .container {
   .projects { padding-top: 80px; }
 }
 
+@media (max-width: 390px) {
+  .logo img { height: 45px; }
+  .logo span { font-size: 1rem; }
+  .logo { gap: 8px; }
+}
+
 @media (max-width: 360px) {
   .logo span { font-size: 0.9rem; }
   .navbar ul li a { font-size: 12px; }
@@ -527,3 +533,4 @@ main, .projects, .container {
   .project-card { padding: 12px; }
   .project-card img { height: 120px; }
 }
+

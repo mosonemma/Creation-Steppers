@@ -423,6 +423,19 @@ form .donor-group label {
   border-top: 1px solid #333;
 }
 
+/* SOCIAL ICONS */
+.footer-social-icons a {
+  color: #fff;
+  font-size: 22px;
+  margin-right: 14px;
+  transition: 0.3s ease;
+  align-items: center;
+}
+
+.footer-social-icons a:hover {
+  color: #4cc9f0;
+}
+
 /* ======================
        RESPONSIVE
    ====================== */

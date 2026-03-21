@@ -77,77 +77,184 @@ body {
   color: #2e7d32;
 }
 
-/* ===================== HAMBURGER MENU ===================== */
-.hamburger {
-  display: none; /* hidden on large screens */
+/* ===================== FOOTER ===================== */
+.footer-home {
+  background: linear-gradient(135deg, #0a0f24 0%, #13182b 100%);
+  color: #ddd;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.footer-home .footer-bg {
+  padding: 30px 0 0;
+}
+
+.footer-home h3 {
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.footer-home p,
+.footer-home a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-home a:hover {
+  color: #4cc9f0;
+}
+
+.footer-home .footer-stats,
+.footer-home .footer-cta,
+.footer-home .footer-links,
+.footer-home .footer-social,
+.footer-home .footer-quote {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.footer-home .footer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.footer-home .footer-stats div {
+  background: linear-gradient(135deg,#2e7d32,#1b4d23);
+  color: #fff;
+  width: 220px;
+  padding: 20px 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(46,125,50,0.18);
+  display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  width: 35px;
-  z-index: 1000;
-  position: relative;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
-.hamburger span {
-  display: block;
-  height: 2.5px;
-  width: 100%;
-  background: #2e7d32;
-  margin: 4px 0;
-  transition: 0.3s;
+.footer-home .footer-stats div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(46,125,50,0.25);
 }
 
-/* Hamburger "X" animation */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.footer-home .footer-stats i {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.4rem;
 }
 
-.hamburger .menu-text {
-  font-size: 10px;
-  margin-top: 2px;
-  font-weight: bold;
+.footer-home .footer-stats h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
 }
 
-/* ===================== HERO SECTION ===================== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
+.footer-home .footer-stats p {
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+}
+
+.footer-home .footer-cta p {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: #e6f4e6;
+}
+
+.footer-home .btn {
+  background: linear-gradient(135deg,#2e7d32,#1b4d23);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 5px;
+  transition: all 0.25s ease;
+}
+
+.footer-home .btn:hover {
+  background: #fff;
+  color: #2e7d32;
+  transform: translateY(-3px);
+}
+
+.footer-home .footer-links {
+  color: #cfdde0;
+  font-size: 0.98rem;
+}
+
+.footer-home .footer-links a { color: inherit; }
+
+.footer-home .footer-social a {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg,#2e7d32,#1b4d23);
+  color: #fff;
+  border-radius: 50%;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(46,125,50,0.2);
+}
+
+.footer-home .footer-social a:hover {
+  transform: translateY(-5px) scale(1.06);
+  background: linear-gradient(135deg,#1b4d23,#0d3015);
+  color: #4cc9f0;
+}
+
+.footer-home .footer-quote p {
+  font-style: italic;
+  color: #d6e9d6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.footer-home .footer-bottom {
   text-align: center;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
-  padding: 80px 15px;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-  z-index: 1;
-}
-
-.hero-text {
+  font-size: 14px;
+  color: #aab3b7;
+  padding-top: 18px;
   position: relative;
   z-index: 2;
   max-width: 700px;
   padding: 15px;
   color: #ffffff;
+}
+
+.hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: white;
 }
 
 .hero-text h1 {
@@ -429,51 +536,7 @@ body {
   filter: brightness(1.2);
 }
 
-/* ===================== NEWSLETTER ===================== */
-.newsletter {
-  padding: 80px 0;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.newsletter h2 {
-  color: #2e7d32;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.newsletter input[type="email"] {
-  padding: 12px 20px;
-  border-radius: 5px;
-  border: 2px solid #2e7d32;
-  width: 300px;
-  max-width: 100%;
-  font-size: 1rem;
-}
-
-.newsletter input[type="email"]:focus {
-  border-color: #1b4d23;
-}
-
-.newsletter button.btn {
-  padding: 12px 25px;
-  border-radius: 5px;
-  border: none;
-  background-color: #2e7d32;
-  color: #fff;
-}
-
-.newsletter button.btn:hover {
-  background-color: #1b4d23;
-}
+/* Newsletter styles removed */
 
 /* ===================== FOOTER ===================== */
 .footer-home {
@@ -542,15 +605,34 @@ body {
 }
 
 /* ===================== FADE-IN EFFECTS ===================== */
+@keyframes fadeInWithDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.hero.fade-in {
+  animation: fadeInWithDelay 0.8s ease-out 10s forwards;
+}
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hero.fade-in.visible {
+  animation: fadeInWithDelay 0.8s ease-out 10s forwards;
 }
 
 /* ===================== RESPONSIVE ===================== */

@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS donations (
 );
 `);
 
+// Note: newsletter/subscribers table removed (feature disabled)
+
 const insertStmt = db.prepare(`
 INSERT INTO donations (reference, amount_usd, amount_ugx, method, donor_name, donor_email, donor_phone, provider, status, metadata)
 VALUES (@reference,@amount_usd,@amount_ugx,@method,@donor_name,@donor_email,@donor_phone,@provider,@status,@metadata)
@@ -46,4 +48,4 @@ function getDonationByReference(reference) {
   return db.prepare('SELECT * FROM donations WHERE reference = ?').get(reference);
 }
 
-module.exports = { createDonation, updateDonation, getDonationByReference, dbPath };
+module.exports = { createDonation, updateDonation, getDonationByReference, dbPath, db };

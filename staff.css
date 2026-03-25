@@ -270,168 +270,169 @@ body {
 /* ===== STAFF FOOTER STYLING ===== */
 .footer-staff {
   background-color: #0a0f24; /* same as other pages */
-  color: #ddd; /* main text color */
-  padding: 50px 20px 30px 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+    color: #ddd; /* main text color */
+      padding: 50px 20px 30px 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-.footer-staff a {
-  color: #ddd; /* links same as text */
-  text-decoration: none;
-}
+        .footer-staff a {
+          color: #ddd; /* links same as text */
+            text-decoration: none;
+            }
 
-.footer-staff a:hover {
-  color: #4cc9f0; /* same hover color as other pages */
-}
+            .footer-staff a:hover {
+              color: #4cc9f0; /* same hover color as other pages */
+              }
 
-/* Logo & Tagline */
-.footer-logo {
-  text-align: center;
-  margin-bottom: 30px;
-}
+              /* Logo & Tagline */
+              .footer-logo {
+                text-align: center;
+                  margin-bottom: 30px;
+                  }
 
-.footer-logo img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%; /* round logo */
-  display: block;
-  margin: 0 auto 10px;
-  object-fit: cover;
-}
+                  .footer-logo img {
+                    width: 120px;
+                      height: 120px;
+                        border-radius: 50%; /* round logo */
+                          display: block;
+                            margin: 0 auto 10px;
+                              object-fit: cover;
+                              }
 
-.footer-logo .tagline {
-  color: #ddd; /* match text color */
-  font-size: 14px;
-  line-height: 1.5;
-}
+                              .footer-logo .tagline {
+                                color: #ddd; /* match text color */
+                                  font-size: 14px;
+                                    line-height: 1.5;
+                                    }
 
-/* Footer Sections */
-.footer-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto 30px auto;
-}
+                                    /* Footer Sections */
+                                    .footer-sections {
+                                      display: flex;
+                                        flex-wrap: wrap;
+                                          justify-content: space-between;
+                                            gap: 30px;
+                                              max-width: 1200px;
+                                                margin: 0 auto 30px auto;
+                                                }
 
-.footer-section {
-  flex: 1 1 200px;
-}
+                                                .footer-section {
+                                                  flex: 1 1 200px;
+                                                  }
 
-.footer-section h4 {
-  color: #4cc9f0; /* same as headings on other pages */
-  font-size: 18px;
-  margin-bottom: 15px;
-}
+                                                  .footer-section h4 {
+                                                    color: #4cc9f0; /* same as headings on other pages */
+                                                      font-size: 18px;
+                                                        margin-bottom: 15px;
+                                                        }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
+                                                        .footer-section ul {
+                                                          list-style: none;
+                                                            padding: 0;
+                                                            }
 
-.footer-section ul li {
-  margin-bottom: 10px;
-}
+                                                            .footer-section ul li {
+                                                              margin-bottom: 10px;
+                                                              }
 
-.footer-section p {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
+                                                              .footer-section p {
+                                                                margin-bottom: 10px;
+                                                                  font-size: 14px;
+                                                                  }
 
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
+                                                                  /* Social Icons */
+                                                                  .social-icons {
+                                                                    display: flex;
+                                                                      gap: 15px;
+                                                                        margin-top: 10px;
+                                                                        }
 
-.social-icons a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: transparent; /* remove colored background */
-  color: #ddd; /* same as text color */
-  font-size: 18px;
-  border: 1px solid #ddd; /* optional for a subtle border */
-  transition: 0.3s;
-}
+                                                                        .social-icons a {
+                                                                          display: flex;
+                                                                            justify-content: center;
+                                                                              align-items: center;
+                                                                                width: 40px;
+                                                                                  height: 40px;
+                                                                                    border-radius: 50%;
+                                                                                      background-color: transparent; /* remove colored background */
+                                                                                        color: #ddd; /* same as text color */
+                                                                                          font-size: 18px;
+                                                                                            border: 1px solid #ddd; /* optional for a subtle border */
+                                                                                              transition: 0.3s;
+                                                                                              }
 
-.social-icons a:hover {
-  color: #4cc9f0; /* same hover as other pages */
-  border-color: #4cc9f0; /* optional hover border */
-}
+                                                                                              .social-icons a:hover {
+                                                                                                color: #4cc9f0; /* same hover as other pages */
+                                                                                                  border-color: #4cc9f0; /* optional hover border */
+                                                                                                  }
 
-/* Footer Bottom */
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  font-size: 14px;
-  color: #aaa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
+                                                                                                  /* Footer Bottom */
+                                                                                                  .footer-bottom {
+                                                                                                    text-align: center;
+                                                                                                      border-top: 1px solid #333;
+                                                                                                        padding-top: 20px;
+                                                                                                          font-size: 14px;
+                                                                                                            color: #aaa;
+                                                                                                              display: flex;
+                                                                                                                flex-direction: column;
+                                                                                                                  align-items: center;
+                                                                                                                    gap: 5px;
+                                                                                                                    }
 
-.footer-bottom a.back-to-top {
-  color: #4cc9f0;
-}
+                                                                                                                    .footer-bottom a.back-to-top {
+                                                                                                                      color: #4cc9f0;
+                                                                                                                      }
 
-.footer-bottom a.back-to-top:hover {
-  color: #fff;
-}
+                                                                                                                      .footer-bottom a.back-to-top:hover {
+                                                                                                                        color: #fff;
+                                                                                                                        }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
+                                                                                                                        /* Responsive */
+                                                                                                                        @media (max-width: 768px) {
+                                                                                                                          .footer-sections {
+                                                                                                                              flex-direction: column;
+                                                                                                                                  gap: 20px;
+                                                                                                                                    }
 
-  .footer-logo img {
-    width: 100px;
-    height: 100px;
-  }
+                                                                                                                                      .footer-logo img {
+                                                                                                                                          width: 100px;
+                                                                                                                                              height: 100px;
+                                                                                                                                                }
 
-  .social-icons a {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
+                                                                                                                                                  .social-icons a {
+                                                                                                                                                      width: 35px;
+                                                                                                                                                          height: 35px;
+                                                                                                                                                              font-size: 16px;
+                                                                                                                                                                }
+                                                                                                                                                                }
 
 
 
-/* === Responsive Design === */
-@media (max-width: 1024px) {
-  .navbar ul { gap: 20px; }
-}
+                                                                                                                                                                /* === Responsive Design === */
+                                                                                                                                                                @media (max-width: 1024px) {
+                                                                                                                                                                  .navbar ul { gap: 20px; }
+                                                                                                                                                                  }
 
-@media (max-width: 768px) {
-  /* mobile navbar behavior moved to common.css; preserve layout tweaks */
-  .logo img { height: 60px; }
-  .logo span { font-size: 1.2rem; }
-}
+                                                                                                                                                                  @media (max-width: 768px) {
+                                                                                                                                                                    /* mobile navbar behavior moved to common.css; preserve layout tweaks */
+                                                                                                                                                                      .logo img { height: 60px; }
+                                                                                                                                                                        .logo span { font-size: 1.2rem; }
+                                                                                                                                                                        }
 
-@media (max-width: 480px) {
-  #staffs h2 { font-size: 1.5rem; }
-  .staff-card { width: 200px; padding: 16px; }
-  .staff-card img { width: 90px; height: 90px; }
-}
+                                                                                                                                                                        @media (max-width: 480px) {
+                                                                                                                                                                          #staffs h2 { font-size: 1.5rem; }
+                                                                                                                                                                            .staff-card { width: 200px; padding: 16px; }
+                                                                                                                                                                              .staff-card img { width: 90px; height: 90px; }
+                                                                                                                                                                              }
 
-/* Small phones (iPhone 12 - 390px) */
-@media (max-width: 390px) {
-  .logo img { height: 45px; }
-  .logo span { font-size: 1rem; }
-  .logo { gap: 8px; }
-}
+                                                                                                                                                                              /* Small phones (iPhone 12 - 390px) */
+                                                                                                                                                                              @media (max-width: 390px) {
+                                                                                                                                                                                .logo img { height: 45px; }
+                                                                                                                                                                                  .logo span { font-size: 1rem; }
+                                                                                                                                                                                    .logo { gap: 8px; }
+                                                                                                                                                                                    }
 
-@media (max-width: 360px) {
-  .staff-card { width: 180px; padding: 12px; }
-  .staff-card img { width: 80px; height: 80px; }
-}
+                                                                                                                                                                                    @media (max-width: 360px) {
+                                                                                                                                                                                      .staff-card { width: 180px; padding: 12px; }
+                                                                                                                                                                                        .staff-card img { width: 80px; height: 80px; }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        

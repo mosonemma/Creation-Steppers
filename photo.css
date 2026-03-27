@@ -1,0 +1,415 @@
+/* ==========================
+   Reset and Basic Styling
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    padding-top: 100px; /* header height */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================
+       HEADER
+========================== */
+.header {
+    width: 100%;
+    height: 100px; /* fixed height */
+    background: #fff;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.4s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.logo span {
+    font-size: 1.6rem;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Navigation */
+/* NAV/HAMBURGER STYLES MOVED TO common.css - per-page rules disabled */
+
+.navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar.active ul li a {
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+/* ==========================
+       MEDIA QUERIES
+========================== */
+@media (max-width: 1024px) {
+    .navbar ul {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* mobile navbar behavior moved to common.css; keep layout tweaks */
+
+    .logo img {
+        height: 60px;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1rem;
+    }
+}
+
+/* Small phones (iPhone 12 - 390px) */
+@media (max-width: 390px) {
+    .logo img { height: 45px; }
+    .logo span { font-size: 1rem; }
+    .logo { gap: 8px; }
+}
+
+
+/* ==========================
+       MAIN CONTENT
+/* ------------------------------
+      IMAGE BANNER
+------------------------------ */
+
+.image-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.image-banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    z-index: 1;
+}
+
+.image-banner-title {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2;
+}
+
+/* Responsive tweaks for image banners */
+@media (max-width: 768px) {
+    .image-banner {
+        aspect-ratio: 16 / 9;
+        margin: 14px 0;
+        border-radius: 8px;
+    }
+
+    .image-banner::after {
+        height: 50%;
+    }
+
+    .image-banner-title {
+        font-size: 16px;
+        left: 12px;
+        bottom: 12px;
+        padding: 6px 10px;
+    }
+
+    .gallery img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-banner {
+        aspect-ratio: 4 / 3;
+        margin: 12px 0;
+        border-radius: 6px;
+    }
+
+    .image-banner::after {
+        height: 45%;
+    }
+
+    .image-banner-title {
+        font-size: 14px;
+        left: 10px;
+        bottom: 10px;
+        padding: 5px 8px;
+    }
+
+    .gallery img {
+        height: 120px;
+    }
+}
+
+/* ---- PHOTO ALBUM ---- */
+.photo-album {
+    padding: 120px 20px 50px;
+    text-align: center;
+}
+
+/* Photo filter dropdown */
+.photo-filter {
+    margin: 12px 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo-filter label {
+    font-weight: 600;
+    color: #333;
+}
+
+.photo-filter select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.photo-status {
+    margin-bottom: 40px;
+}
+
+.toggle-header {
+    font-size: 1.6rem;
+    background: #2e7d32;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.photo-content {
+    display: none;
+    margin-top: 15px;
+}
+
+.gallery {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+}
+
+/* Modal viewer */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5000;
+    padding-top: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    max-width: 90%;
+    max-height: 85%;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    background: #0a0f24;
+    color: #fff;
+    padding: 70px 0 20px;
+    width: 100%;
+}
+
+.footer-grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.footer-col h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4cc9f0;
+}
+
+.footer-col p {
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #4cc9f0;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 12px;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+social-icons a:hover {
+    color: #4cc9f0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin-right: 20px;
+    }
+}
+
+/* Large screens: avoid cropping important parts of banner images */
+@media (min-width: 1200px) {
+    .image-banner img {
+        object-fit: contain;
+    }
+
+    .image-banner {
+        aspect-ratio: 21 / 6;
+    }
+
+    .image-banner-title {
+        font-size: 22px;
+    }
+}

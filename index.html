@@ -104,7 +104,7 @@
       <h2>In Action</h2>
       <h2>Community Voices Against FGM</h2>
       <div class="gallery-grid">
-        <img src="photos/Team Meetings/fgm.jpeg" alt="Community Advocacy">
+        <img src="photos/Team Meetings/ntc1.png" alt="Community Advocacy">
 
       </div>
       <a href="photo.html" class="btn">View More</a>
@@ -174,13 +174,11 @@
     <div class="container">
       <h2>Our Partners</h2>
       <div class="partner-logos">
+        <img src="Docs/defend.JPG" alt="Defender">
         <img src="Docs/mercycorps.png" alt="Mercy Corps">
-        <img src="Docs/brac.png" alt="BRAC">
-        <img src="Docs/taso.png" alt="TASO Logo">
         <img src="Docs/kalyafm.png" alt="Kalya FM">
         <img src="Docs/cecore.jpg" alt="CECORE">
         <img src="Docs/khh.JPG" alt="KHH">
-        <img src="Docs/defend.JPG" alt="Defender">
       </div>
     </div>
   </section>
@@ -290,12 +288,10 @@
 
     // Hero slider
     const heroImages = [
+      "photos/Team Meetings/dd.jpeg",
+      "photos/Team Meetings/ntc1.png",
       "Docs/home.JPG",
-      "Docs/homee.JPG",
-      "Docs/home1.JPG",
       "Docs/home2.JPG",
-      "Docs/home3.JPG",
-      "Docs/home4.JPG"
     ];
     let index = 0;
     const hero = document.querySelector(".hero");
@@ -304,7 +300,7 @@
       index = (index + 1) % heroImages.length;
     }
     changeHeroImage();
-    setInterval(changeHeroImage, 3000);
+    setInterval(changeHeroImage, 4000);
 
     // Back to top button
     const btn = document.getElementById("backToTop");

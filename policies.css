@@ -1,0 +1,200 @@
+/* ==========================
+   Reset and Basic Styling
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    padding-top: 100px; /* header height */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===================== POLICIES SECTION ===================== */
+.policies {
+  padding: 60px 20px;
+  background-color: #f9fbfd;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Section Title */
+.policies h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #0a2a43;
+  position: relative;
+}
+
+.policies h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #0077b6;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Individual Policy Cards */
+.policy {
+  background: #ffffff;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #0077b6;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Policy Titles */
+.policy h3 {
+  margin-bottom: 10px;
+  color: #023e8a;
+  font-size: 1.4rem;
+}
+
+/* Policy Text */
+.policy p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Optional Safeguarding Highlight */
+.policy.highlight {
+  border-left-color: #e63946;
+  background-color: #fff5f5;
+}
+
+/* Footer Note */
+.policies .footer-note {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .policies {
+    padding: 40px 15px;
+  }
+
+  .policies h2 {
+    font-size: 1.8rem;
+  }
+
+  .policy {
+    padding: 20px 15px;
+  }
+
+  .policy h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Footer Note under Policies */
+.policies .footer-note {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* ===================== FOOTER ===================== */
+.site-footer {
+  background-color: #0a2a43;
+  color: #ffffff;
+  padding-top: 40px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cfd8dc;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #cfd8dc;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #00b4d8;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #cfd8dc;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 30px;
+  background-color: #081f33;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

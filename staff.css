@@ -121,8 +121,8 @@ body {
 /* === Staff Section === */
 #staffs {
   position: relative;
-  background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-              url('Docs/IMG_0484.JPG') center/cover no-repeat;
+  background: linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)),
+              url('Staffs/river24-0.JPG') center/cover no-repeat;
   padding: 150px 0 100px;
   text-align: center;
 }
@@ -139,17 +139,17 @@ body {
 .staff-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 40px;
+  gap: 100px;
   justify-items: center;
 }
 
 /* === Staff Card === */
 .staff-card {
   background: #fafafa;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 25px 15px;
-  width: 250px;
+  padding: 30px 20px;
+  width: 300px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -161,8 +161,8 @@ body {
 }
 
 .staff-card img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #2e7d32;

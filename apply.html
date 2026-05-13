@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join CSYDI as a volunteer or staff member. Apply now to be part of our mission to empower youth in Uganda.">
+  <meta name="keywords" content="CSYDI, apply, volunteer, careers, youth, Uganda">
+  <title>CSYDI - Apply Now</title>
+  <link rel="stylesheet" href="apply.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Docs/logo.jpg">
+</head>
+
+<body class="menu-below-header">
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="Docs/logo.jpg" alt="CSYDI Logo">
+        <span>Creation Steppers Youth Development Initiative</span>
+      </div>
+
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-text">Menu</div>
+      </div>
+
+      <!-- NAVBAR -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <!-- WHO WE ARE -->
+          <li class="has-dropdown">
+            <a href="#about">Who We Are</a>
+            <ul class="dropdown">
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="staff.html">Our Team</a></li>
+            </ul>
+          </li>
+
+          <!-- WHAT WE DO -->
+          <li class="has-dropdown">
+            <a href="#projects">What We Do</a>
+            <ul class="dropdown">
+              <li><a href="project.html">Our Projects</a></li>
+              <li><a href="photo.html">Our Moments</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </li>
+
+          <!-- GET INVOLVED -->
+          <li class="has-dropdown">
+            <a href="#contact">Get Involved</a>
+            <ul class="dropdown">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="donate.html">Support Us</a></li>
+              <li><a href="apply.html">Apply Now</a></li>
+            </ul>
+          </li>
+
+          <!-- OUR POLICIES -->
+          <li class="has-dropdown">
+            <a href="#policies">Our Policies</a>
+            <ul class="dropdown">
+              <li><a href="policies.html">Governance & Policies</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="apply-hero">
+    <div class="hero-overlay">
+      <h1>Join CSYDI</h1>
+      <p class="tagline">Whether as a staff member or volunteer, be part of our mission to empower youth</p>
+    </div>
+  </section>
+
+  <!-- TAB SECTION -->
+  <section class="form-tabs-section">
+    <div class="container">
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="employment">
+          <i class="fas fa-briefcase"></i> Employment
+        </button>
+        <button class="tab-btn" data-tab="volunteer">
+          <i class="fas fa-heart"></i> Volunteer
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPLOYMENT FORM SECTION -->
+  <section class="apply-section employment-section active" id="employment">
+    <div class="container">
+      <div class="apply-content">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Employment Application</h2>
+            <p>Apply for a staff position at CSYDI. Submit your details, CV link, and tell us why you're interested in this opportunity.</p>
+          </div>
+
+          <form id="employmentForm" action="https://formspree.io/f/xwvyldnb" method="POST">
+            <input type="hidden" name="form_type" value="employment">
+
+            <div class="form-field">
+              <label for="emp_name">Full Name</label>
+              <input type="text" id="emp_name" name="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="emp_email">Email Address</label>
+              <input type="email" id="emp_email" name="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="emp_phone">Phone Number</label>
+              <input type="text" id="emp_phone" name="phone" placeholder="+256 700 000 000" />
+            </div>
+
+            <div class="form-field">
+              <label for="emp_position">Position Applying For</label>
+              <select id="emp_position" name="position" required>
+                <option value="" disabled selected>Select a position…</option>
+                <option>Program Officer</option>
+                <option>Field Coordinator</option>
+                <option>Communications Officer</option>
+                <option>Project Manager</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="emp_cv">Document Link (CV / Cover Letter)</label>
+              <input
+                type="url"
+                id="emp_cv"
+                name="document_link"
+                placeholder="https://drive.google.com/…"
+              />
+              <p class="field-hint">
+                Upload your file to
+                <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a>,
+                <a href="https://www.dropbox.com" target="_blank" rel="noopener">Dropbox</a>, or
+                <a href="https://www.wetransfer.com" target="_blank" rel="noopener">WeTransfer</a>,
+                then paste the shareable link here.
+              </p>
+            </div>
+
+            <div class="form-field">
+              <label for="emp_motivation">Why do you want to join CSYDI?</label>
+              <textarea id="emp_motivation" name="message" placeholder="Tell us about your motivation and relevant experience…" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="emp_submitBtn">
+              <i class="fas fa-paper-plane"></i> Submit Application
+            </button>
+
+            <p class="error-msg" id="emp_errorMsg"></p>
+          </form>
+
+          <div class="success-msg" id="emp_successMsg">
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Application Received!</h3>
+            <p>Thank you for your application. We will review it and get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER FORM SECTION -->
+  <section class="apply-section volunteer-section" id="volunteer">
+    <div class="container">
+      <div class="apply-content">
+        
+        <!-- Why Volunteer Section -->
+        <div class="why-volunteer-box">
+          <h2>Why Volunteer With Us?</h2>
+          <div class="volunteer-benefits">
+            <div class="benefit-item">
+              <i class="fas fa-users"></i>
+              <h3>Community Impact</h3>
+              <p>Make a real difference in your community and help empower youth.</p>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Skill Development</h3>
+              <p>Gain leadership and teamwork skills through meaningful work.</p>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-heart"></i>
+              <h3>Give Back</h3>
+              <p>Support meaningful causes and initiatives in your community.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volunteer Form -->
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Volunteer Application</h2>
+            <p>Join our team of dedicated volunteers. Share your details and tell us about your interests.</p>
+          </div>
+
+          <form id="volunteerForm">
+            <input type="hidden" name="form_type" value="volunteer">
+
+            <div class="form-field">
+              <label for="vol_name">Full Name</label>
+              <input type="text" id="vol_name" name="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="vol_email">Email Address</label>
+              <input type="email" id="vol_email" name="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="vol_phone">Phone Number</label>
+              <input type="tel" id="vol_phone" name="phone" placeholder="+256 700 000 000" required />
+            </div>
+
+            <div class="form-field">
+              <label for="vol_interest">Area of Interest</label>
+              <select id="vol_interest" name="interest" required>
+                <option value="" disabled selected>Select an area…</option>
+                <option>Youth Programs</option>
+                <option>Community Outreach</option>
+                <option>Advocacy</option>
+                <option>Events & Activities</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="vol_motivation">Why do you want to volunteer?</label>
+              <textarea id="vol_motivation" name="message" placeholder="Tell us about your motivation and what you'd like to contribute…" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="vol_submitBtn">
+              <i class="fas fa-heart"></i> Submit Volunteer Application
+            </button>
+
+            <p class="error-msg" id="vol_errorMsg"></p>
+          </form>
+
+          <div class="success-msg" id="vol_successMsg">
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You for Your Interest!</h3>
+            <p>We've received your volunteer application and will be in touch soon to discuss opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-home">
+    <div class="footer-bg">
+      <div class="container">
+
+        <!-- Impact Stats -->
+        <div class="footer-stats fade-in">
+          <div>
+            <i class="fas fa-user-graduate"></i>
+            <h3>200+</h3>
+            <p>Youths Trained Annually</p>
+          </div>
+          <div>
+            <i class="fas fa-project-diagram"></i>
+            <h3>2+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div>
+            <i class="fas fa-handshake"></i>
+            <h3>5+</h3>
+            <p>Partners</p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="footer-cta fade-in">
+          <p>Be part of our journey in empowering youth!</p>
+          <a href="donate.html" class="btn">Donate</a>
+          <a href="project.html" class="btn btn-outline">Join Us</a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links fade-in">
+          <a href="index.html">Home</a> |
+          <a href="about.html">About Us</a> |
+          <a href="project.html">Projects</a> |
+          <a href="photo.html">Gallery</a> |
+          <a href="donate.html">Donate</a> |
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-social fade-in">
+          <a href="https://www.facebook.com/share/1CMmXdbfuc/?mibextid=wwXIfr" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/creation_steppers1?igsh=MXNvZDNpYmdncTZwNQ%3D%3D&utm_source=qr" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/CreationSteppe5" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/creation-steppers-youth-development-initiative-29b3b73b1/" title="Follow us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@creation_steppers?_r=1&_t=ZS-93ylxv4hl1I" title="Follow us on TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@creationsteppersyouthdevel8209" title="Subscribe on YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <!-- Quote -->
+        <div class="footer-quote fade-in">
+          <p>"Empowering youth is not a task, it's a legacy we leave for tomorrow."</p>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom fade-in">
+          &copy; <span id="year"></span> CSYDI. All rights reserved.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+  ">↑</button>
+
+  <!-- FLOATING FEEDBACK BUTTON -->
+  <a href="contact.html" style="
+    position:fixed;
+    bottom:85px;
+    right:20px;
+    background:#2e7d32;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    z-index:999;
+    transition:all 0.3s ease;
+    font-size:0.9rem;
+  " onmouseover="this.style.background='#1b4d23'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#2e7d32'; this.style.transform='scale(1)';">
+    📧 Feedback
+  </a>
+
+  <script>
+    // Set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+      });
+    });
+
+    // Tab switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const formSections = document.querySelectorAll('.apply-section');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and sections
+        tabBtns.forEach(b => b.classList.remove('active'));
+        formSections.forEach(s => s.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding section
+        btn.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+
+    // Employment Form submission
+    const employmentForm = document.getElementById('employmentForm');
+    const empSubmitBtn = document.getElementById('emp_submitBtn');
+    const empSuccessMsg = document.getElementById('emp_successMsg');
+    const empErrorMsg = document.getElementById('emp_errorMsg');
+
+    employmentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      empSubmitBtn.disabled = true;
+      empSubmitBtn.textContent = 'Sending…';
+      empErrorMsg.classList.remove('visible');
+      empErrorMsg.textContent = '';
+
+      try {
+        const res = await fetch(employmentForm.action, {
+          method: 'POST',
+          body: new FormData(employmentForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          employmentForm.style.display = 'none';
+          empSuccessMsg.classList.add('visible');
+        } else {
+          const json = await res.json().catch(() => ({}));
+          const msg = json?.errors?.[0]?.message || `Server error (${res.status}). Please try again.`;
+          throw new Error(msg);
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        empSubmitBtn.disabled = false;
+        empSubmitBtn.textContent = 'Submit Application';
+        empErrorMsg.textContent = err.message || 'Something went wrong. Please try again.';
+        empErrorMsg.classList.add('visible');
+      }
+    });
+
+    // Volunteer Form submission
+    const volunteerForm = document.getElementById('volunteerForm');
+    const volSubmitBtn = document.getElementById('vol_submitBtn');
+    const volSuccessMsg = document.getElementById('vol_successMsg');
+    const volErrorMsg = document.getElementById('vol_errorMsg');
+
+    volunteerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      volSubmitBtn.disabled = true;
+      volSubmitBtn.textContent = 'Sending…';
+      volErrorMsg.classList.remove('visible');
+      volErrorMsg.textContent = '';
+
+      try {
+        const res = await fetch('https://formspree.io/f/xwvyldnb', {
+          method: 'POST',
+          body: new FormData(volunteerForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          volunteerForm.style.display = 'none';
+          volSuccessMsg.classList.add('visible');
+        } else {
+          const json = await res.json().catch(() => ({}));
+          const msg = json?.errors?.[0]?.message || `Server error (${res.status}). Please try again.`;
+          throw new Error(msg);
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        volSubmitBtn.disabled = false;
+        volSubmitBtn.textContent = 'Submit Application';
+        volErrorMsg.textContent = err.message || 'Something went wrong. Please try again.';
+        volErrorMsg.classList.add('visible');
+      }
+    });
+  </script>
+
+</body>
+</html>

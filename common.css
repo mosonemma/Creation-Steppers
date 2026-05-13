@@ -6,6 +6,35 @@
   --site-header-height: 100px;
 }
 
+/* ===================== HEADER ===================== */
+.header {
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.4s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.logo span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
 /* Basic navbar layout */
 .navbar ul{
   list-style:none;

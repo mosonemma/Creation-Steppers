@@ -63,17 +63,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 
 .logo img {
-    height: 80px;
-    width: auto;
-}
-
-.logo span {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #2e7d32;
+    width: 100%;
+    max-height: 110px;
+    height: auto;
 }
 
 /* NAVBAR */
@@ -132,6 +129,73 @@ body {
 .faq-grid {
     display: flex;
     gap: 30px;
+}
+
+.faq-cta {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.faq-cta-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.faq-cta-copy h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #1b4d23;
+}
+
+.faq-cta-copy p {
+    color: #4d5c4f;
+    line-height: 1.8;
+    max-width: 740px;
+}
+
+.faq-cta-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.faq-cta .btn,
+.faq-cta .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    padding: 14px 24px;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.faq-cta .btn {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.faq-cta .btn:hover {
+    background: #1b4d23;
+    transform: translateY(-2px);
+}
+
+.faq-cta .btn-secondary {
+    background: transparent;
+    border: 2px solid #2e7d32;
+    color: #2e7d32;
+}
+
+.faq-cta .btn-secondary:hover {
+    background: #2e7d32;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Accordion */
@@ -276,6 +340,212 @@ aside.faq-card hr {
     margin: 20px 0;
 }
 
+/* FAQ layout improvements */
+body {
+    background: #eff9f1;
+}
+
+.faq-hero {
+    padding: 80px 0 45px;
+    background: linear-gradient(180deg, #e8f5e9 0%, #d9f1df 100%);
+}
+
+.faq-hero .faq-container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.faq-card {
+    background: #ffffff;
+    border-radius: 26px;
+    box-shadow: 0 18px 70px rgba(46, 125, 50, 0.08);
+    border: 1px solid rgba(46, 125, 50, 0.14);
+    overflow: hidden;
+}
+
+.faq-card:first-child {
+    padding: 24px;
+}
+
+.faq-card h3,
+.faq-card h4 {
+    color: #1c5b28;
+}
+
+.accordion-item {
+    border: 1px solid #d9e8da;
+    border-radius: 18px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    background: #f9fdf8;
+}
+
+.accordion-btn {
+    background-color: transparent;
+    color: #1b4d23;
+    padding: 20px 24px;
+    font-size: 1.05rem;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.accordion-btn:hover,
+.accordion-btn.active {
+    background-color: #eaf7ec;
+}
+
+.accordion-btn i {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d9f0da;
+    color: #2e7d32;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.accordion-btn.active i {
+    transform: rotate(45deg);
+    background: #2e7d32;
+    color: #fff;
+}
+
+.accordion-panel {
+    background: #ffffff;
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.accordion-panel.open {
+    padding: 18px 24px 22px;
+}
+
+.accordion-panel p {
+    margin: 0;
+    color: #405046;
+}
+
+.floating-action {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    background: #2e7d32;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    z-index: 999;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.floating-action:hover {
+    transform: translateY(-3px);
+    background: #1b4d23;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-card:first-child {
+        padding: 18px;
+    }
+
+    .faq-cta-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .faq-cta-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-hero {
+        padding: 60px 0 35px;
+    }
+
+    .faq-hero h1 {
+        font-size: 2rem;
+    }
+
+    .faq-hero p {
+        font-size: 1rem;
+    }
+
+    .accordion-btn {
+        font-size: 1rem;
+        padding: 16px 18px;
+    }
+
+    .accordion-panel {
+        padding: 0 18px;
+    }
+
+    .accordion-panel.open {
+        padding: 16px 18px 20px;
+    }
+
+    .faq-cta {
+        padding: 50px 0;
+    }
+
+    .faq-cta-copy h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq-cta-copy p {
+        font-size: 0.98rem;
+    }
+}
+
 /* QUICK ACTIONS */
 .quick-actions a {
     background: #2e7d32;
@@ -418,11 +688,14 @@ aside.faq-card hr {
     .accordion-panel {
         font-size: 0.95rem;
     }
+    .logo {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
     .logo img {
         height: 60px;
-    }
-    .logo span {
-        font-size: 1.2rem;
+        width: auto;
+        max-width: 100%;
     }
 }
 
@@ -443,8 +716,7 @@ aside.faq-card hr {
 
 /* Small phones (iPhone 12 - 390px) */
 @media (max-width: 390px) {
-    .logo img { height: 45px; }
-    .logo span { font-size: 1rem; }
+    .logo img { height: 45px; width: auto; }
     .logo { gap: 8px; }
 }
 

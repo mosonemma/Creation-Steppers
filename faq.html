@@ -21,8 +21,7 @@
   <header class="header">
     <div class="container">
       <div class="logo">
-        <img src="Docs/logo.jpg" alt="CSYDI Logo">
-        <span>Creation Steppers Youth Development Initiative</span>
+        <img src="photos/Documents/csydi logo.png" alt="CSYDI Logo">
       </div>
 
       <!-- HAMBURGER -->
@@ -175,7 +174,21 @@
     </div>
   </main>
 
-     <!-- Footer -->
+  <!-- FAQ CALL TO ACTION -->
+  <section class="faq-cta">
+    <div class="faq-cta-container">
+      <div class="faq-cta-copy">
+        <h2>Need a deeper answer?</h2>
+        <p>If your question is not listed here, our team is ready to help. Contact us and we will connect you with the right program coordinator within 24 hours.</p>
+      </div>
+      <div class="faq-cta-actions">
+        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="donate.html" class="btn-secondary">Support Our Mission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <!-- ===== NEW FULL FEATURE FOOTER FOR FAQ PAGE ===== -->
 <footer class="faq-footer">
   <div class="faq-footer-container">
@@ -224,106 +237,95 @@
   </div>
 
   <div class="faq-footer-bottom">
-    &copy; <span id="year"></span> 2025 Creation Steppers Youth Development Initiative. All rights reserved.
+    <p class="footer-note">Built by CSYDI Youth Team for community impact.</p>
+    <p>&copy; <span id="year"></span> Creation Steppers Youth Development Initiative. All rights reserved.</p>
   </div>
 </footer>
 
 <!-- FLOATING FEEDBACK BUTTON -->
-  <a href="donate.html"
-  style="
-    position:fixed;
-    bottom:85px;
-    right:20px;
-    background:#2e7d32;
-    color:#fff;
-    padding:12px 22px;
-    border-radius:50px;
-    font-size:16px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    text-decoration:none;
-    z-index:999;">
-    Join Us
-  </a>
+  <a href="donate.html" class="floating-action">Join Us</a>
 
   <!-- BACK TO TOP BUTTON -->
-  <button id="backToTop" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 16px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    display: none;
-    font-size: 17px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  ">↑</button>
+  <button id="backToTop" aria-label="Back to top">↑</button>
   <script>
-    // Back to top
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 250 ? 'block' : 'none';
-    });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const backToTop = document.getElementById('backToTop');
+      const header = document.querySelector('.header');
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      const yearElement = document.getElementById('year');
 
-    // Set footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+      const updateHeaderVisibility = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 100) {
+          header.classList.add('hide');
+        } else {
+          header.classList.remove('hide');
+        }
+      };
 
-    // Accordion with + / – toggle
-    document.querySelectorAll('.accordion-item').forEach((item) => {
-      const btnAcc = item.querySelector('.accordion-btn');
-      const panel = item.querySelector('.accordion-panel');
-      const icon = btnAcc.querySelector('i');
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 250);
+        updateHeaderVisibility();
+      });
 
-      btnAcc.addEventListener('click', () => {
-        const expanded = btnAcc.getAttribute('aria-expanded') === 'true';
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
-        if (expanded) {
-          btnAcc.setAttribute('aria-expanded', 'false');
-          panel.style.maxHeight = null;
+      yearElement.textContent = new Date().getFullYear();
+
+      const closeAllAccordions = () => {
+        accordionItems.forEach(item => {
+          const btn = item.querySelector('.accordion-btn');
+          const panel = item.querySelector('.accordion-panel');
+          const icon = btn.querySelector('i');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('active');
           panel.classList.remove('open');
+          panel.style.maxHeight = null;
           icon.classList.remove('fa-minus');
           icon.classList.add('fa-plus');
-        } else {
-          document.querySelectorAll('.accordion-btn').forEach(b => {
-            b.setAttribute('aria-expanded', 'false');
-            b.querySelector('i').classList.remove('fa-minus');
-            b.querySelector('i').classList.add('fa-plus');
-          });
-          document.querySelectorAll('.accordion-panel').forEach(p => {
-            p.style.maxHeight = null;
-            p.classList.remove('open');
-          });
+        });
+      };
 
-          btnAcc.setAttribute('aria-expanded', 'true');
-          panel.classList.add('open');
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          icon.classList.remove('fa-plus');
-          icon.classList.add('fa-minus');
-        }
+      accordionItems.forEach(item => {
+        const btnAcc = item.querySelector('.accordion-btn');
+        const panel = item.querySelector('.accordion-panel');
+        const icon = btnAcc.querySelector('i');
+
+        const toggleAccordion = () => {
+          const isExpanded = btnAcc.getAttribute('aria-expanded') === 'true';
+          if (isExpanded) {
+            btnAcc.setAttribute('aria-expanded', 'false');
+            btnAcc.classList.remove('active');
+            panel.classList.remove('open');
+            panel.style.maxHeight = null;
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+          } else {
+            closeAllAccordions();
+            btnAcc.setAttribute('aria-expanded', 'true');
+            btnAcc.classList.add('active');
+            panel.classList.add('open');
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          }
+        };
+
+        btnAcc.addEventListener('click', toggleAccordion);
+        btnAcc.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleAccordion();
+          }
+        });
       });
-    });
 
-    if (window.innerWidth > 900) {
-      const firstBtn = document.querySelector('.accordion-btn');
-      if (firstBtn) firstBtn.click();
-    }
-
-    // Header hide on scroll
-    let lastScrollTop = 0;
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        header.classList.add('hide');
-      } else {
-        header.classList.remove('hide');
+      if (accordionItems.length > 0) {
+        const firstBtn = accordionItems[0].querySelector('.accordion-btn');
+        if (window.innerWidth > 900 && firstBtn) firstBtn.click();
       }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
   </script>
 
@@ -331,3 +333,4 @@
 
   </body>
   </html>
+

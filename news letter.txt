@@ -1,0 +1,24 @@
+<section class="news fade-in">
+    <div class="container">
+      <h2>Latest News & Community Impact</h2>
+      <article>
+        <h3>Community Influencers Empowerment Summit on Ending FGM</h3>
+        <p>We are proud to share our participation in the Community Influencers Empowerment Summit organized by Naguru Teenage Centre, held at Tamisha Hotel in Soroti from 21st to 24th March 2026.</p>
+        <p>This impactful gathering brought together passionate community influencers committed to ending Female Genital Mutilation. Through interactive sessions, participants explored effective advocacy strategies, storytelling techniques, and community engagement approaches to challenge and eliminate FGM.</p>
+        <h3>Key Outcomes & Impact</h3>
+        <p> <strong> - Strengthened Advocacy Skills:</strong> Participants gained practical tools to communicate powerful anti-FGM messages within their communities.</p>
+        <p> <strong> - Experience Sharing:</strong> Influencers exchanged real-life stories, building a deeper understanding of the cultural and social drivers of FGM.</p>
+        <p> <strong> - Action Planning:</strong> Teams developed actionable community-based strategies to raise awareness and promote behavioural change.</p>
+        <p> <strong> - Network Building:</strong>  The summit created a strong support system among youth advocates, enabling continued collaboration beyond the event.</p>
+        <h3>What We Must Do in Our Communities</h3>
+        <p>Following the summit, our responsibility is to translate knowledge into action:</p>
+        <p> <strong> - Community Awareness Campaigns:</strong> Organize dialogues, school visits, and outreach programs to educate communities about the dangers of FGM.</p>
+        <p> <strong> - Engage Cultural & Religious Leaders:</strong> Work closely with local leaders to challenge harmful norms and promote positive cultural practices.</p>
+        <p> <strong> - Youth Empowerment:</strong>Equip young people with knowledge and confidence to speak out against FGM.</p>
+        <p> <strong> - Support Survivors:</strong> Create safe spaces where survivors can share experiences and access support services.</p>
+        <p> <strong> - Use Digital Advocacy:</strong> Leverage social media and storytelling to amplify anti-FGM messages and reach wider audiences.</p>
+        <h3>Key Outcomes & Impact</h3>
+        <p>This summit marks a significant step toward building a generation of informed and empowered advocates. Together, we are committed to protecting the rights, dignity, and future of girls and young women in our communities.</p>
+        <p>Let us continue to stand united and take bold action to end FGM.</p>
+        <a href="project.html">Read More</a>
+      </article>

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (header) {
       const h = header.offsetHeight;
       root.style.setProperty('--header-height', h + 'px');
+      root.style.setProperty('--site-header-height', h + 'px');
     }
   };
   updateHeaderHeight();
@@ -43,7 +44,7 @@ dropdowns.forEach(drop => {
   const link = drop.querySelector('a');
 
   link.addEventListener('click', (e) => {
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 20000) {
       e.preventDefault();
       drop.classList.toggle('open');
     }

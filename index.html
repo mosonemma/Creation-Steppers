@@ -8,21 +8,17 @@
   <title>CSYDI - Overview</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="icon" type="image/png" href="Docs/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="photos/logos/cs.webp">
 </head>
 
 <body class="menu-below-header">
-
-  <!-- HEADER -->
   <header class="header">
     <div class="container">
-      <!-- LOGO -->
       <div class="logo">
-        <img src="photos/Documents/csydi logo.png" alt="CSYDI Logo">
+        <img src="photos/logos/csydi logo.webp" alt="CSYDI Logo">
       </div>
 
-      <!-- HAMBURGER -->
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
@@ -30,78 +26,75 @@
         <div class="menu-text">Menu</div>
       </div>
 
-      <!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <ul>
-    <!-- WHO WE ARE -->
-    <li class="has-dropdown">
-      <a href="#about">Who We Are</a>
-      <ul class="dropdown">
-        <li><a href="index.html">Overview</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="staff.html">Our Team</a></li>
-      </ul>
-    </li>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li class="has-dropdown">
+            <a href="#about">Who We Are</a>
+            <ul class="dropdown">
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="staff.html">Our Team</a></li>
+            </ul>
+          </li>
 
-    <!-- WHAT WE DO -->
-    <li class="has-dropdown">
-      <a href="#projects">What We Do</a>
-      <ul class="dropdown">
-        <li><a href="project.html">Our Projects</a></li> <!-- Added text here -->
-        <li><a href="photo.html">Our Moments</a></li>
-        <li><a href="faq.html">FAQ</a></li> <!-- Fixed typo to 'faq' -->
-      </ul>
-    </li>
+          <li class="has-dropdown">
+            <a href="#projects">What We Do</a>
+            <ul class="dropdown">
+              <li><a href="project.html">Our Projects</a></li>
+              <li><a href="photo.html">Our Moments</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </li>
 
-    <!-- CONNECT (The new Contacts dropdown) -->
-    <li class="has-dropdown">
-      <a href="#contact">Get Involved</a> <!-- Better name for a dropdown than just "Contacts" -->
-      <ul class="dropdown">
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="donate.html">Support Us</a></li> <!-- Moved Donate here -->
-        <li><a href="apply.html">Apply Now</a></li> <!-- Updated to apply.html -->
-        <li><a href="policies.html">Our Policies</a></li>
-      </ul>
-    </li>
-    
-    <!-- Our Policies -->
-    <li class="has-dropdown">
-      <a href="#policies">Our Policies</a>
-      <ul class="dropdown">
-        <li><a href="policies.html">Governance & Policies</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+          <li class="has-dropdown">
+            <a href="#contact">Get Involved</a>
+            <ul class="dropdown">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="donate.html">Support Us</a></li>
+              <li><a href="apply.html">Apply Now</a></li>
+            </ul>
+          </li>
 
+          <li class="has-dropdown">
+            <a href="#policies">Our Policies</a>
+            <ul class="dropdown">
+              <li><a href="policies.html">Governance & Policies</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero fade-in" style="background-image: url('photos/Team\ Meetings/ntc1.jpg');">
+  <section
+    class="hero fade-in"
+    data-hero-images="photos/index/ntc1.webp,photos/index/dd.webp,photos/index/home.JPG,photos/index/home2.JPG"
+    style="background-image: url('photos/index/ntc1.webp');"
+  >
     <div class="hero-text">
-      <h1>Empowering Youth for a Brighter Tomorrow</h1>
+      <p class="hero-kicker">Creation Steppers Youth Development Initiative</p>
+      <h1>An Empowered Youth for a Positive Change</h1>
       <p>We nurture young minds to become future leaders through skills, mentorship, and innovation.</p>
+      <h3>My Voice, My Future.</h3>
       <a href="donate.html" class="btn">Donate</a>
-      <a href="project.html" class="btn btn-outline">Join Us</a>
+      <a href="apply.html" class="btn btn-outline">Join Us</a>
+      <div class="hero-slider-dots" aria-label="Hero image slider"></div>
     </div>
   </section>
 
-  <!-- ABOUT PREVIEW -->
-  <section class="about-preview fade-in">
+  <section class="about-preview fade-in" id="about">
     <div class="container">
       <h2>About Us</h2>
       <p>
-        Creation Steppers Youth Development Initiative (CSYDI) started in 2011 as a music, dance, and drama group
-        promoting positive community change. In 2018, it was registered to support more youth talents and development
-        programs aimed at addressing issues like FGM, early marriages, HIV/AIDS, and alcoholism through advocacy and creativity.
+        Creation Steppers Youth Development Initiative (CSYDI) started in 2011 as a music, dance, and drama group formerly known as Creation Steppers Music Empire (CSME),
+        promoting positive community change. In 2018, it was registered as Creation Steppers Youth Development Initiative (CSYDI) to support more youth talents and development
+        programs aimed at addressing issues like FGM, early marriages, GBV, HIV/AIDS, and drug misuse through advocacy and creativity.
       </p>
       <a href="about.html" class="btn">Learn More</a>
     </div>
   </section>
 
-  <!-- PROGRAMS SECTION -->
-  <section class="programs fade-in">
+  <section class="programs fade-in" id="projects">
     <div class="container">
       <h2>Our Key Programs</h2>
       <div class="program-cards">
@@ -121,46 +114,44 @@
     </div>
   </section>
 
-  <!-- GALLERY PREVIEW -->
   <section class="gallery-preview fade-in">
     <div class="container">
       <h2>In Action</h2>
-      <h2>Simama! Say NO to Harmful Practices</h2>
+      <h2>Simama! Say NO to Harmful Cultural Practices</h2>
       <div class="gallery-grid">
-        <img src="logos/actionaid.png" alt="Simama! Say NO to Harmful Practices">
-
+        <img src="photos/index/Simama_1.webp" alt="Simama! Say NO to Harmful Practices">
       </div>
       <a href="project.html" class="btn">View More</a>
     </div>
   </section>
 
-  <!-- NEWS SECTION -->
-  <section class="news fade-in">
+  <section class="news fade-in" id="news">
     <div class="container">
       <h2>Latest News & Community Impact</h2>
       <article>
         <h3>Simama! Say NO to Harmful Practices - Student-Led Action in Amudat</h3>
         <p>Creation Steppers Youth Development Initiative (CSYDI) is excited to announce the launch of <strong>"Simama! Say NO to Harmful Practices,"</strong> a transformative 3-month project targeting harmful cultural practices including child marriage, Female Genital Mutilation (FGM), and sexual and gender-based violence (S/GBV) in Amudat District.</p>
-        
+
         <h3>Project Focus</h3>
         <p>This initiative brings together students, teachers, and community members in Loroo and Abiliyep Sub-counties to create lasting change through student-led advocacy and community engagement. Our target schools are Loroo Primary School and Loroo Seed Secondary School, where we will establish vibrant school clubs dedicated to ending these harmful practices.</p>
-        
+
         <h3>Key Project Activities</h3>
-        <p> <strong> - School Club Formation:</strong> Establish 2 student-led clubs as platforms for youth advocacy and awareness.</p>
-        <p> <strong> - Community Dialogues:</strong> Organize talking chats and community engagement sessions to increase awareness about harmful practices.</p>
-        <p> <strong> - Creative Advocacy:</strong> Use drama, debates, and video production to amplify powerful messages against child marriage, FGM, and S/GBV.</p>
-        <p> <strong> - Community Cinema Nights:</strong> Screen educational content to engage families and foster community conversations.</p>
-        <p> <strong> - Media Campaigns:</strong> Launch radio talk shows and social media campaigns to reach wider audiences with life-changing messages.</p>
-        
+        <p><strong>- School Club Formation:</strong> Establish 2 student-led clubs as platforms for youth advocacy and awareness.</p>
+        <p><strong>- Community Dialogues:</strong> Organize talking chats and community engagement sessions to increase awareness about harmful practices.</p>
+        <p><strong>- Creative Advocacy:</strong> Use drama, debates, and video production to amplify powerful messages against child marriage, FGM, and S/GBV.</p>
+        <p><strong>- Community Cinema Nights:</strong> Screen educational content to engage families and foster community conversations.</p>
+        <p><strong>- Media Campaigns:</strong> Launch radio talk shows and social media campaigns to reach wider audiences with life-changing messages.</p>
+
         <h3>Why This Matters</h3>
         <p>In Amudat District, harmful cultural practices remain prevalent due to cultural norms, poverty, and low awareness. These practices lead to school dropout, early pregnancies, and increased vulnerability to violence. By empowering students as change-makers and engaging communities in dialogue, we believe we can reduce these harmful practices and protect the rights and future of adolescent girls.</p>
-        
+
         <h3>Our Vision</h3>
         <p>We envision a generation of confident, informed youth advocates who challenge harmful norms and promote the rights of adolescent girls. Through school clubs, community dialogues, creative expression, and media engagement, we are building momentum for sustainable change in Amudat.</p>
-        
+
         <p><strong>Together, let's Say NO to Harmful Practices and empower our youth to be agents of change!</strong></p>
         <a href="project.html">Read More</a>
       </article>
+
       <article>
         <h3>Community Influencers Empowerment Summit on Ending FGM</h3>
         <p>We are proud to share our participation in the Community Influencers Empowerment Summit organized by Naguru Teenage Centre, held at Tamisha Hotel in Soroti from 21st to 24th March 2026.</p>
@@ -170,79 +161,70 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
   <section class="testimonials fade-in">
     <div class="container">
       <h2>Voices of Change</h2>
       <div class="testimonial-cards">
-        <blockquote>“Personally through various activities done in CSYDi I have been able to have a voice. We have been trained to be peace champions and change  in our community Amudat which raises my “our”self-esteem and community status.”  
-          <cite>– Cheptum Miriam</cite>
+        <blockquote>"Through various activities done in CSYDI, I have been able to have a voice. We have been trained to be peace champions and change-makers in our community in Amudat, which raises our self-esteem and community status."
+          <cite>- Cheptum Miriam</cite>
         </blockquote>
-        <blockquote>“CSYDI helped me gain tailoring and craft-making skills that changed my life.”  
-          <cite>– Apet, Amudat District</cite>
+        <blockquote>"CSYDI helped me gain tailoring and craft-making skills that changed my life."
+          <cite>- Apet, Amudat District</cite>
         </blockquote>
-        <blockquote>“We were able to travel all along to Yumbe district to showcase and see other youths skills.”  
-          <cite>– CSYDI Team that travelled to Yumbe</cite>
+        <blockquote>"We were able to travel all the way to Yumbe District to showcase our skills and learn from other youth."
+          <cite>- CSYDI Team that travelled to Yumbe</cite>
         </blockquote>
-        <blockquote>“Being part of Creation Steppers Youth Development Initiative (CSYDI) shaped my career path in ways I never imagined. Through mentorship, skills development, and practical digital projects, I discovered my passion for software engineering. The hands-on experience I gained at CSYDI strengthened my technical abilities, improved my problem-solving skills, and gave me the confidence to build real solutions. CSYDI played a major role in guiding me toward becoming the software engineer I am today." 
-          <cite>– Moson Emmanuel</cite>
+        <blockquote>"Being part of Creation Steppers Youth Development Initiative (CSYDI) shaped my career path in ways I never imagined. Through mentorship, skills development, and practical digital projects, I discovered my passion for software engineering. The hands-on experience I gained at CSYDI strengthened my technical abilities, improved my problem-solving skills, and gave me the confidence to build real solutions. CSYDI played a major role in guiding me toward becoming the software engineer I am today."
+          <cite>- Moson Emmanuel</cite>
         </blockquote>
-        <blockquote>“Through CSYDI, I gained both computer and music production skills. The computer training built my IT confidence and taught me to train others, while the music lessons gave me real hands-on experience with production equipments.
-          CSYDI empowered me to grow, create, and share my skills in today’s digital world.”  
-          <cite>– Rotich Amos – (Dj Heights)</cite>
+        <blockquote>"Through CSYDI, I gained both computer and music production skills. The computer training built my IT confidence and taught me to train others, while the music lessons gave me real hands-on experience with production equipment. CSYDI empowered me to grow, create, and share my skills in today's digital world."
+          <cite>- Rotich Amos - (Dj Heights)</cite>
         </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- PARTNERS -->
   <section class="partners fade-in">
     <div class="container">
       <h2>Our Partners</h2>
       <div class="partner-logos">
-        <img src="Docs/defend.JPG" alt="Defender">
-        <img src="Docs/mercycorps.png" alt="Mercy Corps">
-        <img src="Docs/kalyafm.png" alt="Kalya FM">
-        <img src="Docs/cecore.jpg" alt="CECORE">
-        <img src="Docs/khh.JPG" alt="KHH">
+        <img src="photos/logos/actionaid.png" alt="Actionaid">
+        <img src="photos/logos/defend.png" alt="Defender">
+        <img src="photos/logos/mercycorps.png" alt="Mercy Corps">
+        <img src="photos/logos/kalyafm.png" alt="Kalya FM">
+        <img src="photos/logos/cecore.jpg" alt="CECORE">
+        <img src="photos/logos/khh.JPG" alt="KHH">
       </div>
     </div>
   </section>
 
-  <!-- Newsletter removed -->
-
-  <!-- FOOTER -->
-  <footer class="footer-home">
+  <footer class="footer-home" id="contact">
     <div class="footer-bg">
       <div class="container">
-
-        <!-- Impact Stats -->
         <div class="footer-stats fade-in">
           <div>
             <i class="fas fa-user-graduate"></i>
-            <h3>200+</h3>
+            <h3 data-count="200">0+</h3>
             <p>Youths Trained Annually on the River Festival</p>
           </div>
           <div>
             <i class="fas fa-project-diagram"></i>
-            <h3>2+</h3>
+            <h3 data-count="2">0+</h3>
             <p>Projects Completed</p>
           </div>
           <div>
             <i class="fas fa-handshake"></i>
-            <h3>5+</h3>
+            <h3 data-count="5">0+</h3>
             <p>Partners</p>
           </div>
         </div>
 
-        <!-- Call to Action -->
         <div class="footer-cta fade-in">
           <p>Be part of our journey in empowering youth!</p>
           <a href="donate.html" class="btn">Donate</a>
-          <a href="project.html" class="btn btn-outline">Join Us</a>
+          <a href="apply.html" class="btn btn-outline">Join Us</a>
         </div>
 
-        <!-- Quick Links -->
         <div class="footer-links fade-in">
           <a href="index.html">Home</a> |
           <a href="about.html">About Us</a> |
@@ -252,118 +234,32 @@
           <a href="contact.html">Contact</a>
         </div>
 
-        <!-- Social Media Links -->
         <div class="footer-social fade-in">
-          <a href="https://www.facebook.com/share/1CMmXdbfuc/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/creation_steppers1?igsh=MXNvZDNpYmdncTZwNQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/CreationSteppe5"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/creation-steppers-youth-development-initiative-29b3b73b1/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.tiktok.com/@creation_steppers?_r=1&_t=ZS-93ylxv4hl1I"><i class="fab fa-tiktok"></i></a>
-          <a href="https://www.youtube.com/@creationsteppersyouthdevel8209"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/share/1CMmXdbfuc/?mibextid=wwXIfr" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/creation_steppers1?igsh=MXNvZDNpYmdncTZwNQ%3D%3D&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/CreationSteppe5" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/creation-steppers-youth-development-initiative-29b3b73b1/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@creation_steppers?_r=1&_t=ZS-93ylxv4hl1I" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@creationsteppersyouthdevel8209" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <!-- Quote -->
         <div class="footer-quote fade-in">
-          <p>“Empowering youth is not a task, it’s a legacy we leave for tomorrow.”</p>
+          <p>"Empowering youth is not a task, it's a legacy we leave for tomorrow."</p>
         </div>
 
-        <!-- Footer Bottom -->
         <div class="footer-bottom fade-in">
           &copy; <span id="year"></span> CSYDI. All rights reserved.
         </div>
-
       </div>
     </div>
   </footer>
 
-  <!-- BACK TO TOP BUTTON -->
-  <button id="backToTop" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 16px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    display: none;
-    font-size: 17px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  ">↑</button>
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-  <!-- FLOATING FEEDBACK BUTTON -->
-  <a href="contact.html" style="
-    position:fixed;
-    bottom:85px;
-    right:20px;
-    background:#2e7d32;
-    color:#fff;
-    padding:12px 22px;
-    border-radius:50px;
-    font-size:16px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    text-decoration:none;
-    z-index:999;">
-    Give Feedback
-  </a>
-
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Hero slider
-    const heroImages = [
-      "photos/Team Meetings/ntc1.jpg",
-      "photos/Team Meetings/dd.jpeg",
-      "Docs/home.JPG",
-      "Docs/home2.JPG",
-    ];
-    let index = 0;
-    const hero = document.querySelector(".hero");
-    function changeHeroImage() {
-      hero.style.backgroundImage = `url(${heroImages[index]})`;
-      index = (index + 1) % heroImages.length;
-    }
-    changeHeroImage();
-    setInterval(changeHeroImage, 4000);
-
-    // Back to top button
-    const btn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      btn.style.display = window.scrollY > 250 ? "block" : "none";
-    });
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // (Menu toggle moved to external script.js)
-
-    // Fade-in elements
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Header hide on scroll
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
-        header.classList.add('hide');
-      } else {
-        header.classList.remove('hide');
-      }
-      lastScrollY = window.scrollY;
-    });
-  </script>
+  <a href="contact.html" class="floating-feedback">Give Feedback</a>
 
   <script src="script.js" defer></script>
-
 </body>
 </html>

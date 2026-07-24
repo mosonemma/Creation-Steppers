@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
   const dropdowns = document.querySelectorAll('.has-dropdown');
 
-  /* --- 1. HEADER HEIGHT & POSITIONING --- */
   const updateHeaderHeight = () => {
     const root = document.documentElement;
     if (header) {
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   updateHeaderState();
 
-  /* --- 2. MAIN MENU TOGGLE --- */
   if (hamburger && navbar) {
     hamburger.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -44,19 +42,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- 3. MOBILE DROPDOWN BEHAVIOR --- */
-dropdowns.forEach(drop => {
-  const link = drop.querySelector('a');
+  dropdowns.forEach(drop => {
+    const link = drop.querySelector('a');
 
-  link.addEventListener('click', (e) => {
-    if (window.innerWidth < 900) {
-      e.preventDefault();
-      drop.classList.toggle('open');
-    }
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth < 900) {
+        e.preventDefault();
+        const isOpen = drop.classList.contains('open');
+        dropdowns.forEach(d => d.classList.remove('open'));
+        if (!isOpen) drop.classList.add('open');
+      }
+    });
+
+    drop.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 900) {
+        dropdowns.forEach(d => {
+          if (d !== drop) d.classList.remove('force-open');
+        });
+        drop.classList.add('force-open');
+      }
+    });
+
+    drop.addEventListener('mouseleave', () => {
+      if (window.innerWidth >= 900) {
+        drop.classList.remove('force-open');
+      }
+    });
   });
-});
 
-  /* --- 4. HERO SLIDER --- */
+  if (navbar) {
+    navbar.addEventListener('mouseleave', () => {
+      if (window.innerWidth >= 900) {
+        dropdowns.forEach(d => d.classList.remove('force-open'));
+      }
+    });
+  }
+
   const hero = document.querySelector(".hero");
   const heroImages = hero?.dataset.heroImages
     ? hero.dataset.heroImages.split(',').map(src => src.trim()).filter(Boolean)
@@ -99,7 +120,6 @@ dropdowns.forEach(drop => {
     sliderTimer = window.setInterval(nextHeroImage, 5000);
   }
 
-  /* --- 5. SCROLL UTILITIES --- */
   const topBtn = document.getElementById("backToTop");
   let lastScrollY = window.scrollY;
 
@@ -127,7 +147,6 @@ dropdowns.forEach(drop => {
     });
   }
 
-  /* --- 6. FADE-IN OBSERVER --- */
   const fadeElements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -139,7 +158,6 @@ dropdowns.forEach(drop => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  /* --- 7. ANIMATED IMPACT NUMBERS --- */
   const counters = document.querySelectorAll('[data-count]');
   const countObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -169,7 +187,6 @@ dropdowns.forEach(drop => {
 
   counters.forEach(counter => countObserver.observe(counter));
 
-  /* --- 8. TESTIMONIAL SPOTLIGHT --- */
   const testimonials = Array.from(document.querySelectorAll('.testimonial-cards blockquote'));
   let testimonialIndex = 0;
 
@@ -186,7 +203,6 @@ dropdowns.forEach(drop => {
     window.setInterval(featureTestimonial, 3500);
   }
 
-  /* --- 9. FOOTER YEAR --- */
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });

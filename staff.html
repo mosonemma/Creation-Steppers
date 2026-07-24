@@ -47,19 +47,19 @@
     <li class="has-dropdown">
       <a href="#projects">What We Do</a>
       <ul class="dropdown">
-        <li><a href="project.html">Our Projects</a></li> <!-- Added text here -->
+        <li><a href="project.html">Our Projects</a></li>
         <li><a href="photo.html">Our Moments</a></li>
-        <li><a href="faq.html">FAQ</a></li> <!-- Fixed typo to 'faq' -->
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </li>
 
     <!-- CONNECT (The new Contacts dropdown) -->
     <li class="has-dropdown">
-      <a href="#contact">Get Involved</a> <!-- Better name for a dropdown than just "Contacts" -->
+      <a href="#contact">Get Involved</a>
       <ul class="dropdown">
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="donate.html">Support Us</a></li> <!-- Moved Donate here -->
-        <li><a href="apply.html">Apply Now</a></li> <!-- Updated to apply.html -->
+        <li><a href="donate.html">Support Us</a></li>
+        <li><a href="apply.html">Apply Now</a></li>
       </ul>
     </li>
 
@@ -104,8 +104,6 @@
             data-bio="Leads project planning and implementation, manages teams and budgets, ensures compliance, engages stakeholders, and delivers measurable results"
           >View Profile</button>
         </div>
-
-        
 
         <div class="staff-card">
           <img src="photos/staffs/ikoojo.webp" alt="Ikoojo">
@@ -166,10 +164,6 @@
             data-bio="Manages, maintains, and secures digital infrastructure, networks, and software systems."
           >View Profile</button>
         </div>
-
-        
-        </div>
-
       </div>
     </div>
   </section>
@@ -208,7 +202,7 @@
     <!-- Contact -->
     <div class="footer-section">
       <h4>Contact Us</h4>
-      <p>Email: <a href="mailto:csydi@gmail.com">creationsteppersinitiative@gmail.com</a></p>
+      <p>Email: <a href="mailto:creationsteppersinitiative@gmail.com">creationsteppersinitiative@gmail.com</a></p>
       <p>Phone: <a href="tel:0393254319">0393 254 319</a></p>
       <p>Address: CSYDI Offices, Amudat District, Uganda</p>
     </div>
@@ -217,12 +211,12 @@
     <div class="footer-section">
       <h4>Connect With Us</h4>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/share/1CMmXdbfuc/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/creation_steppers1?igsh=MXNvZDNpYmdncTZwNQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/CreationSteppe5" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/creation-steppers-youth-development-initiative-29b3b73b1/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@creation_steppers?_r=1&_t=ZS-93ylxv4hl1I" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@creationsteppersyouthdevel8209" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
 
@@ -234,32 +228,6 @@
   </div>
 </footer>
 
-
-  <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Fade-in scroll animation
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Header hide on scroll
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('.header');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
-        header.classList.add('hide');
-      } else {
-        header.classList.remove('hide');
-      }
-      lastScrollY = window.scrollY;
-    });
-  </script>
 
   <!-- FLOATING FEEDBACK BUTTON -->
   <a href="project.html"
@@ -294,6 +262,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   ">↑</button>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
     const btn = document.getElementById("backToTop");
 
@@ -355,5 +324,3 @@
   <script src="script.js" defer></script>
   </body>
   </html>
-
-

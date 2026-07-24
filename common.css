@@ -41,9 +41,9 @@ body {
 
 .header .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: none;
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: flex !important;
   align-items: center !important;
@@ -143,6 +143,14 @@ body {
   z-index: 2100;
 }
 
+/* Prevent the last dropdown(s) from overflowing off the right edge
+   on very wide / full-width headers */
+.navbar ul > li:last-child.has-dropdown .dropdown,
+.navbar ul > li:last-child.has-dropdown .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
 .has-dropdown .dropdown li,
 .dropdown-menu li {
   width: 100%;
@@ -159,11 +167,39 @@ body {
 }
 
 @media (min-width: 900px) {
-  .has-dropdown:hover > .dropdown,
-  .has-dropdown:focus-within > .dropdown,
-  .has-dropdown:hover > .dropdown-menu,
-  .has-dropdown:focus-within > .dropdown-menu {
-    display: block;
+  .has-dropdown .dropdown,
+  .has-dropdown .dropdown-menu {
+    top: 100%;
+    padding-top: 12px;
+    margin-top: 0;
+  }
+
+  /* --- HARDENED VISIBILITY RULES ---
+     These are deliberately the LAST rules in this media block and use
+     !important so nothing else in this file — or in common.css, or any
+     other stylesheet loaded after/before this one — can force a dropdown
+     open via :hover or any other selector. Only JS adding .force-open,
+     or :focus-within for keyboard users, can reveal a dropdown. */
+  .has-dropdown .dropdown,
+  .has-dropdown .dropdown-menu {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+  }
+
+  .has-dropdown.force-open > .dropdown,
+  .has-dropdown.force-open > .dropdown-menu {
+    display: block !important;
+    pointer-events: auto !important;
+    opacity: 1;
+  }
+
+  /* Keyboard-only fallback (Tab navigation without JS hover events) */
+  .has-dropdown:focus-within:not(.force-open) > .dropdown,
+  .has-dropdown:focus-within:not(.force-open) > .dropdown-menu {
+    display: block !important;
+    pointer-events: auto !important;
+    opacity: 1;
   }
 
   .hamburger {

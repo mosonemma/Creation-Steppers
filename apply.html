@@ -17,7 +17,8 @@
   <header class="header">
     <div class="container">
       <div class="logo">
-        <img src="photos/logos/csydi logo.webp" alt="CSYDI Logo">      </div>
+        <img src="photos/logos/csydi logo.webp" alt="CSYDI Logo">
+      </div>
 
       <!-- HAMBURGER -->
       <div class="hamburger" id="hamburger">
@@ -30,7 +31,6 @@
       <!-- NAVBAR -->
       <nav class="navbar" id="navbar">
         <ul>
-          <!-- WHO WE ARE -->
           <li class="has-dropdown">
             <a href="#about">Who We Are</a>
             <ul class="dropdown">
@@ -39,8 +39,6 @@
               <li><a href="staff.html">Our Team</a></li>
             </ul>
           </li>
-
-          <!-- WHAT WE DO -->
           <li class="has-dropdown">
             <a href="#projects">What We Do</a>
             <ul class="dropdown">
@@ -49,8 +47,6 @@
               <li><a href="faq.html">FAQ</a></li>
             </ul>
           </li>
-
-          <!-- GET INVOLVED -->
           <li class="has-dropdown">
             <a href="#contact">Get Involved</a>
             <ul class="dropdown">
@@ -59,8 +55,6 @@
               <li><a href="apply.html">Apply Now</a></li>
             </ul>
           </li>
-
-          <!-- OUR POLICIES -->
           <li class="has-dropdown">
             <a href="#policies">Our Policies</a>
             <ul class="dropdown">
@@ -101,10 +95,10 @@
         <div class="form-card">
           <div class="form-header">
             <h2>Employment Application</h2>
-            <p>Apply for a staff position at CSYDI. Submit your details, CV link, and tell us why you're interested in this opportunity.</p>
+            <p>Apply for a staff position at CSYDI. Submit your details and upload your CV or cover letter.</p>
           </div>
 
-          <form id="employmentForm" action="https://formspree.io/f/xwvyldnb" method="POST">
+          <form id="employmentForm" action="https://formspree.io/f/xwvyldnb" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="form_type" value="employment">
 
             <div class="form-field">
@@ -135,19 +129,11 @@
             </div>
 
             <div class="form-field">
-              <label for="emp_cv">Document Link (CV / Cover Letter)</label>
-              <input
-                type="url"
-                id="emp_cv"
-                name="document_link"
-                placeholder="https://drive.google.com/…"
-              />
+              <label for="emp_cv">Upload CV / Cover Letter</label>
+              <input type="file" id="emp_cv" name="document" accept=".pdf,.doc,.docx" />
               <p class="field-hint">
-                Upload your file to
-                <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a>,
-                <a href="https://www.dropbox.com" target="_blank" rel="noopener">Dropbox</a>, or
-                <a href="https://www.wetransfer.com" target="_blank" rel="noopener">WeTransfer</a>,
-                then paste the shareable link here.
+                Supported formats: PDF, DOC, DOCX (max 5MB).<br>
+                <span style="color:#d32f2f; font-size:0.85rem;">Note: File upload requires a Formspree plan that supports attachments (free plan does not).</span>
               </p>
             </div>
 
@@ -179,8 +165,6 @@
   <section class="apply-section volunteer-section" id="volunteer">
     <div class="container">
       <div class="apply-content">
-        
-        <!-- Why Volunteer Section -->
         <div class="why-volunteer-box">
           <h2>Why Volunteer With Us?</h2>
           <div class="volunteer-benefits">
@@ -202,14 +186,13 @@
           </div>
         </div>
 
-        <!-- Volunteer Form -->
         <div class="form-card">
           <div class="form-header">
             <h2>Volunteer Application</h2>
             <p>Join our team of dedicated volunteers. Share your details and tell us about your interests.</p>
           </div>
 
-          <form id="volunteerForm">
+          <form id="volunteerForm" action="https://formspree.io/f/xwvyldnb" method="POST">
             <input type="hidden" name="form_type" value="volunteer">
 
             <div class="form-field">
@@ -267,8 +250,6 @@
   <footer class="footer-home">
     <div class="footer-bg">
       <div class="container">
-
-        <!-- Impact Stats -->
         <div class="footer-stats fade-in">
           <div>
             <i class="fas fa-user-graduate"></i>
@@ -286,15 +267,11 @@
             <p>Partners</p>
           </div>
         </div>
-
-        <!-- Call to Action -->
         <div class="footer-cta fade-in">
           <p>Be part of our journey in empowering youth!</p>
           <a href="donate.html" class="btn">Donate</a>
           <a href="project.html" class="btn btn-outline">Join Us</a>
         </div>
-
-        <!-- Quick Links -->
         <div class="footer-links fade-in">
           <a href="index.html">Home</a> |
           <a href="about.html">About Us</a> |
@@ -303,8 +280,6 @@
           <a href="donate.html">Donate</a> |
           <a href="contact.html">Contact</a>
         </div>
-
-        <!-- Social Media Links -->
         <div class="footer-social fade-in">
           <a href="https://www.facebook.com/share/1CMmXdbfuc/?mibextid=wwXIfr" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/creation_steppers1?igsh=MXNvZDNpYmdncTZwNQ%3D%3D&utm_source=qr" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
@@ -313,17 +288,12 @@
           <a href="https://www.tiktok.com/@creation_steppers?_r=1&_t=ZS-93ylxv4hl1I" title="Follow us on TikTok"><i class="fab fa-tiktok"></i></a>
           <a href="https://www.youtube.com/@creationsteppersyouthdevel8209" title="Subscribe on YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-
-        <!-- Quote -->
         <div class="footer-quote fade-in">
           <p>"Empowering youth is not a task, it's a legacy we leave for tomorrow."</p>
         </div>
-
-        <!-- Footer Bottom -->
         <div class="footer-bottom fade-in">
           &copy; <span id="year"></span> CSYDI. All rights reserved.
         </div>
-
       </div>
     </div>
   </footer>
@@ -364,52 +334,12 @@
     📧 Feedback
   </a>
 
+  <!-- ===== INCLUDE MAIN SCRIPT ===== -->
+  <script src="script.js" defer></script>
+
+  <!-- ===== PAGE-SPECIFIC FORM SCRIPTS ===== -->
   <script>
-    // Set copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Back to top button
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
-    hamburger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.navbar a').forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('active');
-      });
-    });
-
-    // Tab switching
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const formSections = document.querySelectorAll('.apply-section');
-
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tab = btn.getAttribute('data-tab');
-        
-        // Remove active class from all buttons and sections
-        tabBtns.forEach(b => b.classList.remove('active'));
-        formSections.forEach(s => s.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding section
-        btn.classList.add('active');
-        document.getElementById(tab).classList.add('active');
-      });
-    });
-
-    // Employment Form submission
+    // Employment form submission (with file)
     const employmentForm = document.getElementById('employmentForm');
     const empSubmitBtn = document.getElementById('emp_submitBtn');
     const empSuccessMsg = document.getElementById('emp_successMsg');
@@ -422,10 +352,11 @@
       empErrorMsg.classList.remove('visible');
       empErrorMsg.textContent = '';
 
+      const formData = new FormData(employmentForm);
       try {
         const res = await fetch(employmentForm.action, {
           method: 'POST',
-          body: new FormData(employmentForm),
+          body: formData,
           headers: { 'Accept': 'application/json' }
         });
 
@@ -446,7 +377,7 @@
       }
     });
 
-    // Volunteer Form submission
+    // Volunteer form submission
     const volunteerForm = document.getElementById('volunteerForm');
     const volSubmitBtn = document.getElementById('vol_submitBtn');
     const volSuccessMsg = document.getElementById('vol_successMsg');
@@ -477,14 +408,24 @@
       } catch (err) {
         console.error('Submission error:', err);
         volSubmitBtn.disabled = false;
-        volSubmitBtn.textContent = 'Submit Application';
+        volSubmitBtn.textContent = 'Submit Volunteer Application';
         volErrorMsg.textContent = err.message || 'Something went wrong. Please try again.';
         volErrorMsg.classList.add('visible');
       }
     });
-  </script>
 
+    // Tab switching (already in the page)
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const formSections = document.querySelectorAll('.apply-section');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        tabBtns.forEach(b => b.classList.remove('active'));
+        formSections.forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
-
-

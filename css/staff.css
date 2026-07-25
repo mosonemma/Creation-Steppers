@@ -333,6 +333,151 @@ body {
   color: #fff;
 }
 
+/* ===================================================================
+   BOARD OF GOVERNORS — TREE STRUCTURE (pure CSS org chart)
+   Connectors are drawn by ::before/::after based on nesting depth,
+   so adding/removing <li> items in the HTML re-draws the tree
+   automatically — no positions to hand-tune.
+   =================================================================== */
+#board {
+  padding: 90px 0 100px;
+  text-align: center;
+  background: #f7f9f7;
+}
+
+#board h2 {
+  font-size: 2rem;
+  color: #2e7d32;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.board-intro {
+  color: #555;
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto 50px;
+}
+
+.org-tree {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.org-tree ul {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  position: relative;
+}
+
+.org-tree ul ul {
+  padding-top: 40px;
+}
+
+.org-tree li {
+  list-style-type: none;
+  position: relative;
+  padding: 40px 14px 0 14px;
+  text-align: center;
+}
+
+/* horizontal + vertical connector lines between a parent and its children (desktop) */
+.org-tree li::before,
+.org-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 50%;
+  height: 40px;
+  border-top: 2px solid #2e7d32;
+}
+
+.org-tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #2e7d32;
+}
+
+.org-tree li:only-child::before,
+.org-tree li:only-child::after {
+  display: none;
+}
+
+.org-tree li:only-child {
+  padding-top: 0;
+}
+
+.org-tree li:first-child::before,
+.org-tree li:last-child::after {
+  border: 0 none;
+}
+
+.org-tree li:last-child::before {
+  border-right: 2px solid #2e7d32;
+  border-radius: 0 6px 0 0;
+}
+
+.org-tree li:first-child::after {
+  border-radius: 6px 0 0 0;
+}
+
+/* the stem connecting a node down to its own children (desktop) */
+.org-tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 40px;
+  border-left: 2px solid #2e7d32;
+}
+
+.org-node {
+  display: inline-block;
+  background: #fff;
+  border: 2px solid #2e7d32;
+  border-radius: 16px;
+  padding: 18px 16px;
+  min-width: 170px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-node:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+.org-node img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2e7d32;
+  margin-bottom: 10px;
+  background: #eee;
+}
+
+.org-node h3 {
+  font-size: 0.98rem;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.org-node p {
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.org-node .view-profile {
+  font-size: 0.78rem;
+  padding: 6px 12px;
+}
+
 /* === Responsive Design === */
 @media (max-width: 768px) {
   .staff-grid {
@@ -353,6 +498,38 @@ body {
     width: 35px;
     height: 35px;
     font-size: 16px;
+  }
+
+  /* Below 768px the branching lines are dropped entirely. Hierarchy is
+     shown through order and indentation instead: each nested level
+     (ul ul, ul ul ul...) indents a bit further than its parent, so the
+     Chairperson reads first, then Vice Chair/Secretary/Treasurer below
+     and slightly indented, then Board Members indented one level further
+     still — top to bottom in rank order. */
+  .org-tree ul {
+    display: block;
+    padding-top: 0;
+  }
+
+  .org-tree ul ul {
+    padding-top: 0;
+    margin: 14px 0 0 24px;
+  }
+
+  .org-tree li {
+    display: block;
+    text-align: left;
+    padding: 14px 0 0 0;
+  }
+
+  .org-tree li::before,
+  .org-tree li::after {
+    display: none;
+  }
+
+  .org-node {
+    display: inline-block;
+    text-align: left;
   }
 }
 
@@ -378,6 +555,18 @@ body {
   .staff-card img {
     width: 110px;
     height: 110px;
+  }
+
+  #board {
+    padding: 60px 0 70px;
+  }
+
+  #board h2 {
+    font-size: 1.5rem;
+  }
+
+  .org-tree ul ul {
+    margin-left: 16px;
   }
 }
 

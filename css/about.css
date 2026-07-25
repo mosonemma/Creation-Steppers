@@ -43,7 +43,7 @@ body {
   color: #fff;
   background:
     linear-gradient(120deg, rgba(10,15,36,0.72), rgba(20,70,32,0.42)),
-    url("photos/about/aboutbk.webp") center / cover no-repeat;
+    var(--about-bg) center / cover no-repeat;
 }
 
 .about-hero::after {

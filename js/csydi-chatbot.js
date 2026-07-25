@@ -43,8 +43,8 @@ var HTML = ""
 +"</svg></div>"
 +"<div id='csydi-window'>"
 +"<div id='csydi-header'>"
-+"<div class='avatar'>CS</div>"
-+"<div class='titles'><div class='name'>CSYDI Assistant</div><div class='status'><span class=\"dot\"></span>Usually replies instantly</div></div>"
++"<div class='avatar'>AS</div>"
++"<div class='titles'><div class='name'>Akiror Seraphina (CSYDI Assistant)</div><div class='status'><span class=\"dot\"></span>Usually replies instantly</div></div>"
 +"<button id='csydi-close'>&times;</button>"
 +"</div>"
 +"<div id='csydi-body'></div>"
@@ -67,7 +67,7 @@ var CSYDI_KB = [
   { keys:["mandate","christ","ephesians","faith"],
     a:"Our mandate: \"Created for a life of good deeds through Christ Jesus\" (Ephesians 2:10)." },
   { keys:["about","who are you","who is csydi","tell me about"],
-    a:"Creation Steppers Youth Development Initiative (CSYDI) is a community-based organization in Uganda building skills, creativity and empowerment among young people through art, education and social action. Read more on our <a href='https://creation-steppers.netlify.app/about' target='_blank'>Our Story page</a>." },
+    a:"Creation Steppers Youth Development Initiative (CSYDI) is a community-based organization in Uganda building skills, creativity and empowerment among young people through art, education and social action. Read more on our <a href='https://csydi.netlify.app/about' target='_blank'>Our Story page</a>." },
   { keys:["history","started","founded","origin","journey","timeline","milestone"],
     a:"CSYDI began in 2011 as Creation Steppers Music Empire (CSME), a music/dance/drama group. In 2015 it expanded into drama and dance projects on FGM and early marriage. In 2018 it was officially registered as CSYDI. 2023 brought digital-skills projects, 2024 saw a music studio expansion, 2025 strengthened the Annual River Carnival, and 2026 launched the Annual Excursion Initiative." },
   { keys:["objective","core objective","what do you focus on"],
@@ -85,27 +85,27 @@ var CSYDI_KB = [
   { keys:["girl","girls","menstrual","female","girlh"],
     a:"Yes — we run girl-centered programs on menstrual health, FGM prevention, leadership and livelihoods, including the Mercy Corps-funded GIRLH project (Girls Improving Resilience through Livelihoods and Health, 2021–2023) among the Pokot of Amudat District." },
   { keys:["volunteer"],
-    a:"You can volunteer by filling the Volunteer Application on our <a href='https://creation-steppers.netlify.app/apply' target='_blank'>Apply Now page</a> — choose your area of interest (Youth Programs, Community Outreach, Advocacy, Events & Activities, or Other) and tell us why you'd like to join." },
+    a:"You can volunteer by filling the Volunteer Application on our <a href='https://csydi.netlify.app/apply' target='_blank'>Apply Now page</a> — choose your area of interest (Youth Programs, Community Outreach, Advocacy, Events & Activities, or Other) and tell us why you'd like to join." },
   { keys:["job","career","employment","hiring","vacancy","staff position"],
-    a:"For staff positions, use the Employment Application on our <a href='https://creation-steppers.netlify.app/apply' target='_blank'>Apply Now page</a>. You'll submit your name, email, phone, the position (Program Officer, Field Coordinator, Communications Officer, Project Manager, or Other), and a shareable CV/cover letter link (Google Drive, Dropbox or WeTransfer)." },
+    a:"For staff positions, use the Employment Application on our <a href='https://csydi.netlify.app/apply' target='_blank'>Apply Now page</a>. You'll submit your name, email, phone, the position (Program Officer, Field Coordinator, Communications Officer, Project Manager, or Other), and a shareable CV/cover letter link (Google Drive, Dropbox or WeTransfer)." },
   { keys:["apply","application","sign up","register","join"],
-    a:"You can apply as staff or as a volunteer on our <a href='https://creation-steppers.netlify.app/apply' target='_blank'>Apply Now page</a>." },
+    a:"You can apply as staff or as a volunteer on our <a href='https://csydi.netlify.app/apply' target='_blank'>Apply Now page</a>." },
   { keys:["donate","donation","fund","give money","sponsor","how much","payment method","mobile money"],
-    a:"You can donate one-time or monthly via card (Visa/Mastercard), MTN Mobile Money or Airtel Money on our <a href='https://creation-steppers.netlify.app/donate' target='_blank'>Support Us page</a>. Suggested amounts are $10, $25, $50 or $100, or you can enter a custom amount. Donations fund Youth Education Programs, ICT Training, Community Arts & Campaigns, and Sustainability Projects." },
+    a:"You can donate one-time or monthly via card (Visa/Mastercard), MTN Mobile Money or Airtel Money on our <a href='https://csydi.netlify.app/donate' target='_blank'>Support Us page</a>. Suggested amounts are $10, $25, $50 or $100, or you can enter a custom amount. Donations fund Youth Education Programs, ICT Training, Community Arts & Campaigns, and Sustainability Projects." },
   { keys:["support","help out","get involved"],
-    a:"You can get involved by volunteering, applying for a job, donating, or partnering with us — check <a href='https://creation-steppers.netlify.app/apply' target='_blank'>Apply Now</a> or <a href='https://creation-steppers.netlify.app/donate' target='_blank'>Support Us</a>." },
+    a:"You can get involved by volunteering, applying for a job, donating, or partnering with us — check <a href='https://csydi.netlify.app/apply' target='_blank'>Apply Now</a> or <a href='https://csydi.netlify.app/donate' target='_blank'>Support Us</a>." },
   { keys:["contact","phone","email","reach you","number","whatsapp"],
-    a:"You can reach CSYDI at:<br>📞 0393 254 319 (also WhatsApp)<br>✉️ creationsteppersinitiative@gmail.com<br>🌐 www.csydi.org<br>Or visit our <a href='https://creation-steppers.netlify.app/contact' target='_blank'>Contact page</a>." },
+    a:"You can reach CSYDI at:<br>📞 0393 254 319 (also WhatsApp)<br>✉️ creationsteppersinitiative@gmail.com<br>🌐 www.csydi.org<br>Or visit our <a href='https://csydi.netlify.app/contact' target='_blank'>Contact page</a>." },
   { keys:["location","where","based","address","office","amudat","kampala"],
     a:"CSYDI's offices are in Amudat District, Uganda, with program activities across several districts (including Loroo and Abiliyep Sub-counties). Our contact page also lists a Kampala, Uganda address." },
   { keys:["team","who runs","leadership","ceo","director","founder"],
     a:"Our team: Etapukan Moses Isura (a.k.a Mozerox) — CEO; Loduk Samuel — Programs Manager; Ikoojo Michael Isura — M&E; Chepkemoi Brenda — Project Officer; Chemutai Elizabeth — Operations Officer; Akiror Seraphina — Office Assistant; Moson Emmanuel — Information & Technology. See <a href='https://creation-steppers.netlify.app/staff' target='_blank'>Our Team page</a>." },
   { keys:["staff"],
-    a:"Meet the CSYDI staff on our <a href='https://creation-steppers.netlify.app/staff' target='_blank'>Our Team page</a> — it includes our CEO, Programs Manager, M&E lead, Project Officer, Operations Officer, Office Assistant and IT lead." },
+    a:"Meet the CSYDI staff on our <a href='https://csydi.netlify.app/staff' target='_blank'>Our Team page</a> — it includes our CEO, Programs Manager, M&E lead, Project Officer, Operations Officer, Office Assistant and IT lead." },
   { keys:["partner","partners","sponsor","actionaid","mercy corps","brac","taso","cecore","khh","defenders","defenddefenders"],
     a:"Our partners include: <b>Mercy Corps</b> (2021–2023, GIRLH project), <b>BRAC</b> (2019–2020, youth skilling), <b>TASO</b> (2021–2022, HIV/AIDS prevention), <b>Kalya FM</b> (2019–present, radio), <b>CECORE</b> (2021–2022, peace/Youth Peace Champions), <b>KHH</b> (2024–2025, peace, gender equality & climate resilience), <b>DefendDefenders</b> (2023–recent, digital/physical security capacity building), and <b>ActionAid with the EU</b> (2026, ongoing, Simama! project)." },
   { keys:["gallery","photo","photos","pictures","moments"],
-    a:"Check out photos from our events and programs on <a href='https://creation-steppers.netlify.app/photo' target='_blank'>Our Moments gallery</a>." },
+    a:"Check out photos from our events and programs on <a href='https://csydi.netlify.app/photo' target='_blank'>Our Moments gallery</a>." },
   { keys:["policy","policies","governance","safeguarding","hr policy","finance policy","procurement","travel policy"],
     a:"Our Governance & Policies cover: Human Resource Policy (fair, inclusive practices), Finance Policy (accountability & transparency), Procurement Policy (fair, ethical sourcing), Travel Policy (cost-effective, accountable travel), and Safeguarding & Community Protection (protecting children/youth from harm, incl. eliminating FGM). Full documents are available on request — see <a href='https://creation-steppers.netlify.app/policies' target='_blank'>Governance & Policies</a>." },
   { keys:["social","facebook","instagram","tiktok","twitter","x.com","youtube","linkedin"],
@@ -120,7 +120,7 @@ var CSYDI_KB = [
     a:"You're very welcome! Feel free to ask me anything else about CSYDI. 🌱" }
 ];
 
-var FALLBACK = "I don't have that exact answer yet, but our team can help directly — email creationsteppersinitiative@gmail.com, call 0393 254 319, or use the <a href='https://creation-steppers.netlify.app/contact' target='_blank'>Contact page</a>. You can also ask me about our mission, projects, team, volunteering, donating, or applying.";
+var FALLBACK = "I don't have that exact answer yet, but our team can help directly — email creationsteppersinitiative@gmail.com, call 0393 254 319, or use the <a href='https://csydi.netlify.app/contact' target='_blank'>Contact page</a>. You can also ask me about our mission, projects, team, volunteering, donating, or applying.";
 var QUICK_REPLIES = ["Our programs", "How to volunteer", "How to donate", "Contact info"];
 var opened = false;
 

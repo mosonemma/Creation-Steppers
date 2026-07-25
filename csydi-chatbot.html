@@ -53,12 +53,14 @@
     display:flex; align-items:center; gap:10px;
     border-bottom:3px solid var(--csydi-lime);
   }
-  #csydi-header .avatar{
-    width:36px;height:36px;border-radius:50%;
-    background:var(--csydi-lime); color:var(--csydi-green-dark);
-    display:flex;align-items:center;justify-content:center;
-    font-weight:700; font-size:15px; flex-shrink:0;
-  }
+ .avatar {
+  width: 50px;
+  height: 50px;
+  background-image: url('photos/staffs/moson.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
   #csydi-header .titles{ flex:1; min-width:0; }
   #csydi-header .titles .name{ font-weight:700; font-size:14.5px; }
   #csydi-header .titles .status{ font-size:11.5px; color:var(--csydi-lime); display:flex; align-items:center; gap:5px; }
@@ -134,9 +136,10 @@
 
 <div id="csydi-window">
   <div id="csydi-header">
-    <div class="avatar">CS</div>
+    <div class="avatar"></div>
     <div class="titles">
-      <div class="name">CSYDI Assistant</div>
+      <div class="name">Moson Emma</div>
+      <div class="status">CSYDI Assistant</div>
       <div class="status"><span class="dot"></span>Usually replies instantly</div>
     </div>
     <button id="csydi-close" onclick="csydiToggle()">&times;</button>
@@ -356,6 +359,7 @@ function csydiSend(){
   csydiRespond(text);
 }
 </script>
+<script src="js/csydi-chatbot.js" defer></script>
 
 </body>
 </html>

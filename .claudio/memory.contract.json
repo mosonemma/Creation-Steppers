@@ -1,0 +1,228 @@
+{
+  "version": "1",
+  "workspaceId": "9a86a90d53c3a50d",
+  "workspaceName": "Creation-Steppers-master",
+  "enabled": true,
+  "updatedAt": "2026-07-28T21:12:19.893Z",
+  "detectedStack": {
+    "languages": [
+      "JavaScript/TypeScript"
+    ],
+    "frameworks": [
+      "Express"
+    ],
+    "uiLibraries": [],
+    "orm": [],
+    "authLibraries": [],
+    "validationLibraries": [],
+    "paymentLibraries": [
+      "Stripe"
+    ],
+    "testTools": [],
+    "scripts": {
+      "backend/start": "node server.js",
+      "backend/dev": "nodemon server.js"
+    },
+    "importantDirs": [
+      "backend"
+    ],
+    "sensitiveFiles": []
+  },
+  "sections": {
+    "stack": [],
+    "packageManager": [],
+    "architectureRules": [],
+    "codingConventions": [],
+    "sensitiveFiles": [
+      {
+        "id": "05703663d872dabf",
+        "text": "Environment file: backend/.env",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "backend/.env"
+        },
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      },
+      {
+        "id": "133eb4a3b6f19024",
+        "text": "Environment file: backend/.env.example",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "backend/.env.example"
+        },
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      },
+      {
+        "id": "7a44f9f936714178",
+        "text": "Webhook handler: backend/routes/webhook.js",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "backend/routes/webhook.js"
+        },
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      }
+    ],
+    "forbiddenActions": [
+      {
+        "id": "54f96302c2a895f9",
+        "text": "Never log or commit values for env names: AIRTEL_CLIENT_SECRET, STRIPE_SECRET, MTN_SUBSCRIPTION_KEY, MTN_API_KEY, STRIPE_WEBHOOK_SECRET.",
+        "kind": "constraint",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      }
+    ],
+    "allowedCommands": [
+      {
+        "id": "866b98a23d9ff55a",
+        "text": "npm run start (in backend) -> node server.js",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "backend/package.json"
+        },
+        "appliesTo": [
+          "backend"
+        ],
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      },
+      {
+        "id": "d888bdbe6cd27fd0",
+        "text": "npm run dev (in backend) -> nodemon server.js",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "backend/package.json"
+        },
+        "appliesTo": [
+          "backend"
+        ],
+        "lastVerifiedAt": "2026-07-28T21:12:19.892Z"
+      }
+    ],
+    "businessRules": [],
+    "integrationRules": [],
+    "testingExpectations": [],
+    "agentInstructions": [],
+    "openQuestions": []
+  },
+  "packages": [
+    {
+      "path": "backend",
+      "name": "creation-steppers-donations-backend",
+      "detectedStack": {
+        "languages": [
+          "JavaScript/TypeScript"
+        ],
+        "frameworks": [
+          "Express"
+        ],
+        "uiLibraries": [],
+        "orm": [],
+        "authLibraries": [],
+        "validationLibraries": [],
+        "paymentLibraries": [
+          "Stripe"
+        ],
+        "testTools": [],
+        "scripts": {
+          "start": "node server.js",
+          "dev": "nodemon server.js"
+        },
+        "importantDirs": [],
+        "sensitiveFiles": []
+      },
+      "items": [
+        {
+          "id": "backend:fact:Project name: creation-steppers-donation",
+          "text": "Project name: creation-steppers-donations-backend",
+          "kind": "fact",
+          "source": "repo_detected",
+          "confidence": "confirmed",
+          "scope": "package",
+          "evidence": {
+            "file": "backend/package.json"
+          },
+          "appliesTo": [
+            "backend"
+          ],
+          "lastVerifiedAt": "2026-07-28T21:12:19.890Z"
+        },
+        {
+          "id": "backend:fact:Framework detected: Express.",
+          "text": "Framework detected: Express.",
+          "kind": "fact",
+          "source": "repo_detected",
+          "confidence": "confirmed",
+          "scope": "package",
+          "evidence": {
+            "file": "backend/package.json"
+          },
+          "appliesTo": [
+            "backend"
+          ],
+          "lastVerifiedAt": "2026-07-28T21:12:19.890Z"
+        },
+        {
+          "id": "backend:command:npm run start -> node server.js",
+          "text": "npm run start -> node server.js",
+          "kind": "command",
+          "source": "repo_detected",
+          "confidence": "confirmed",
+          "scope": "package",
+          "evidence": {
+            "file": "backend/package.json"
+          },
+          "appliesTo": [
+            "backend"
+          ],
+          "lastVerifiedAt": "2026-07-28T21:12:19.890Z"
+        },
+        {
+          "id": "backend:command:npm run dev -> nodemon server.js",
+          "text": "npm run dev -> nodemon server.js",
+          "kind": "command",
+          "source": "repo_detected",
+          "confidence": "confirmed",
+          "scope": "package",
+          "evidence": {
+            "file": "backend/package.json"
+          },
+          "appliesTo": [
+            "backend"
+          ],
+          "lastVerifiedAt": "2026-07-28T21:12:19.890Z"
+        },
+        {
+          "id": "backend:constraint:Payment integrations: Stripe. Verify web",
+          "text": "Payment integrations: Stripe. Verify webhook signatures before trusting events.",
+          "kind": "constraint",
+          "source": "repo_detected",
+          "confidence": "confirmed",
+          "scope": "package",
+          "evidence": {
+            "file": "backend/package.json"
+          },
+          "appliesTo": [
+            "backend"
+          ],
+          "lastVerifiedAt": "2026-07-28T21:12:19.890Z"
+        }
+      ]
+    }
+  ]
+}

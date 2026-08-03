@@ -198,3 +198,24 @@ body {
     text-align: center;
   }
 }
+.footer-col {
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.social-icons a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}

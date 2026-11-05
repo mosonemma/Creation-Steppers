@@ -13,7 +13,6 @@ html {
 body {
   background-color: #fff;
   color: #333;
-  padding-top: 120px;
 }
 
 /* ===================== CONTAINER ===================== */
@@ -21,59 +20,6 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* ===================== HEADER ===================== */
-.header {
-  width: 100%;
-  background: #fff;
-  padding: 30px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.4s ease;
-}
-
-.header.hide {
-  transform: translateY(-100%);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 150px;
-  width: auto;
-}
-
-/* ===================== NAVIGATION ===================== */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  color: #2e7d32;
 }
 
 /* ===================== FOOTER ===================== */
@@ -610,6 +556,97 @@ body {
   transform: translateX(2px);
 }
 
+/* ===================== SOCIAL CALENDAR ===================== */
+.social-calendar-section {
+  padding: 90px 0;
+  background: #f3f7fa;
+  text-align: center;
+}
+
+.social-calendar-section .news-header {
+  margin-bottom: 36px;
+}
+
+.social-calendar-intro {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: #536170;
+  line-height: 1.6;
+}
+
+.social-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.social-calendar-card {
+  overflow: hidden;
+  border: 1px solid rgba(16, 54, 87, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(16, 54, 87, 0.08);
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-calendar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(16, 54, 87, 0.14);
+}
+
+.social-calendar-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.social-calendar-card figcaption {
+  padding: 13px 15px;
+  color: #12385b;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.social-calendar-follow {
+  margin-top: 34px;
+}
+
+.social-calendar-follow > p {
+  margin-bottom: 14px;
+  color: #34495c;
+  font-weight: 600;
+}
+
+.social-calendar-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-calendar-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(18, 56, 91, 0.18);
+  border-radius: 999px;
+  color: #12385b;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.social-calendar-links a:hover {
+  border-color: #12385b;
+  background: #12385b;
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   .news {
     padding: 60px 0;
@@ -621,6 +658,20 @@ body {
 
   .news-card {
     padding: 24px 20px;
+  }
+
+  .social-calendar-section {
+    padding: 60px 0;
+  }
+
+  .social-calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .social-calendar-card figcaption {
+    padding: 10px;
+    font-size: 0.82rem;
   }
 }
 
@@ -876,66 +927,7 @@ body {
 }
 
 /* ===================== RESPONSIVE ===================== */
-@media (max-width: 1024px) {
-  .navbar ul {
-    gap: 20px;
-  }
-}
-
 @media (max-width: 768px) {
-  /* Hamburger menu visible */
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: rgba(255,255,255,0.96);
-    z-index: 1100;
-  }
-
-  .navbar.active {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-
-  .navbar.active ul {
-    display: flex;
-  }
-
-  .navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-  .navbar ul li a {
-    padding: 15px 0;
-    display: block;
-    color: #333;
-  }
-
-  /* Resize logo and text */
-  .logo img {
-    height: 60px;
-  }
-
-  .logo span {
-    font-size: 1.2rem;
-  }
-
-  /* Hero text */
   .hero-text h1 {
     font-size: 2.2rem;
   }
@@ -953,11 +945,4 @@ body {
   .hero-text p {
     font-size: 0.95rem;
   }
-}
-
-/* Small phones (iPhone 12 - 390px) */
-@media (max-width: 390px) {
-  .logo img { height: 45px; }
-  .logo span { font-size: 1rem; }
-  .logo { gap: 8px; }
 }

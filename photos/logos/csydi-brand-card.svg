@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 132" role="img" aria-labelledby="brand-title brand-description">
+  <title id="brand-title">Creation Steppers Youth Development Initiative (CSYDI)</title>
+  <desc id="brand-description">Creation Steppers emblem alongside the organization name and abbreviation.</desc>
+  <defs>
+    <linearGradient id="brand-background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f3f8fd"/>
+    </linearGradient>
+    <linearGradient id="brand-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d4b95"/>
+      <stop offset="1" stop-color="#5b9bd5"/>
+    </linearGradient>
+    <filter id="brand-shadow" x="-10%" y="-15%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#082d53" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="552" height="124" rx="18" fill="url(#brand-background)" stroke="#d7e5f2" stroke-width="2" filter="url(#brand-shadow)"/>
+  <path d="M22 5h516" stroke="url(#brand-accent)" stroke-linecap="round" stroke-width="3"/>
+  <rect x="20" y="21" width="86" height="90" rx="17" fill="#eaf3fb"/>
+  <rect x="28" y="28" width="70" height="76" rx="13" fill="#fff" stroke="#d6e5f2"/>
+  <g transform="translate(30 33)">
+    <circle cx="13" cy="16" r="4.6" fill="#0d4b95"/>
+    <rect x="8" y="24" width="9" height="32" rx="1" fill="#0d4b95"/>
+    <path d="M17 24 39 19v6l-22 6z" fill="#0d4b95"/>
+    <circle cx="52" cy="10" r="3.6" fill="#5b9bd5"/>
+    <path d="m40 20 15-5v22l-5 3V22l-9 3z" fill="#5b9bd5"/>
+    <path d="M21 44Q37 30 57 40M25 50Q39 40 54 46" fill="none" stroke="#5b9bd5" stroke-linecap="round" stroke-width="3.2"/>
+  </g>
+  <path d="M123 27v78" stroke="#d7e5f2" stroke-width="2"/>
+  <text x="145" y="55" fill="#082d53" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" letter-spacing=".25">CREATION STEPPERS YOUTH</text>
+  <text x="145" y="85" fill="#2675b9" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600" letter-spacing=".5">DEVELOPMENT INITIATIVE</text>
+  <rect x="448" y="68" width="94" height="28" rx="14" fill="#edf4fa" stroke="#d7e5f2"/>
+  <circle cx="462" cy="82" r="3" fill="#e9a81a"/>
+  <text x="474" y="87" fill="#082d53" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="1.5">CSYDI</text>
+</svg>

@@ -244,6 +244,14 @@ body {
   object-fit: cover;
 }
 
+.footer-logo img.brand-card {
+  width: min(100%, 420px);
+  height: auto;
+  max-height: none;
+  border-radius: 0;
+  object-fit: contain;
+}
+
 .footer-logo .tagline {
   color: #ddd;
   font-size: 14px;

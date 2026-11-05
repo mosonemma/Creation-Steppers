@@ -55,83 +55,6 @@ html, body {
 }
 
 /* ===================================== */
-/* HEADER */
-/* ===================================== */
-.header {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.4s ease, background-color 0.3s ease;
-  padding: 20px 0;
-}
-
-.header.hide {
-  transform: translateY(-100%);
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 80px;
-  width: auto;
-}
-
-.logo span {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #2e7d32;
-}
-
-/* NAVIGATION */
-/* NAV/HAMBURGER STYLES MOVED TO common.css - per-page rules disabled */
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  min-width: 150px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 2px 0;
-  z-index: 999;
-}
-
-.dropdown-menu li {
-  width: 100%;
-}
-
-.dropdown-menu a {
-  padding: 6px 12px !important;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  display: block;
-  transition: all 0.2s ease;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(46, 125, 50, 0.1);
-  padding-left: 16px !important;
-}
-
-/* NAV/HAMBURGER rules moved to common.css */
-
-/* ===================================== */
 /* HERO SECTION */
 /* ===================================== */
 .hero {
@@ -1319,7 +1242,6 @@ html, body {
 /* RESPONSIVE MEDIA QUERIES */
 /* ===================================== */
 @media (max-width: 1024px) {
-  .navbar ul { gap: 20px; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1359,14 +1281,6 @@ html, body {
     max-width: 100%;
   }
 
-  .logo img {
-    height: 60px;
-  }
-
-  .logo span {
-    font-size: 1.2rem;
-  }
-
   .project-grid { grid-template-columns: 1fr; }
   .projects { padding-top: 100px; }
 }
@@ -1393,9 +1307,6 @@ html, body {
 @media (max-width: 420px) {
   html { -webkit-text-size-adjust: 100%; }
   .container { width: 95%; }
-  .logo img { height: 50px; }
-  .logo span { font-size: 0.95rem; }
-  .navbar ul li a { font-size: 13px; padding: 8px 6px; }
   .projects h1 { font-size: 1.4rem; margin-bottom: 18px; }
   .project-grid { gap: 20px; }
   .project-card { padding: 14px; }
@@ -1403,17 +1314,8 @@ html, body {
   .projects { padding-top: 80px; }
 }
 
-@media (max-width: 390px) {
-  .logo img { height: 45px; }
-  .logo span { font-size: 1rem; }
-  .logo { gap: 8px; }
-}
-
 @media (max-width: 360px) {
-  .logo span { font-size: 0.9rem; }
-  .navbar ul li a { font-size: 12px; }
   .projects h1 { font-size: 1.2rem; }
   .project-card { padding: 12px; }
   .project-card img { height: 120px; }
 }
-

@@ -60,40 +60,6 @@ body {
   .social-top-right { gap: 6px; top: 8px; right: 8px; }
 }
 
-/* Header */
-.header {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.4s ease, background-color 0.3s ease;
-  padding: 20px 0;
-}
-
-.header.hide {
-  transform: translateY(-100%);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 80px;
-  width: auto;
-}
-
-.logo span {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #2e7d32;
-}
-
 /* ======================================================
    DONATION SECTION — modernized
    ====================================================== */
@@ -640,24 +606,12 @@ form .donor-group label {
   .extra-footer-container { grid-template-columns: 1fr; text-align: center; gap: 25px; }
 }
 
-@media (max-width: 1024px) {
-  .navbar ul { gap: 20px; }
-}
-
 @media (max-width: 768px) {
   .hero-text h1 { font-size: 2.2rem; }
   .hero-text p { font-size: 1rem; }
-  .logo img { height: 60px; }
-  .logo span { font-size: 1.2rem; }
 }
 
 @media (max-width: 480px) {
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 0.95rem; }
-}
-
-@media (max-width: 390px) {
-  .logo img { height: 45px; }
-  .logo span { font-size: 1rem; }
-  .logo { gap: 8px; }
 }

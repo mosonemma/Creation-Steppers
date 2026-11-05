@@ -10,7 +10,6 @@ body {
     scroll-behavior: smooth;
     background-color: #fff;
     color: #333;
-    padding-top: 120px;
 }
 
 /*Container*/
@@ -40,74 +39,6 @@ body {
 .social-top-right a:hover {
     color: #1b4d23;
     transform: scale(1.2);
-}
-
-
-/* HEADER */
-.header {
-    width: 100%;
-    background: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: transform .4s ease;
-}
-.header.hide {
-    transform: translateY(-100%);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.logo img {
-    height: 80px;
-}
-.logo span {
-    font-size: 1.6rem;
-    color: #2e7d32;
-    font-weight: bold;
-}
-
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-}
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: .3s;
-}
-.navbar ul li a:hover,
-.navbar ul li a.active {
-    color: #2e7d32;
-}
-
-/* HAMBURGER MENU */
-.hamburger { /* moved to common.css */ }
-
-@media (max-width: 768px) {
-    /* mobile navbar behavior moved to common.css */
-
-    .logo img { height: 60px; }
-    .logo span { font-size: 1.2rem; }
-}
-
-/* Small phones (iPhone 12 - 390px) */
-@media (max-width: 390px) {
-    .logo img { height: 45px; }
-    .logo span { font-size: 1rem; }
-    .logo { gap: 8px; }
 }
 
 
@@ -317,35 +248,5 @@ button:hover, .btn:hover {
 @media (max-width: 1024px) {
     .contact-container {
         grid-template-columns: 1fr;
-    }
-    .navbar ul {
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* mobile navbar behavior moved to common.css; keep layout tweaks */
-
-    .navbar.active ul {
-        display: flex;
-    }
-
-    .navbar ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .navbar ul li a {
-        padding: 15px 0;
-        display: block;
-        color: #333;
-    }
-
-    .logo img {
-        height: 60px;
-    }
-
-    .logo span {
-        font-size: 1.2rem;
     }
 }

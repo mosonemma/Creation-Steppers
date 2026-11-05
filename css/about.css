@@ -30,10 +30,6 @@ body {
   margin: 0 auto;
 }
 
-.header.hide {
-  transform: translateY(-100%);
-}
-
 .about-hero {
   position: relative;
   min-height: calc(100vh - var(--site-header-height, 110px));

@@ -10,7 +10,6 @@ body {
     scroll-behavior: smooth;
     background-color: #fff;
     color: #333;
-    padding-top: 120px;
 }
 
 /*Container*/
@@ -41,64 +40,6 @@ body {
     color: #1b4d23;
     transform: scale(1.2);
 }
-
-/*Header*/
-.header {
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: transform 0.4s ease, background-color 0.3s ease;
-    padding: 20px 0;
-}
-
-.header.hide {
-    transform: translateY(-100%);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.logo img {
-    width: 100%;
-    max-height: 110px;
-    height: auto;
-}
-
-/* NAVBAR */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-    color: #2e7d32;
-}
-
-
 
 /* ===== FAQ HERO ===== */
 .faq-hero {
@@ -688,15 +629,6 @@ body {
     .accordion-panel {
         font-size: 0.95rem;
     }
-    .logo {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    .logo img {
-        height: 60px;
-        width: auto;
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -713,10 +645,3 @@ body {
         font-size: 0.9rem;
     }
 }
-
-/* Small phones (iPhone 12 - 390px) */
-@media (max-width: 390px) {
-    .logo img { height: 45px; width: auto; }
-    .logo { gap: 8px; }
-}
-

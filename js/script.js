@@ -3,17 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
   const header = document.querySelector('.header');
   const dropdowns = document.querySelectorAll('.has-dropdown');
+  const mobileNavigation = window.matchMedia('(max-width: 1150px)');
 
-  const updateHeaderHeight = () => {
-    const root = document.documentElement;
-    if (header) {
-      const h = header.offsetHeight;
-      root.style.setProperty('--header-height', h + 'px');
-      root.style.setProperty('--site-header-height', h + 'px');
-    }
+  const setDropdownState = (drop, isOpen, className = 'force-open') => {
+    drop.classList.toggle(className, isOpen);
+    const link = drop.querySelector(':scope > a');
+    if (link) link.setAttribute('aria-expanded', String(isOpen));
   };
-  updateHeaderHeight();
-  window.addEventListener('resize', updateHeaderHeight);
+
+  const closeDropdowns = () => {
+    dropdowns.forEach(drop => {
+      setDropdownState(drop, false, 'open');
+      setDropdownState(drop, false);
+    });
+  };
+
+  const setMenuState = (isOpen) => {
+    if (!hamburger || !navbar) return;
+    hamburger.classList.toggle('active', isOpen);
+    navbar.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = isOpen && mobileNavigation.matches ? 'hidden' : '';
+    if (!isOpen) closeDropdowns();
+  };
 
   const updateHeaderState = () => {
     if (header) header.classList.toggle('scrolled', window.scrollY > 12);
@@ -21,59 +34,86 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeaderState();
 
   if (hamburger && navbar) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const opening = !hamburger.classList.contains('active');
-      hamburger.classList.toggle('active');
-      navbar.classList.toggle('active');
+    hamburger.addEventListener('click', event => {
+      event.stopPropagation();
+      setMenuState(!navbar.classList.contains('active'));
+    });
 
-      if (!document.body.classList.contains('menu-below-header')) {
-        document.body.style.overflow = opening ? 'hidden' : '';
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target)) {
+        setMenuState(false);
       }
     });
 
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !hamburger.contains(e.target)) {
-        navbar.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.style.overflow = '';
-        dropdowns.forEach(el => el.classList.remove('open'));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navbar.classList.contains('active')) {
+        setMenuState(false);
+        hamburger.focus();
       }
+    });
+
+    navbar.addEventListener('click', event => {
+      const link = event.target.closest('a');
+      if (link) {
+        const dropdown = link.closest('.has-dropdown');
+        if (!dropdown || dropdown.querySelector(':scope > a') !== link) setMenuState(false);
+      }
+    });
+
+    mobileNavigation.addEventListener('change', () => {
+      setMenuState(false);
     });
   }
 
   dropdowns.forEach(drop => {
-    const link = drop.querySelector('a');
+    const link = drop.querySelector(':scope > a');
+    if (!link) return;
 
     link.addEventListener('click', (e) => {
-      if (window.innerWidth < 900) {
+      if (mobileNavigation.matches) {
         e.preventDefault();
         const isOpen = drop.classList.contains('open');
-        dropdowns.forEach(d => d.classList.remove('open'));
-        if (!isOpen) drop.classList.add('open');
+        closeDropdowns();
+        if (!isOpen) setDropdownState(drop, true, 'open');
       }
     });
 
     drop.addEventListener('mouseenter', () => {
-      if (window.innerWidth >= 900) {
+      if (!mobileNavigation.matches) {
         dropdowns.forEach(d => {
-          if (d !== drop) d.classList.remove('force-open');
+          if (d !== drop) setDropdownState(d, false);
         });
-        drop.classList.add('force-open');
+        setDropdownState(drop, true);
       }
     });
 
     drop.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 900) {
-        drop.classList.remove('force-open');
+      if (!mobileNavigation.matches && !drop.matches(':focus-within')) {
+        setDropdownState(drop, false);
+      }
+    });
+
+    drop.addEventListener('focusin', () => {
+      if (!mobileNavigation.matches) setDropdownState(drop, true);
+    });
+
+    link.addEventListener('focus', () => {
+      if (!mobileNavigation.matches) setDropdownState(drop, true);
+    });
+
+    drop.addEventListener('focusout', event => {
+      if (!mobileNavigation.matches && !drop.contains(event.relatedTarget)) {
+        setDropdownState(drop, false);
       }
     });
   });
 
   if (navbar) {
     navbar.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 900) {
-        dropdowns.forEach(d => d.classList.remove('force-open'));
+      if (!mobileNavigation.matches) {
+        dropdowns.forEach(drop => {
+          if (!drop.matches(':focus-within')) setDropdownState(drop, false);
+        });
       }
     });
   }

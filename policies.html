@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/policies.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="icon" type="image/png" href="photos/logos/cs.webp">
+  <link rel="icon" type="image/svg+xml" href="photos/logos/csydi-header-logo.svg">
 </head>
 
 <body class="menu-below-header">
@@ -17,24 +17,30 @@
   <header class="header">
     <div class="container">
       <!-- LOGO -->
-      <div class="logo">
-        <img src="photos/logos/csydi logo.webp" alt="CSYDI Logo">
-      </div>
+      <a class="brand-block" href="index.html" aria-label="Creation Steppers Youth Development Initiative home">
+        <img class="brand-mark" src="photos/logos/csydi-header-logo.svg" width="62" height="62" decoding="async" alt="">
+        <span class="brand-copy">
+          <span class="brand-title-primary">CREATION STEPPERS YOUTH</span>
+          <span class="brand-title-secondary">DEVELOPMENT INITIATIVE</span>
+          <span class="brand-acronym">CSYDI</span>
+        </span>
+      </a>
+
+      <a class="header-donate-mobile" href="donate.html">Donate</a>
 
       <!-- HAMBURGER -->
-      <div class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" type="button" aria-controls="navbar" aria-expanded="false" aria-label="Open menu">
         <span></span>
         <span></span>
         <span></span>
-        <div class="menu-text">Menu</div>
-      </div>
+      </button>
 
       <!-- NAVBAR -->
-      <nav class="navbar" id="navbar">
+      <nav class="navbar" id="navbar" aria-label="Main navigation">
         <ul>
           <!-- WHO WE ARE -->
           <li class="has-dropdown">
-            <a href="#about">Who We Are</a>
+            <a href="#about" aria-expanded="false">Who We Are</a>
             <ul class="dropdown">
               <li><a href="index.html">Overview</a></li>
               <li><a href="about.html">Our Story</a></li>
@@ -44,7 +50,7 @@
 
           <!-- WHAT WE DO -->
           <li class="has-dropdown">
-            <a href="#projects">What We Do</a>
+            <a href="#projects" aria-expanded="false">What We Do</a>
             <ul class="dropdown">
               <li><a href="project.html">Our Projects</a></li>
               <li><a href="photo.html">Our Moments</a></li>
@@ -54,7 +60,7 @@
 
           <!-- GET INVOLVED -->
           <li class="has-dropdown">
-            <a href="#contact">Get Involved</a>
+            <a href="#contact" aria-expanded="false">Get Involved</a>
             <ul class="dropdown">
               <li><a href="contact.html">Contact Us</a></li>
               <li><a href="donate.html">Support Us</a></li>
@@ -64,11 +70,12 @@
 
           <!-- OUR POLICIES -->
           <li class="has-dropdown">
-            <a href="#policies">Our Policies</a>
+            <a href="#policies" aria-expanded="false">Our Policies</a>
             <ul class="dropdown">
               <li><a href="policies.html">Governance & Policies</a></li>
             </ul>
           </li>
+         <li class="nav-donate-item"><a class="nav-donate" href="donate.html">Donate</a></li>
         </ul>
       </nav>
     </div>

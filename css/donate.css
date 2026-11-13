@@ -615,3 +615,28 @@ form .donor-group label {
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 0.95rem; }
 }
+
+.donate-section {
+  min-height: calc(100vh - var(--site-header-height));
+  padding: clamp(132px, 18vh, 185px) 20px 80px;
+}
+
+.donate-card {
+  min-width: 0;
+}
+
+.card-number-preview {
+  font-size: clamp(0.85rem, 4vw, 1.08rem);
+  letter-spacing: clamp(1px, 1vw, 3px);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .donate-section {
+    padding: 126px 12px 64px;
+  }
+
+  .donate-card {
+    padding: 28px 18px;
+  }
+}

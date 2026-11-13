@@ -385,11 +385,6 @@ html, body {
   }
 }
 
-/* ===================================== */
-  margin-bottom: 8px;
-  color: #2e7d32;
-}
-
 .project-card p {
   color: #555;
   line-height: 1.5;
@@ -1318,4 +1313,35 @@ html, body {
   .projects h1 { font-size: 1.2rem; }
   .project-card { padding: 12px; }
   .project-card img { height: 120px; }
+}
+
+@media (max-width: 620px) {
+  .details-container {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-card {
+    min-width: 0;
+    padding: 18px 12px;
+  }
+
+  .metric-number {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .hero-label {
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .metrics-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

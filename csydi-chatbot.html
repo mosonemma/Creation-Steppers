@@ -38,7 +38,10 @@
 
   #csydi-window{
     position:fixed; bottom:96px; right:24px; z-index:999999;
-    width:360px; max-width:92vw; height:520px; max-height:78vh;
+    width:min(360px, calc(100vw - 32px));
+    max-width:calc(100vw - 32px);
+    height:520px;
+    max-height:min(78vh, calc(100vh - 120px));
     background:var(--csydi-cream);
     border-radius:16px; overflow:hidden;
     box-shadow:0 12px 40px rgba(0,0,0,0.4);
@@ -122,7 +125,26 @@
   }
 
   @media (max-width:480px){
-    #csydi-window{ width:94vw; right:3vw; bottom:90px; height:72vh; }
+    #csydi-window{
+      width:calc(100vw - 24px);
+      max-width:360px;
+      right:calc(12px + env(safe-area-inset-right));
+      bottom:calc(90px + env(safe-area-inset-bottom));
+      height:72vh;
+      height:min(72dvh, calc(100dvh - 120px));
+      max-height:calc(100vh - 120px);
+      max-height:calc(100dvh - 120px);
+    }
+  }
+
+  @media (max-height: 480px) and (orientation: landscape) {
+    #csydi-window {
+      bottom:calc(84px + env(safe-area-inset-bottom));
+      height:calc(100vh - 100px);
+      height:calc(100dvh - 100px);
+      max-height:calc(100vh - 100px);
+      max-height:calc(100dvh - 100px);
+    }
   }
 </style>
 </head>

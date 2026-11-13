@@ -645,3 +645,26 @@ body {
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 600px) {
+    .faq-container,
+    .faq-grid,
+    .faq-card,
+    aside.faq-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+    aside.faq-card {
+        padding: 18px;
+    }
+
+    .faq-cta-container {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .faq-cta-actions > a {
+        flex: 1 1 150px;
+    }
+}

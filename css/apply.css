@@ -626,3 +626,22 @@ input[type="file"]:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media (max-width: 768px) {
+  .apply-hero {
+    height: auto;
+    min-height: 360px;
+    min-height: clamp(360px, 62svh, 560px);
+    padding: 48px 20px;
+  }
+
+  .apply-hero h1 {
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+  }
+
+  .apply-hero .tagline {
+    max-width: 38rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

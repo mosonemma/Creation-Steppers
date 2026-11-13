@@ -946,3 +946,32 @@ body {
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 640px) {
+  .hero {
+    height: auto;
+    min-height: calc(100vh - var(--site-header-height));
+    min-height: calc(100svh - var(--site-header-height));
+    padding: clamp(42px, 8vh, 72px) 16px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
+  .program-cards,
+  .gallery-grid,
+  .news-grid,
+  .testimonial-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gallery-grid,
+  .news-grid {
+    width: 100%;
+  }
+}

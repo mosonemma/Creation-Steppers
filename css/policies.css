@@ -218,3 +218,13 @@ body {
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
+
+@media (max-width: 480px) {
+  .policies h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .policy p {
+    overflow-wrap: anywhere;
+  }
+}

@@ -163,12 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const topBtn = document.getElementById("backToTop");
   let lastScrollY = window.scrollY;
 
+  const updateBackToTop = () => {
+    if (!topBtn) return;
+    const isVisible = window.scrollY > 250;
+    topBtn.style.display = isVisible ? "grid" : "none";
+    topBtn.setAttribute('aria-hidden', String(!isVisible));
+    topBtn.tabIndex = isVisible ? 0 : -1;
+  };
+  updateBackToTop();
+
   window.addEventListener('scroll', () => {
     updateHeaderState();
-
-    if (topBtn) {
-      topBtn.style.display = window.scrollY > 250 ? "grid" : "none";
-    }
+    updateBackToTop();
 
     if (header) {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
@@ -243,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setInterval(featureTestimonial, 3500);
   }
 
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  document.querySelectorAll('footer #year').forEach(yearSpan => {
+    yearSpan.textContent = new Date().getFullYear();
+  });
 });

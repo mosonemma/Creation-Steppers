@@ -21,11 +21,9 @@
 <header class="header">
   <div class="container">
 
-    <a class="brand-block" href="index.html" aria-label="Creation Steppers Youth Development Initiative home">
+    <a class="brand-block" href="index.html" aria-label="CSYDI home">
       <img class="brand-mark" src="photos/logos/csydi-header-logo.svg" width="62" height="62" decoding="async" alt="">
       <span class="brand-copy">
-        <span class="brand-title-primary">CREATION STEPPERS YOUTH</span>
-        <span class="brand-title-secondary">DEVELOPMENT INITIATIVE</span>
         <span class="brand-acronym">CSYDI</span>
       </span>
     </a>
@@ -463,7 +461,7 @@
 
     <div class="footer-col">
       <h3>Contact</h3>
-      <p>Email: <a href="mailto:csydi@gmail.com">creationsteppersinitiative@gmail.com</a></p>
+      <p>Email: <a href="mailto:creationsteppersinitiative@gmail.com">creationsteppersinitiative@gmail.com</a></p>
       <p>Phone: <a href="tel:0393254319">0393 254 319</a></p>
       <p>Address: Amudat, Uganda</p>
     </div>
@@ -681,61 +679,6 @@
   }
 </script>
 
-<!-- FOOTER ANIMATION SCRIPT -->
-<script>
-  // Animate footer columns on load
-  const footerCols = document.querySelectorAll('.footer-col');
-  
-  const footerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, index * 150);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  footerCols.forEach(col => {
-    col.style.opacity = '0';
-    col.style.transform = 'translateY(20px)';
-    col.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    footerObserver.observe(col);
-  });
-  
-  // Add social icon ripple effects
-  document.querySelectorAll('.footer-social a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const ripple = document.createElement('span');
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-      
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.classList.add('ripple');
-      ripple.style.position = 'absolute';
-      ripple.style.borderRadius = '50%';
-      ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-      ripple.style.pointerEvents = 'none';
-      ripple.style.animation = 'ripple-animation 0.6s ease-out';
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-  
-  // Smooth scroll for footer links
-  document.querySelectorAll('.footer-col a').forEach(link => {
-    link.addEventListener('mouseenter', function() {
-      this.style.transition = 'all 0.3s ease';
-    });
-  });
-</script>
 <script>
   const heroImages = [
     "Docs/mainproject00.JPG",

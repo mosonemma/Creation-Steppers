@@ -250,3 +250,45 @@ button:hover, .btn:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.contact-hero {
+    height: auto;
+    min-height: clamp(220px, 30vw, 320px);
+    padding: 28px 16px;
+}
+
+.contact-hero h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+}
+
+.contact-container {
+    width: min(1200px, calc(100% - 32px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 4vw, 50px);
+}
+
+.contact-info,
+.contact-form {
+    min-width: 0;
+    padding: clamp(20px, 4vw, 40px);
+}
+
+@media (max-width: 760px) {
+    .contact-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero {
+        min-height: 200px;
+    }
+
+    .contact-container {
+        width: calc(100% - 24px);
+        margin: 28px auto;
+        padding: 0;
+    }
+}

@@ -589,3 +589,20 @@ body {
     height: 90px;
   }
 }
+
+.modal-content {
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 100%;
+    padding: 22px 18px;
+  }
+}
